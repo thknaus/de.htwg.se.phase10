@@ -1,6 +1,6 @@
 package de.htwg.phase10;
 
-public class CardStack {
+public class Stack {
 	int size;
 	
 	
