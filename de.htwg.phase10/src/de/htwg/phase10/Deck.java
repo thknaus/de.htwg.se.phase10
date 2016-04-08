@@ -8,23 +8,23 @@ public class Deck {
 	private static final int DEF_CAPACITY = 108;
 	private LinkedList<Card> cards;
 
-	public Deck(){
-		
-	}
+	public Deck(){}
 	
-	/*
+	/**
 	 * fill the Deck with all 108 Cards
 	 * and set the size to 108.
+	 * @return Returns a LinkedList with all cards
 	 */
-	public void newDeck() {
+	public LinkedList<Card> newDeck() {
 		cards = new LinkedList<Card>();
 		for (Card.Color color: Card.Color.values()) {
-			System.out.println(color);
 			for (Card.Rank rank : Card.Rank.values()) {
+				for(SpecialCard.SpecialRank sc : SpecialCard.SpecialRank.values()){
+					cards.add(new Card(sc, SpecialCard.SpecialColor.WHITE));
+				}
 				cards.add(new Card(rank, color));
 				this.size++;
 			}
-			
 		}
 		
 
@@ -37,13 +37,9 @@ public class Deck {
 			}
 		}
 		*/
+		return cards;
 	}
-	
-    public static void main(String [] args){
-        Deck d = new Deck();
-        System.out.println(d);
-    }
-	
+
 	/*
 	 * clean the Array completely and set the
 	 * size to zero.
@@ -67,4 +63,8 @@ public class Deck {
 		
 	}
 	
+	@Override
+	public String toString() {
+		return "Deck [size=" + size + ", cards=" + cards + "]";
+	}
 }
