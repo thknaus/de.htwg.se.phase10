@@ -7,7 +7,7 @@ public class SpecialCard {
 	
 	
 	public enum SpecialColor {
-		WITH;
+		WHITE;
 	}
 	
 	public enum SpecialRank {
@@ -23,7 +23,7 @@ public class SpecialCard {
 		return color;
 	}
 	
-	public SpecialRank getRenk() { 
+	public SpecialRank getRank() { 
 		return rank;
 	}
 

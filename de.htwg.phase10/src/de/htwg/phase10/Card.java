@@ -24,7 +24,7 @@ public class Card {
 		return color;
 	}
 	
-	public Rank getRenk() { 
+	public Rank getRank() { 
 		return rank;
 	}
 

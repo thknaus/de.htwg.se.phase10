@@ -6,16 +6,20 @@ public class Deck {
 	
 	private int size;
 	private static final int DEF_CAPACITY = 108;
-	private List<Card> cards;
+	private LinkedList<Card> cards;
+
+	public Deck(){
+		
+	}
 	
 	/*
 	 * fill the Deck with all 108 Cards
-	 * an set the size to 108.
+	 * and set the size to 108.
 	 */
 	public void newDeck() {
-		cards = new ArrayList<Card>(DEF_CAPACITY);
-		
+		cards = new LinkedList<Card>();
 		for (Card.Color color: Card.Color.values()) {
+			System.out.println(color);
 			for (Card.Rank rank : Card.Rank.values()) {
 				cards.add(new Card(rank, color));
 				this.size++;
@@ -44,7 +48,7 @@ public class Deck {
 	 * clean the Array completely and set the
 	 * size to zero.
 	 */
-	public void cleanDack() {
+	public void cleanDeck() {
 		
 	}
 	
@@ -59,7 +63,7 @@ public class Deck {
 	/*
 	 * set all Cards from the Stack into the Array
 	 */
-	public void setStacktoArray() {
+	public void setStackToArray() {
 		
 	}
 	
