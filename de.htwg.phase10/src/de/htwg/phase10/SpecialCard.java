@@ -1,6 +1,6 @@
-package de.htwg.phase10;
+/* package de.htwg.phase10;
 
-public class SpecialCard extends MainCard{
+public class SpecialCard implements CardInterface{
 	
 	private SpecialRank rank;
 	private SpecialColor color;
@@ -26,10 +26,5 @@ public class SpecialCard extends MainCard{
 	public String toString() {
 		return ""+ rank +" "+ color;
 	}
-
-	@Override
-	public Card getCard() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
+*/

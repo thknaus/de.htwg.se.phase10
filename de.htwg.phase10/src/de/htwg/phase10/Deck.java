@@ -6,8 +6,7 @@ public class Deck {
 	
 	private int size;
 	private static final int DEF_CAPACITY = 108;
-	private LinkedList<MainCard> cards;
-
+	private LinkedList<Card> cards;
 	public Deck(){}
 	
 	/**
@@ -15,21 +14,28 @@ public class Deck {
 	 * and set the size to 108.
 	 * @return Returns a LinkedList with all cards
 	 */
-	public LinkedList<MainCard> newDeck() {
-		
-		cards = new LinkedList<MainCard>();
+	public LinkedList<Card> newDeck() {
+		cards = new LinkedList<Card>();
 		
 		for (int i = 0; i < 2; i++) {
 			for (Card.Color color: Card.Color.values()) {
 				for (Card.Rank rank : Card.Rank.values()) {
-					cards.add(new Card(rank, color));
-					this.size++;
-				}
-			}
-			
-			for (SpecialCard.SpecialColor color: SpecialCard.SpecialColor.values()) {
-				for (SpecialCard.SpecialRank rank : SpecialCard.SpecialRank.values()) {
-					cards.add(new SpecialCard(rank, color));
+					if(rank == Card.Rank.JOKER && color == Card.Color.WHITE){
+						for (int k = 0; k < 4; k++){
+							cards.add(new Card(rank, color, 1));
+							this.size++;
+						}
+					}else if(rank == Card.Rank.SKIP && color == Card.Color.WHITE){
+						for (int j = 0; j < 2; j++) {
+							cards.add(new Card(rank, color, 1));
+							this.size++;
+						}
+					}else if(color != Card.Color.WHITE && rank != Card.Rank.JOKER && rank != Card.Rank.SKIP){
+						cards.add(new Card(rank, color, 0));
+						this.size++;
+					}else{
+						continue;
+					}
 				}
 			}
 		}
@@ -61,6 +67,12 @@ public class Deck {
 	
 	@Override
 	public String toString() {
-		return "Deck [size=" + size + ", cards=" + cards + "]";
+		StringBuilder sb = new StringBuilder();
+		
+		for(Card s : cards){
+			sb.append(s.getRank()).append("_").append(s.getColor()).append(", \n");
+		}
+		sb.append("size: " + this.size);
+		return sb.toString();
 	}
 }
