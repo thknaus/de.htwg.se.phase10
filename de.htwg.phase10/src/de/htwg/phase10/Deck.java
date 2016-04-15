@@ -6,7 +6,7 @@ public class Deck {
 	
 	private int size;
 	private static final int DEF_CAPACITY = 108;
-	private LinkedList<Card> cards;
+	private LinkedList<MainCard> cards;
 
 	public Deck(){}
 	
@@ -15,28 +15,24 @@ public class Deck {
 	 * and set the size to 108.
 	 * @return Returns a LinkedList with all cards
 	 */
-	public LinkedList<Card> newDeck() {
-		cards = new LinkedList<Card>();
-		for (Card.Color color: Card.Color.values()) {
-			for (Card.Rank rank : Card.Rank.values()) {
-				for(SpecialCard.SpecialRank sc : SpecialCard.SpecialRank.values()){
-					cards.add(new Card(sc, SpecialCard.SpecialColor.WHITE));
+	public LinkedList<MainCard> newDeck() {
+		
+		cards = new LinkedList<MainCard>();
+		
+		for (int i = 0; i < 2; i++) {
+			for (Card.Color color: Card.Color.values()) {
+				for (Card.Rank rank : Card.Rank.values()) {
+					cards.add(new Card(rank, color));
+					this.size++;
 				}
-				cards.add(new Card(rank, color));
-				this.size++;
+			}
+			
+			for (SpecialCard.SpecialColor color: SpecialCard.SpecialColor.values()) {
+				for (SpecialCard.SpecialRank rank : SpecialCard.SpecialRank.values()) {
+					cards.add(new SpecialCard(rank, color));
+				}
 			}
 		}
-		
-
-		/*
-		System.out.println(cards);
-		
-		for (SpecialCard.SpecialColor color: SpecialCard.SpecialColor.values()) {
-			for (SpecialCard.SpecialRank rank : SpecialCard.SpecialRank.values()) {
-				cards.add(new SpecialCard(rank, color));
-			}
-		}
-		*/
 		return cards;
 	}
 

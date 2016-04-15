@@ -7,10 +7,10 @@ import de.htwg.phase10.Card.Rank;
 
 public class TestCard {
 	public static void main(String []args){		
-		Deck d = new Deck();
-		LinkedList<Card> cards = d.newDeck();
+		Deck firstDeck = new Deck();
+		firstDeck.newDeck();
 		
-		System.out.println(cards);
+		System.out.println(firstDeck);
 		
 	}
 }

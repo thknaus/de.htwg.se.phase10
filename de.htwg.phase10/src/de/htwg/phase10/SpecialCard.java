@@ -1,10 +1,13 @@
 package de.htwg.phase10;
 
-public class SpecialCard {
+public class SpecialCard extends MainCard{
 	
 	private SpecialRank rank;
 	private SpecialColor color;
 	
+	public SpecialCard(){
+		super();
+	}
 	
 	public enum SpecialColor {
 		WHITE;
@@ -18,17 +21,15 @@ public class SpecialCard {
 		this.rank = rank;
 		this.color = color;
 	}
-	
-	public SpecialColor getColor() {
-		return color;
-	}
-	
-	public SpecialRank getRank() { 
-		return rank;
-	}
 
 	@Override 
 	public String toString() {
 		return ""+ rank +" "+ color;
+	}
+
+	@Override
+	public Card getCard() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
