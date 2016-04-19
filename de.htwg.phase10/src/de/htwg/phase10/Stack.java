@@ -13,7 +13,7 @@ public class Stack {
 	/*
 	 * set a Card from the Hand to the Stack.
 	 */
-	public void setCardtoStack() {
+	public void putCardtoStack() {
 		
 	}
 }

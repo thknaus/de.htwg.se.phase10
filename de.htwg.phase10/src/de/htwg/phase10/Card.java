@@ -29,7 +29,6 @@ public class Card implements CardInterface{
 	}
 	@Override
 	public Card getCard() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

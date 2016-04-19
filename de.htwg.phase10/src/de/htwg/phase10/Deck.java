@@ -4,8 +4,7 @@ import java.util.*;
 
 public class Deck {
 	
-	private int size;
-	private static final int DEF_CAPACITY = 108;
+	private int size = 0;
 	private LinkedList<Card> cards;
 	public Deck(){}
 	
@@ -39,23 +38,30 @@ public class Deck {
 				}
 			}
 		}
+		Collections.shuffle(cards);
 		return cards;
 	}
 
 	/*
 	 * clean the Array completely and set the
 	 * size to zero.
+	 * Return: returns true if deck has been cleaned.
 	 */
-	public void cleanDeck() {
-		
+	public boolean cleanDeck() {
+		this.cards.clear();
+		this.size = 0;
+		return true;
 	}
 	
 	/*
-	 * get a random Card from the Array, delete it and
-	 * reduced the size around one.
+	 * get a random Card from the list, delete it and
+	 * reduce the size around one.
 	 */
-	public void getnewCard() {
-		
+	public Card getNewCard() {
+		Card c = cards.getLast();
+		cards.removeLast();
+		size--;
+		return c;
 	}
 	
 	/*
@@ -68,9 +74,10 @@ public class Deck {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		
-		for(Card s : cards){
-			sb.append(s.getRank()).append("_").append(s.getColor()).append(", \n");
+		if(cards != null){
+			for(Card s : cards){
+				sb.append(s.getRank()).append("_").append(s.getColor()).append(", \n");
+			}
 		}
 		sb.append("size: " + this.size);
 		return sb.toString();
