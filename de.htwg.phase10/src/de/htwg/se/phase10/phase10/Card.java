@@ -1,6 +1,6 @@
-package de.htwg.phase10;
+package de.htwg.se.phase10.phase10;
 
-public class Card implements CardInterface{
+public class Card {
 	
 	private Rank rank;
 	private Color color;
@@ -26,9 +26,5 @@ public class Card implements CardInterface{
 	}
 	public Color getColor(){
 		return this.color;
-	}
-	@Override
-	public Card getCard() {
-		return null;
 	}
 }

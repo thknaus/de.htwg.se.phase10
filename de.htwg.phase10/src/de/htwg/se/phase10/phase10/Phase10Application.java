@@ -1,4 +1,4 @@
-package de.htwg.phase10;
+package de.htwg.se.phase10.phase10;
 
 public class Phase10Application {
 
