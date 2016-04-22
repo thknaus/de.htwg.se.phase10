@@ -5,16 +5,17 @@ import java.util.*;
 public class Deck {
 	
 	private int size = 0;
-	private LinkedList<Card> cards;
-	public Deck(){}
+	private LinkedList<Card> cards = new LinkedList<Card>();;
+	public Deck(){
+		 newDeck();
+	}
 	
 	/**
 	 * fill the Deck with all 108 Cards
 	 * and set the size to 108.
 	 * @return Returns a LinkedList with all cards
 	 */
-	public LinkedList<Card> newDeck() {
-		cards = new LinkedList<Card>();
+	public void newDeck() {
 		
 		for (int i = 0; i < 2; i++) {
 			for (Card.Color color: Card.Color.values()) {
@@ -39,7 +40,6 @@ public class Deck {
 			}
 		}
 		Collections.shuffle(cards);
-		return cards;
 	}
 
 	/*

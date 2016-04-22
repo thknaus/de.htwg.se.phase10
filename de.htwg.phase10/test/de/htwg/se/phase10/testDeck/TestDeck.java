@@ -10,37 +10,26 @@ import de.htwg.se.phase10.phase10.Card.Color;
 import de.htwg.se.phase10.phase10.Card.Rank;
 
 public class TestDeck extends TestCase{
-	private static Deck firstDeck;
+	private  Deck firstDeck;
 	
 	@Before
-	public static void setUpDeck(){
+	public  void setUp(){
 		firstDeck = new Deck();
 	}
-	
+	/*
 	@Test
-	public static void testNewDeck(){
+	public  void testNewDeck(){
 		assertNotNull(firstDeck.newDeck());
-	}
+	}*/
 	
 	@Test
-	public static void testCleanDeck(){
+	public  void testCleanDeck(){
+		assertNotNull(firstDeck);
 		assertTrue(firstDeck.cleanDeck());
 	}
-	
+	/*
 	@Test
-	public static void testGetNewCard(){
+	public  void testGetNewCard(){
 		assertNotNull(firstDeck.getNewCard());
-	}
-	
-	public static void main(String []args){				
-		setUpDeck();
-		System.out.println(firstDeck);
-		testNewDeck();
-		System.out.println(firstDeck);
-		testGetNewCard();
-		Card c = firstDeck.getNewCard();
-		System.out.println(c.getColor() + " " + c.getRank());
-		testCleanDeck();
-		System.out.println(firstDeck);
-	}
+	}*/
 }
