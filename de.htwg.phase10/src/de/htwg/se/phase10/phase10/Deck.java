@@ -20,26 +20,42 @@ public class Deck {
 		for (int i = 0; i < 2; i++) {
 			for (Card.Color color: Card.Color.values()) {
 				for (Card.Rank rank : Card.Rank.values()) {
-					if(rank == Card.Rank.JOKER && color == Card.Color.WHITE){
-						for (int k = 0; k < 4; k++){
-							cards.add(new Card(rank, color, 1));
-							this.size++;
-						}
-					}else if(rank == Card.Rank.SKIP && color == Card.Color.WHITE){
-						for (int j = 0; j < 2; j++) {
-							cards.add(new Card(rank, color, 1));
-							this.size++;
-						}
-					}else if(color != Card.Color.WHITE && rank != Card.Rank.JOKER && rank != Card.Rank.SKIP){
-						cards.add(new Card(rank, color, 0));
-						this.size++;
-					}else{
-						continue;
-					}
+					WhichCard(rank, color);
 				}
 			}
 		}
 		Collections.shuffle(cards);
+	}
+	
+	private void WhichCard(Card.Rank rank,Card.Color color) {
+		if(rank == Card.Rank.JOKER && color == Card.Color.WHITE){
+			newDeckNC(rank, color);
+
+		}else if(rank == Card.Rank.SKIP && color == Card.Color.WHITE){
+			newDeckSpCS(rank, color);
+
+		}else if(color != Card.Color.WHITE && rank != Card.Rank.JOKER && rank != Card.Rank.SKIP){
+			newDeckSpCJ(rank, color);
+		}
+	}
+	
+	private void newDeckNC(Card.Rank rank,Card.Color color) {
+		for (int k = 0; k < 4; k++){
+			cards.add(new Card(rank, color, 1));
+			this.size++;
+		}
+	}
+	
+	private void newDeckSpCS(Card.Rank rank,Card.Color color) {
+		for (int j = 0; j < 2; j++) {
+			cards.add(new Card(rank, color, 1));
+			this.size++;
+		}
+	}
+	
+	private void newDeckSpCJ(Card.Rank rank,Card.Color color) {
+		cards.add(new Card(rank, color, 0));
+		this.size++;
 	}
 
 	/*

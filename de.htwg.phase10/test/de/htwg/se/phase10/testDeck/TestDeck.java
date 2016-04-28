@@ -15,6 +15,8 @@ public class TestDeck extends TestCase{
 	@Before
 	public  void setUp(){
 		firstDeck = new Deck();
+		System.out.println(firstDeck);
+		
 	}
 	/*
 	@Test
