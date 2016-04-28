@@ -4,8 +4,9 @@ import java.util.*;
 
 public class Deck {
 	
+	public static Object getNewCard;
 	private int size = 0;
-	private LinkedList<Card> cards = new LinkedList<Card>();;
+	private LinkedList<Card> cards = new LinkedList<Card>();
 	public Deck(){
 		 newDeck();
 	}
@@ -18,13 +19,21 @@ public class Deck {
 	public void newDeck() {
 		
 		for (int i = 0; i < 2; i++) {
-			for (Card.Color color: Card.Color.values()) {
-				for (Card.Rank rank : Card.Rank.values()) {
-					WhichCard(rank, color);
-				}
-			}
+			forCardColor();
 		}
 		Collections.shuffle(cards);
+	}
+	
+	private void forCardColor() {
+		for (Card.Color color: Card.Color.values()) {
+			forCardRank(color);
+		}
+	}
+	
+	private void forCardRank(Card.Color color) {
+		for (Card.Rank rank : Card.Rank.values()) {
+			WhichCard(rank, color);
+		}
 	}
 	
 	private void WhichCard(Card.Rank rank,Card.Color color) {
@@ -80,13 +89,13 @@ public class Deck {
 		return c;
 	}
 	
-	/*
+	/**
 	 * set all Cards from the Stack into the Array
-	 */
+	
 	public void setStackToArray() {
 		
 	}
-	
+	 **/
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
