@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Deck {
 	
-	public static Object getNewCard;
+	//public static Object getNewCard;
 	private int size = 0;
 	private LinkedList<Card> cards = new LinkedList<Card>();
 	public Deck(){
@@ -32,11 +32,11 @@ public class Deck {
 	
 	private void forCardRank(Card.Color color) {
 		for (Card.Rank rank : Card.Rank.values()) {
-			WhichCard(rank, color);
+			whichCard(rank, color);
 		}
 	}
 	
-	private void WhichCard(Card.Rank rank,Card.Color color) {
+	private void whichCard(Card.Rank rank,Card.Color color) {
 		if(rank == Card.Rank.JOKER && color == Card.Color.WHITE){
 			newDeckNC(rank, color);
 

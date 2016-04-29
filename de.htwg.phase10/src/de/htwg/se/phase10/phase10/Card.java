@@ -5,7 +5,6 @@ public class Card {
 	private Rank rank;
 	private Color color;
 	private int specialC;
-	public Card(){}
 	
 	public enum Color {
 		BLUE, RED, GREEN, YELLOW, WHITE;
@@ -26,5 +25,8 @@ public class Card {
 	}
 	public Color getColor(){
 		return this.color;
+	}
+	public int getSpecialC(){
+		return this.specialC;		
 	}
 }

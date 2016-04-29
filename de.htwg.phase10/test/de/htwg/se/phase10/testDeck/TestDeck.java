@@ -15,18 +15,16 @@ public class TestDeck extends TestCase{
 	
 	@Before
 	public  void setUp(){
-		/*
 		firstDeck = new Deck();
 		System.out.println(firstDeck);
-		*/
-		firstHand = new Hand();
-		System.out.println(firstHand);
+		/*firstHand = new Hand();
+		System.out.println(firstHand);*/
 	}
 
-/*
+
 	@Test
 	public  void testNewDeck(){
-		assertNotNull(firstDeck.newDeck());
+		assertNotNull(firstDeck);
 	}
 
 	@Test
@@ -39,7 +37,7 @@ public class TestDeck extends TestCase{
 	public  void testGetNewCard(){
 		assertNotNull(firstDeck.getNewCard());
 	}
-	@Test
+	/*@Test
 	public void testHand(){
 		assertNotNull(hand);
 	}
