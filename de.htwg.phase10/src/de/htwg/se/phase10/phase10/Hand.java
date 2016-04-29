@@ -5,12 +5,18 @@ import java.util.*;
 public class Hand {
 
 	private int size;
-	//private Card [] handcards;
-	private LinkedList<Card> handcards = new LinkedList<Card>();
+	private Card [] handcards = new Card[10];
+	private Deck deck;
+	public Hand (Deck d) {
+		deck = d;
+		for(int i = 0; i < 10; i++){
+			Card c = deck.getNewCard();
+			handcards[i] = c;
+		}
+	}
 	
-	public Hand () {
-		//handcards = new Card[10];
-		//this.size = 10;
+	public int getSize(){
+		return this.size;
 	}
 	/**
 	public void setacard() {
@@ -23,5 +29,18 @@ public class Hand {
 		}
 	}
 	**/
+
+	@Override
+	public String toString() {
+		return "Hand [size=" + size + ", handcards=" + Arrays.toString(handcards) + ", deck=" + deck + "]";
+	}
+
+	public Card dropCard() {
+		return null;
+	}
+
+	public Card getNewCard() {
+		return null;
+	}
 	
 }
