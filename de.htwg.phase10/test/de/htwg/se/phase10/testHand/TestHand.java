@@ -1,11 +1,10 @@
 package de.htwg.se.phase10.testHand;
 
+import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.phase10.Deck;
-import de.htwg.se.phase10.phase10.Hand;
-import junit.framework.TestCase;
+import de.htwg.se.phase10.phase10.*;
 
 public class TestHand extends TestCase{
 	private Hand hand;
@@ -20,18 +19,18 @@ public class TestHand extends TestCase{
 	}
 	
 	@Test
-	public void getHand(){
-		assertEquals(10, hand.getSize());
+	public void testGetHandH(){
+		assertEquals(10, hand.getSizeH());
 	}
 	@Test
-	public void dropCard(){
-		int size = hand.getSize();
-		assertEquals(size-1, hand.dropCard());
+	public void testDropCard(){
+		int size = hand.getSizeH();
+		assertEquals(size-1, hand.dropCardH());
 	}
 	
 	@Test
-	public void getNewCard(){
-		assertNotNull(hand.getNewCard());
+	public void testGetNewCard(){
+		assertNotNull(hand.getNewCardH());
 	}
 	
 	/*@Test

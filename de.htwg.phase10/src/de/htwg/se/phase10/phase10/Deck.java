@@ -88,14 +88,11 @@ public class Deck {
 		size--;
 		return c;
 	}
-	
-	/**
-	 * set all Cards from the Stack into the Array
-	
-	public void setStackToArray() {
+	public void backtoDeckD() {
 		
 	}
-	 **/
+	
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();

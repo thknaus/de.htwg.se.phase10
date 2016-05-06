@@ -1,19 +1,28 @@
 package de.htwg.se.phase10.phase10;
 
 public class Stack {
-	int size;
+	private int size;
 	
-	/*
-	 * get the last Card witch was discarded from the Stack to the Hand.
-	 */
-	public void getoldCard() {
+	public Stack() {
+		new Stack();
+	}
+
+	public void pullCardS() {
+		size--;
+	}
+	
+	public void dropCardS() {
+		size++;
 		
 	}
 	
-	/*
-	 * set a Card from the Hand to the Stack.
-	 */
-	public void putCardtoStack() {
+	public void backtoDeckS() {
 		
+		size = 0;
 	}
+	
+	public int getsizeS() {
+		return size;
+	}
+	
 }
