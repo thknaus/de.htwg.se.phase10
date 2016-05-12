@@ -14,26 +14,28 @@ public class TestHand extends TestCase{
 	public void setUp(){
 		deck = new Deck();
 		hand = new Hand(deck);
-		
-		System.out.println(hand);
 	}
-	
 	@Test
-	public void testGetHandH(){
+	public void testGetHand(){
+		assertNotNull(hand.getHand());
+	}
+	@Test
+	public void testGetHandSize(){
 		assertEquals(10, hand.getSizeH());
 	}
-	/*
+	
 	@Test
-	public void testDropCard(){
-		int size = hand.getSizeH();
-		assertEquals(size-1, hand.dropCardH());
+	public void testDropCardH(){
+		Card c = hand.getHand()[0];
+		assertEquals(c, hand.dropCardH(c));
 	}
 	
 	@Test
-	public void testGetNewCard(){
+	public void testGetNewCardH(){
+		testDropCardH();
 		assertNotNull(hand.getNewCardH());
 	}
-	
+	/*
 	@Test
 	public void getStackCard(){
 		assertNotNull(hand.getStackCard());

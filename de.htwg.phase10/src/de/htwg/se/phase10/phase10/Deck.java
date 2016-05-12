@@ -89,10 +89,14 @@ public class Deck {
 		return c;
 	}
 	
-	public void backtoDeckD() {
-		
+	public void pushToDeck(Card s) {
+		cards.add(s);
+		size++;
 	}
 	
+	public int getSize(){
+		return this.size;
+	}
 	
 	@Override
 	public String toString() {

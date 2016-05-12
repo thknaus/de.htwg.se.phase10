@@ -16,7 +16,6 @@ public class TestDeck extends TestCase{
 		System.out.println(firstDeck);
 	}
 
-
 	@Test
 	public  void testNewDeck(){
 		assertNotNull(firstDeck);
@@ -31,5 +30,12 @@ public class TestDeck extends TestCase{
 	@Test
 	public  void testGetNewCard(){
 		assertNotNull(firstDeck.getNewCard());
+	}
+	@Test
+	public void testBackToDeck(){
+		int size = firstDeck.getSize();
+		Card c = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
+		firstDeck.pushToDeck(c);
+		assertEquals(size + 1, firstDeck.getSize());
 	}
 }

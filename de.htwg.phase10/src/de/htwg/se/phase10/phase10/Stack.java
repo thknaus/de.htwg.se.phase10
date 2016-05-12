@@ -5,12 +5,16 @@ import java.util.LinkedList;
 public class Stack {
 	private int size;
 	private LinkedList<Card> stack = new LinkedList<Card>();
-	
+	private Deck deck;
 	public Stack() {
+		//Deck deck = this.deck;
 		new Stack();
 	}
 
 	public Card pullCardS() {
+		if(size == 0){
+			return null;
+		}
 		Card c = stack.getLast();
 		stack.removeLast();
 		size--;
@@ -18,17 +22,22 @@ public class Stack {
 	}
 
 	
-	public void dropCardS() {
+	public void pushCardS(Card c) {
+		stack.add(c);
 		size++;
-		
 	}
 	
-	public void backtoDeckS() {
-		
-		size = 0;
+	public void backToDeckS() {
+		Card c = stack.getLast();
+		stack.removeLast();
+		for(Card sc : stack){
+			this.deck.pushToDeck(sc);
+		}
+		pushCardS(c);
+		size = 1;
 	}
 	
-	public int getsizeS() {
+	public int getSizeS() {
 		return size;
 	}
 	
