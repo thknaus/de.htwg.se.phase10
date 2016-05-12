@@ -7,6 +7,7 @@ public class Hand {
 	private int size;
 	private Card [] handcards = new Card[10];
 	private Deck deck;
+	private Stack stack;
 	
 	public Hand (Deck d) {
 		deck = d;
@@ -19,14 +20,13 @@ public class Hand {
 	
 
 	public void getNewCardH() {
-		if (size >= 10){
-			System.out.println("Es darf keine Karte mehr aufgenommen werdne");			
+		for (int i = 0; i < i; i++){
+			if (handcards[i] == null) {
+				Card c = deck.getNewCard();
+				handcards[++size] = c;
+			}
 		}
-		else {
-			Card c = deck.getNewCard();
-			handcards[size +1] = c;
-			size++;
-		}
+		System.out.println("Bereits 10 Karten auf der Hand");
 	}
 	
 	public int getSizeH(){
@@ -47,16 +47,13 @@ public class Hand {
 	}
 	
 	public void pullCardH(Card c) {
-		if (size >= 10){
-			System.out.println("Es darf keine Karte mehr aufgenommen werdne");			
+		for (int i = 0; i < i; i++){
+			if (handcards[i] == null) {
+				Card p = stack.pullCardS();
+				handcards[++size] = p;
+			}			
 		}
-		else {
-			/*
-			Card p = stack.pullCardS();
-			handcards[size +1] = p;
-			size++;
-			*/
-		}
+		System.out.println("Bereits 10 Karten auf der Hand");
 	}
 
 	
