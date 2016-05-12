@@ -17,36 +17,59 @@ public class Hand {
 		}
 	}
 	
+
+	public void getNewCardH() {
+		if (size >= 10){
+			System.out.println("Es darf keine Karte mehr aufgenommen werdne");			
+		}
+		else {
+			Card c = deck.getNewCard();
+			handcards[size +1] = c;
+			size++;
+		}
+	}
+	
 	public int getSizeH(){
 		return this.size;
 	}
-	public Card dropCardH() {
-		return null;
-	}
-
-	public Card getNewCardH() {
-		return null;
+	
+	public Card dropCardH(Card c) {
+		for (int i = 0; i < size; i++) {
+			if(handcards[i].equals(c)){
+				handcards[i] = null;
+				size--;
+			}
+			else {
+				System.out.println("Karte befindet sich nicht auf Ihrer Hand");
+			}
+		}
+		return c;
 	}
 	
-	public Card pullCardH() {
-		return null;
-	}
-
-	/**
-	public void setacard() {
-		Card s = Deck.getNewCard.;
-	}
-	
-	public void newHand(Deck d) {
-		for (int i = 0; i < 10; i++) {
-			handcards.add(new Card(Card));
+	public void pullCardH(Card c) {
+		if (size >= 10){
+			System.out.println("Es darf keine Karte mehr aufgenommen werdne");			
+		}
+		else {
+			/*
+			Card p = stack.pullCardS();
+			handcards[size +1] = p;
+			size++;
+			*/
 		}
 	}
-	**/
+
 	
 	@Override
 	public String toString() {
-		return "Hand [size=" + size + ", handcards=" + Arrays.toString(handcards) + ", deck=" + deck + "]";
+		StringBuilder sb = new StringBuilder();
+		if(handcards != null){
+			for(Card c : handcards){
+				sb.append(c.getRank()).append("_").append(c.getColor()).append(", \n");
+			}
+		}
+		sb.append("size: " + this.size);
+		return sb.toString();
 	}
 	
 }

@@ -22,6 +22,7 @@ public class TestHand extends TestCase{
 	public void testGetHandH(){
 		assertEquals(10, hand.getSizeH());
 	}
+	/*
 	@Test
 	public void testDropCard(){
 		int size = hand.getSizeH();
@@ -33,7 +34,7 @@ public class TestHand extends TestCase{
 		assertNotNull(hand.getNewCardH());
 	}
 	
-	/*@Test
+	@Test
 	public void getStackCard(){
 		assertNotNull(hand.getStackCard());
 	}*/
