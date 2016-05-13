@@ -1,4 +1,4 @@
-package de.htwg.phase10.test.modeltest;
+package de.htwg.phase10.model;
 
 import junit.framework.TestCase;
 
