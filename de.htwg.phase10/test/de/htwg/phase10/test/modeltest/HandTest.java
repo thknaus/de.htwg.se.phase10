@@ -1,12 +1,14 @@
-package de.htwg.se.phase10.testHand;
+package de.htwg.phase10.test.modeltest;
 
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.phase10.*;
+import de.htwg.se.phase10.model.*;
+import de.htwg.se.phase10.model.Card.Color;
+import de.htwg.se.phase10.model.Card.Rank;
 
-public class TestHand extends TestCase{
+public class HandTest extends TestCase{
 	private Hand hand;
 	private Deck deck;
 	
@@ -28,16 +30,24 @@ public class TestHand extends TestCase{
 	public void testDropCardH(){
 		Card c = hand.getHand()[0];
 		assertEquals(c, hand.dropCardH(c));
-		/* @Thomas assertNull sollte so gehen oder?
-		Card s = hand.getHand()[10];
-		assertNull(hand.getHand(s));
-		*/
+	}
+	
+	@Test
+	public void testSetCardH(){
+		Card c = new Card(Rank.EIGHT,Color.YELLOW, 0);
+		hand.setCardHand(c);
+		assertTrue(hand.containsCard(c));
 	}
 	
 	@Test
 	public void testGetNewCardH(){
 		testDropCardH();
 		assertNotNull(hand.getNewCardH());
+	}
+	@Test
+	public void testGetNewCardHNull(){
+		hand.getNewCardH();
+		assertNull(hand.getNewCardH());
 	}
 
 	/*

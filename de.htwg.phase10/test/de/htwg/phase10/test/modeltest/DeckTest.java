@@ -1,13 +1,13 @@
-package de.htwg.se.phase10.testDeck;
+package de.htwg.phase10.test.modeltest;
 
 import junit.framework.TestCase;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.phase10.*;
+import de.htwg.se.phase10.model.*;
 
-public class TestDeck extends TestCase{
+public class DeckTest extends TestCase{
 	private Deck firstDeck;
 	
 	@Before

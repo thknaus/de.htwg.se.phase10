@@ -1,11 +1,11 @@
-package de.htwg.se.phase10.testCard;
+package de.htwg.phase10.test.modeltest;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.phase10.Card;
+import de.htwg.se.phase10.model.Card;
 import junit.framework.TestCase;
 
-public class TestCard extends TestCase{
+public class CardTest extends TestCase{
 	private Card card;
 	
 	@Before

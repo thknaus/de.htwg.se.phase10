@@ -1,4 +1,4 @@
-package de.htwg.se.phase10.phase10;
+package de.htwg.se.phase10.model;
 
 import java.util.LinkedList;
 

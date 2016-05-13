@@ -1,4 +1,6 @@
-package de.htwg.se.phase10.phase10;
+package de.htwg.se.phase10;
+
+import de.htwg.se.phase10.model.Deck;
 
 public class Phase10Application {
 

@@ -1,21 +1,25 @@
-package de.htwg.se.phase10.phase10;
+package de.htwg.se.phase10.model;
 
 import java.util.*;
 
 public class Hand {
 
 	private int size;
-	private Card [] handcards = new Card[10];
+	private Card [] handcards = new Card[11];
 	private Deck deck;
 	private Stack stack;
 	
 	// generatest a new hand
 	public Hand(Deck d) {
 		deck = d;
-		for(int i = 0; i < 10; i++){
-			Card c = deck.getNewCard();
-			handcards[i] = c;
-			size++;
+		for(int i = 0; i <= 11; i++){
+			if(i == 11){
+				handcards[i] = null;
+			}else{
+				Card c = deck.getNewCard();
+				handcards[i] = c;
+				size++;	
+			}
 		}
 	}
 	
@@ -51,7 +55,7 @@ public class Hand {
 	
 	// get current card from stack
 	public void pullCardH(Card c) {
-		for (int i = 0; i < i; i++){
+		for (int i = 0; i < handcards.length; i++){
 			if (handcards[i] == null) {
 				Card p = stack.pullCardS();
 				handcards[i] = p;
@@ -59,6 +63,25 @@ public class Hand {
 			}			
 		}
 		System.out.println("Bereits 10 Karten auf der Hand");
+	}
+	
+	// set new card to hand 
+	public void setCardHand(Card c){
+		for(int i = 0; i < handcards.length; i++){
+			if(handcards[i] == null){
+				handcards[i] = c;
+			}
+		}
+	}
+	
+	// check if hand contains
+	public boolean containsCard(Card c){
+		for(Card d : handcards){
+			if(d.equals(c)){
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	// returns the current size of the hand

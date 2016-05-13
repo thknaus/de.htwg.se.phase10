@@ -1,12 +1,12 @@
-package de.htwg.se.phase10.testStack;
+package de.htwg.phase10.test.modeltest;
 
 import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.phase10.*;
+import de.htwg.se.phase10.model.*;
 
-public class TestStack extends TestCase{
+public class StackTest extends TestCase{
 	private Stack firstStack;
 	private int size;
 	
