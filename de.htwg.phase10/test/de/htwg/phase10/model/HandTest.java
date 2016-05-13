@@ -1,4 +1,4 @@
-/*package de.htwg.phase10.model;
+package de.htwg.phase10.model;
 
 import junit.framework.TestCase;
 import org.junit.Before;
@@ -11,6 +11,7 @@ import de.htwg.se.phase10.model.Card.Rank;
 public class HandTest extends TestCase{
 	private Hand hand;
 	private Deck deck;
+	private Card exampleCard = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 	
 	@Before
 	public void setUp(){
@@ -34,21 +35,20 @@ public class HandTest extends TestCase{
 	
 	@Test
 	public void testDropCardHfalse(){
-		Card d = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
+		hand.setCardHand(exampleCard);
 		Card[] handarray = hand.getHand();
 		for(Card h : handarray){
-			if(h.equals(d)){
+			if(h.equals(exampleCard)){
 				hand.dropCardH(h);
 			}
 		}
-		assertNull(hand.dropCardH(d));
+		assertNull(hand.dropCardH(exampleCard));
 	}
 		
 	@Test
 	public void testSetCardH(){
-		Card c = new Card(Rank.EIGHT,Color.YELLOW, 0);
-		hand.setCardHand(c);
-		assertTrue(hand.containsCard(c));
+		hand.setCardHand(exampleCard);
+		assertTrue(hand.containsCard(exampleCard));
 	}
 	
 	@Test
@@ -61,12 +61,31 @@ public class HandTest extends TestCase{
 		hand.getNewCardH();
 		assertNull(hand.getNewCardH());
 	}
+	
+	@Test
+	public void testContainsCard(){
+		hand.setCardHand(exampleCard);
+		assertTrue(hand.containsCard(exampleCard));
+	}
+	
+	@Test
+	public void testContainsCardFalse(){
+		Card[] handarray = hand.getHand();
+		for(Card h : handarray){
+			if(h.equals(exampleCard)){
+				hand.dropCardH(h);
+			}
+		}
+		assertFalse(hand.containsCard(exampleCard));
+	}
+
+	
 
 	/*
 	@Test
 	public void getStackCard(){
 		assertNotNull(hand.getStackCard());
-	}
+	}*/
 	
 	
-}*/
+}
