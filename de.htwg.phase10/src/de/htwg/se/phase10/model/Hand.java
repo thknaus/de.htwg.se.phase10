@@ -12,8 +12,8 @@ public class Hand {
 	// generatest a new hand
 	public Hand(Deck d) {
 		deck = d;
-		for(int i = 0; i <= 11; i++){
-			if(i == 11){
+		for(int i = 0; i < 11; i++){
+			if(i == 10){
 				handcards[i] = null;
 			}else{
 				Card c = deck.getNewCard();
