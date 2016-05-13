@@ -33,6 +33,18 @@ public class HandTest extends TestCase{
 	}
 	
 	@Test
+	public void testDropCardHfalse(){
+		Card d = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
+		Card[] handarray = hand.getHand();
+		for(Card h : handarray){
+			if(h.equals(d)){
+				hand.dropCardH(h);
+			}
+		}
+		assertNull(hand.dropCardH(d));
+	}
+		
+	@Test
 	public void testSetCardH(){
 		Card c = new Card(Rank.EIGHT,Color.YELLOW, 0);
 		hand.setCardHand(c);

@@ -49,6 +49,7 @@ public class Hand {
 				size--;
 				return c;
 			}
+			continue;
 		}
 		return null;
 	}
