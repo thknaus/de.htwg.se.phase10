@@ -28,6 +28,10 @@ public class TestHand extends TestCase{
 	public void testDropCardH(){
 		Card c = hand.getHand()[0];
 		assertEquals(c, hand.dropCardH(c));
+		/* @Thomas assertNull sollte so gehen oder?
+		Card s = hand.getHand()[10];
+		assertNull(hand.getHand(s));
+		*/
 	}
 	
 	@Test
@@ -35,6 +39,7 @@ public class TestHand extends TestCase{
 		testDropCardH();
 		assertNotNull(hand.getNewCardH());
 	}
+
 	/*
 	@Test
 	public void getStackCard(){

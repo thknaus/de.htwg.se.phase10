@@ -8,32 +8,35 @@ import de.htwg.se.phase10.phase10.*;
 
 public class TestStack extends TestCase{
 	private Stack firstStack;
+	private int size;
 	
 	@Before
 	public void setUp(){
+
 		firstStack = new Stack();
 		System.out.println(firstStack);
 	}
 
 	/*
 	@Test
-	public void dropCardS(){
-		assertEquals(10, hand.getSize());
+	public void testdropCardS(){
+		assertEquals(stack.getlast(), );
 	}
 	
 	@Test
-	public void pullCardS(){
-		assertEquals(10, hand.getSize());
+	size = n - 1;
+	public void testpullCardS(){
+		assertEquals(n, stack.getsize());
 	}
 	
 	@Test
-	public void backtoDeckS(){
-		assertEquals(10, hand.getSize());
+	public void testbacktoDeckS(){
+		assertEquals(1, stack.getSize());
 	}
 	
 	@Test
-	public void getSizeS(){
-		assertEquals(10, hand.getSize());
+	public void testgetSizeS(){
+		assertNotNull(stack.size());
 	}
 	*/
 }

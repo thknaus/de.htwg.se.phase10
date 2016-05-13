@@ -28,17 +28,18 @@ public class Stack {
 	}
 	
 	public void backToDeckS() {
-		Card c = stack.getLast();
-		stack.removeLast();
-		for(Card sc : stack){
-			this.deck.pushToDeck(sc);
+		if (size > 1) {
+			Card c = stack.getLast();
+			stack.removeLast();
+			for(Card sc : stack){
+				this.deck.pushToDeck(sc);
+			}
+			pushCardS(c);
+			size = 1;
 		}
-		pushCardS(c);
-		size = 1;
 	}
 	
 	public int getSizeS() {
 		return size;
 	}
-	
 }

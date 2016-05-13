@@ -77,5 +77,4 @@ public class Hand {
 		sb.append("size: " + this.size);
 		return sb.toString();
 	}
-	
 }
