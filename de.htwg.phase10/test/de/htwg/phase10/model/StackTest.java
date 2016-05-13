@@ -1,4 +1,4 @@
-package de.htwg.phase10.model;
+/*package de.htwg.phase10.model;
 
 import junit.framework.TestCase;
 import org.junit.Before;
@@ -38,5 +38,5 @@ public class StackTest extends TestCase{
 	public void testgetSizeS(){
 		assertNotNull(stack.size());
 	}
-	*/
-}
+	
+}*/

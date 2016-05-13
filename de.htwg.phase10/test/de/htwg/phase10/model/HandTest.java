@@ -1,4 +1,4 @@
-package de.htwg.phase10.model;
+/*package de.htwg.phase10.model;
 
 import junit.framework.TestCase;
 import org.junit.Before;
@@ -66,7 +66,7 @@ public class HandTest extends TestCase{
 	@Test
 	public void getStackCard(){
 		assertNotNull(hand.getStackCard());
-	}*/
+	}
 	
 	
-}
+}*/
