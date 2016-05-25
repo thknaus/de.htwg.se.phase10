@@ -68,7 +68,6 @@ public class Hand {
 				return p;
 			}			
 		}
-		System.out.println("Bereits 10 Karten auf der Hand");
 		return null;
 	}
 	
