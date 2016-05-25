@@ -4,11 +4,10 @@ import java.util.LinkedList;
 
 public class Stack {
 	private int size;
-	private LinkedList<Card> stack = new LinkedList<Card>();
+	private LinkedList<Card> stack;
 	private Deck deck;
 	public Stack() {
-		//Deck deck = this.deck;
-		new Stack();
+		stack = new LinkedList<Card>();
 	}
 
 	public Card pullCardS() {

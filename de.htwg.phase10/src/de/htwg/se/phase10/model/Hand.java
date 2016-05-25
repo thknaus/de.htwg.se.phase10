@@ -58,15 +58,18 @@ public class Hand {
 	}
 	
 	// get current card from stack
-	public void pullCardH(Card c) {
+	public Card getCardStack(Stack s) {
+		this.stack = s;
 		for (int i = 0; i < handcards.length; i++){
 			if (handcards[i] == null) {
 				Card p = stack.pullCardS();
 				handcards[i] = p;
 				size++;
+				return p;
 			}			
 		}
 		System.out.println("Bereits 10 Karten auf der Hand");
+		return null;
 	}
 	
 	// set new card to hand 

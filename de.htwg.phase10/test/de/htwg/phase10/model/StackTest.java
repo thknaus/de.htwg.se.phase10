@@ -1,6 +1,7 @@
 package de.htwg.phase10.model;
 
 import junit.framework.TestCase;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,34 +10,32 @@ import de.htwg.se.phase10.model.*;
 public class StackTest extends TestCase{
 	private Stack firstStack;
 	private int size;
+	private Card exampleCard = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 	
 	@Before
 	public void setUp(){
-
 		firstStack = new Stack();
 		System.out.println(firstStack);
 	}
 
-	/*
 	@Test
-	public void testdropCardS(){
-		assertEquals(stack.getlast(), );
+	public void testPushCardS(){
+		assert(firstStack.pushCardS(exampleCard));
+	}
+	@Test
+	public void testPullCardS(){
+		
+		assertNotNull(firstStack.pullCardS());
 	}
 	
 	@Test
-	size = n - 1;
-	public void testpullCardS(){
-		assertEquals(n, stack.getsize());
+	public void testBackToDeckS(){
+		
 	}
 	
 	@Test
-	public void testbacktoDeckS(){
-		assertEquals(1, stack.getSize());
-	}
+	public void testGetSizeS(){
 	
-	@Test
-	public void testgetSizeS(){
-		assertNotNull(stack.size());
-	}*/
+	}
 	
 }

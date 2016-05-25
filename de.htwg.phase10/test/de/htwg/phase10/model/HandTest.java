@@ -44,7 +44,13 @@ public class HandTest extends TestCase{
 		}
 		assertNull(hand.dropCardH(exampleCard));
 	}
-		
+	@Test
+	public void testGetCardStack(){
+		Stack s = new Stack();
+		s.pushCardS(exampleCard);
+		assertNotNull(hand.getCardStack(s));
+		assertNull(hand.getCardStack(s));
+	}
 	@Test
 	public void testSetCardH(){
 		hand.setCardHand(exampleCard);
