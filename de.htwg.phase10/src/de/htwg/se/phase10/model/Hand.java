@@ -43,7 +43,10 @@ public class Hand {
 	
 	// drops card c from hand
 	public Card dropCardH(Card c) {
-		for (int i = 0; i < size; i++) {
+		for (int i = 0; i < handcards.length; i++) {
+			if(handcards[i] == null){
+				continue;
+			}
 			if(handcards[i].equals(c)){
 				handcards[i] = null;
 				size--;
@@ -78,6 +81,9 @@ public class Hand {
 	// check if hand contains
 	public boolean containsCard(Card c){
 		for(Card d : handcards){
+			if(d == null){
+				continue;
+			}
 			if(d.equals(c)){
 				return true;
 			}

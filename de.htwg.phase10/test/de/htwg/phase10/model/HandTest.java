@@ -71,10 +71,9 @@ public class HandTest extends TestCase{
 	@Test
 	public void testContainsCardFalse(){
 		Card[] handarray = hand.getHand();
+		System.out.println(handarray.length);
 		for(Card h : handarray){
-			if(h.equals(exampleCard)){
-				hand.dropCardH(h);
-			}
+			hand.dropCardH(h);
 		}
 		assertFalse(hand.containsCard(exampleCard));
 	}
