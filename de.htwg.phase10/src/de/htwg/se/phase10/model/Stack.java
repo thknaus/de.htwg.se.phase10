@@ -1,9 +1,9 @@
 package de.htwg.se.phase10.model;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class Stack {
-	private int size;
 	private LinkedList<Card> stack;
 	private Deck deck;
 	public Stack() {
@@ -11,34 +11,32 @@ public class Stack {
 	}
 
 	public Card pullCardS() {
-		if(size == 0){
+		if(stack.size() == 0){
 			return null;
 		}
 		Card c = stack.getLast();
 		stack.removeLast();
-		size--;
 		return c;
 	}
 
 	
 	public void pushCardS(Card c) {
 		stack.add(c);
-		size++;
 	}
 	
-	public void backToDeckS() {
-		if (size > 1) {
-			Card c = stack.getLast();
-			stack.removeLast();
+	public Deck backToDeckS(Deck d) {
+		this.deck = d;
+		if (stack.size() >= 1) {
 			for(Card sc : stack){
 				this.deck.pushToDeck(sc);
+				stack.removeLast();
 			}
-			pushCardS(c);
-			size = 1;
+			pullCardS();
 		}
+		return deck;
 	}
 	
 	public int getSizeS() {
-		return size;
+		return stack.size();
 	}
 }

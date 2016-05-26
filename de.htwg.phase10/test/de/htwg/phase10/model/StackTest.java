@@ -8,34 +8,42 @@ import org.junit.Test;
 import de.htwg.se.phase10.model.*;
 
 public class StackTest extends TestCase{
-	private Stack firstStack;
+	private Stack stack;
+	private Deck deck;
 	private int size;
 	private Card exampleCard = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 	
 	@Before
 	public void setUp(){
-		firstStack = new Stack();
-		System.out.println(firstStack);
+		stack = new Stack();
+		System.out.println(stack);
 	}
 
 	@Test
 	public void testPushCardS(){
-		assert(firstStack.pushCardS(exampleCard));
+		stack.pushCardS(exampleCard);
+		assertEquals(1, stack.getSizeS());
+		
 	}
 	@Test
 	public void testPullCardS(){
-		
-		assertNotNull(firstStack.pullCardS());
+		assertNull(stack.pullCardS());
+		stack.pushCardS(exampleCard);
+		assertNotNull(stack.pullCardS());
 	}
 	
 	@Test
 	public void testBackToDeckS(){
+		deck = new Deck();
+		stack.pushCardS(deck.getNewCard());
+		assertEquals(108,stack.backToDeckS(deck).getSize());
 		
 	}
 	
 	@Test
 	public void testGetSizeS(){
-	
+		stack.pushCardS(exampleCard);
+		assertEquals(1, stack.getSizeS());
 	}
 	
 }

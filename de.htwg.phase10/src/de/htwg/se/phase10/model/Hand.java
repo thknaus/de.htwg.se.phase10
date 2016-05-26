@@ -98,7 +98,7 @@ public class Hand {
 		return this.size;
 	}
 	
-	@Override
+	/*@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		if(handcards != null){
@@ -108,5 +108,5 @@ public class Hand {
 		}
 		sb.append("size: " + this.size);
 		return sb.toString();
-	}
+	}*/
 }

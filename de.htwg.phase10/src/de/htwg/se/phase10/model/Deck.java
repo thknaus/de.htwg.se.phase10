@@ -17,7 +17,6 @@ public class Deck {
 	 * @return Returns a LinkedList with all cards
 	 */
 	public void newDeck() {
-		
 		for (int i = 0; i < 2; i++) {
 			forCardColor();
 		}
@@ -89,16 +88,21 @@ public class Deck {
 		return c;
 	}
 	
-	public void pushToDeck(Card s) {
+	public boolean pushToDeck(Card s) {
+		if(cards.size() == 108){
+			return false;
+		}
 		cards.add(s);
+		Collections.shuffle(cards);
 		size++;
+		return true;
 	}
 	
 	public int getSize(){
 		return this.size;
 	}
 	
-	@Override
+	/*@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		if(cards != null){
@@ -108,5 +112,5 @@ public class Deck {
 		}
 		sb.append("size: " + this.size);
 		return sb.toString();
-	}
+	}*/
 }

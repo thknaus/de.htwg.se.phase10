@@ -13,7 +13,6 @@ public class DeckTest extends TestCase{
 	@Before
 	public  void setUp(){
 		firstDeck = new Deck();
-		System.out.println(firstDeck);
 	}
 
 	@Test
@@ -32,10 +31,14 @@ public class DeckTest extends TestCase{
 		assertNotNull(firstDeck.getNewCard());
 	}
 	@Test
-	public void testBackToDeck(){
-		int size = firstDeck.getSize();
+	public void testPushToDeck(){
 		Card c = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
-		firstDeck.pushToDeck(c);
-		assertEquals(size + 1, firstDeck.getSize());
+		assertFalse(firstDeck.pushToDeck(c));
+		firstDeck.getNewCard();
+		assertTrue(firstDeck.pushToDeck(c));
+	}
+	@Test
+	public void testGetSize(){
+		assertEquals(108, firstDeck.getSize());
 	}
 }
