@@ -23,7 +23,6 @@ public class CardTest extends TestCase{
 	}
 	@Test
 	public void testSpecialC(){
-		int i = card.getSpecialC();
-		assertNotNull(i == 1);
+		assertNotNull(card.getSpecialC());
 	}
 }
