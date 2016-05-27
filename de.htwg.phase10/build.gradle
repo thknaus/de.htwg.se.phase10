@@ -7,11 +7,11 @@ repositories {
 }
 
 apply plugin: "java"
-apply plugin: "sonar-runner"
-apply plugin: "org.sonarqube"
 apply plugin: "eclipse"
 apply plugin: "maven"
 apply plugin: "jacoco"
+apply plugin: "org.sonarqube"
+apply plugin: "sonar-runner"
 
 dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-api',  version: '2.2'
@@ -32,7 +32,8 @@ sonarqube {
     property "sonar.projectName", "SE2016SS-04-Phase10"
     property "sonar.projectKey", "de.htwg.se.phase10"
     property "sonar.projectVersion", "1.0"
-    property "sonar.binaries", "bin"
+   
     property "sonar.java.coveragePlugin", "jacoco"
+    property "sonar.binaries", "de.htwg.phase10/build"
   }
 }
