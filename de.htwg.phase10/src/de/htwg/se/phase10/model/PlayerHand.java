@@ -2,15 +2,17 @@ package de.htwg.se.phase10.model;
 
 import java.util.*;
 
-public class Hand {
+public class PlayerHand {
 
+	private String name;
 	private int size;
 	private Card [] handcards = new Card[11];
 	private Deck deck;
 	private Stack stack;
 	
 	// generatest a new hand
-	public Hand(Deck d) {
+	public PlayerHand(Deck d, String n) {
+		this.name = n;
 		deck = d;
 		for(int i = 0; i < 11; i++){
 			if(i == 10){
@@ -21,6 +23,10 @@ public class Hand {
 				size++;	
 			}
 		}
+	}
+	
+	public String getName(){
+		return this.name;
 	}
 	
 	// returns the current Hand

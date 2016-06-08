@@ -9,14 +9,18 @@ import de.htwg.se.phase10.model.Card.Color;
 import de.htwg.se.phase10.model.Card.Rank;
 
 public class HandTest extends TestCase{
-	private Hand hand;
+	private PlayerHand hand;
 	private Deck deck;
 	private Card exampleCard = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 	
 	@Before
 	public void setUp(){
 		deck = new Deck();
-		hand = new Hand(deck);
+		hand = new PlayerHand(deck, "TestPlayer");
+	}
+	@Test
+	public void testGetName(){
+		assertEquals("TestPlayer", hand.getName());
 	}
 	@Test
 	public void testGetHand(){

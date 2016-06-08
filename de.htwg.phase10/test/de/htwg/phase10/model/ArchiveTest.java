@@ -6,7 +6,7 @@ import de.htwg.se.phase10.model.*;
 import junit.framework.TestCase;
 
 public class ArchiveTest extends TestCase{
-	private Hand hand;
+	private PlayerHand hand;
 	private Deck deck;
 	private Card exampleCard = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 	private Archive archive;
@@ -14,7 +14,7 @@ public class ArchiveTest extends TestCase{
 	@Before
 	public void setUp(){
 		deck = new Deck();
-		hand = new Hand(deck);
+		hand = new PlayerHand(deck, "TestPlayer");
 		archive = new Archive(10);
 	}
 	
