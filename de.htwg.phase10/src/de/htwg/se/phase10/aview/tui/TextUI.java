@@ -1,6 +1,11 @@
 package de.htwg.se.phase10.aview.tui;
 
-public class tuiview {
+import de.htwg.se.phase10.controller.Phase10Controller;
+
+public class TextUI {
+	public void TextUI(Phase10Controller controller){
+		
+	}
 	public void newGame(){
 		System.out.println("Welcome to Phase 10");
 		System.out.println("");

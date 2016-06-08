@@ -5,6 +5,7 @@ import java.util.*;
 public class PlayerHand {
 
 	private String name;
+	private int score;
 	private int size;
 	private Card [] handcards = new Card[11];
 	private Deck deck;
@@ -13,7 +14,8 @@ public class PlayerHand {
 	// generatest a new hand
 	public PlayerHand(Deck d, String n) {
 		this.name = n;
-		deck = d;
+		this.score = 0;
+		this.deck = d;
 		for(int i = 0; i < 11; i++){
 			if(i == 10){
 				handcards[i] = null;
@@ -28,7 +30,12 @@ public class PlayerHand {
 	public String getName(){
 		return this.name;
 	}
-	
+	public int getScore(){
+		return this.score;
+	}
+	public void setScore(int s){
+		this.score = this.score + s;
+	}
 	// returns the current Hand
 	public Card[] getHand(){
 		return this.handcards;

@@ -23,6 +23,13 @@ public class HandTest extends TestCase{
 		assertEquals("TestPlayer", hand.getName());
 	}
 	@Test
+	public void testScore(){
+		hand.setScore(10);
+		assertEquals(10, hand.getScore());
+	}
+
+	
+	@Test
 	public void testGetHand(){
 		assertNotNull(hand.getHand());
 	}
