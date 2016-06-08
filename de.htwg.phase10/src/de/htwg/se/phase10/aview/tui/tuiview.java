@@ -26,4 +26,7 @@ public class tuiview {
 	public void printPhaseOutput(){
 		
 	}
+	public void printArchive(){
+		
+	}
 }

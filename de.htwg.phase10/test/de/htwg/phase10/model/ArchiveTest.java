@@ -15,18 +15,35 @@ public class ArchiveTest extends TestCase{
 	public void setUp(){
 		deck = new Deck();
 		hand = new Hand(deck);
+		archive = new Archive(10);
 	}
 	
 	@Test
-	public void testArchive(){
-		//assertNotNull(archive.Archive();
+	public void testNewArchive(){		
+		archive.newArchive(hand.getHand());
 	}
+	
 	@Test
-	public void testcomplementArchive(){
-		//assertNotNull(card.getColor());
+	public void testGetCurrentArchive(){
+		archive.newArchive(hand.getHand());
+		assertNotNull(archive.getArchive());
 	}
 	@Test
 	public void testcleanArchive(){
-		assertNull(archive.cleanArchive());
+		archive.cleanArchive();
+		assertNull(archive.getArchive());
+	}
+	@Test
+	public void testPutCardToArchiveTrue(){
+		Card c = deck.getNewCard();
+		assertTrue(archive.putCardToArchive(c));
+	}
+	@Test
+	public void testPutCardToArchiveFalse(){
+		archive.newArchive(hand.getHand());
+		Card c = deck.getNewCard();
+		Card d = deck.getNewCard();
+		archive.putCardToArchive(c);
+		assertFalse(archive.putCardToArchive(d));
 	}
 }
