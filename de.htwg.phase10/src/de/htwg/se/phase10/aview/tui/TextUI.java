@@ -15,6 +15,18 @@ public class TextUI {
 	
 	public TextUI(Phase10Controller cont){
 		controller = cont;
+		printMenu();
+	}
+	public boolean inputLine(String input){
+		if(input.equals("1")){
+			printNewGame();
+			controller.newGame();
+		}else if(input.equals("2")){
+			printQuitGame();
+			controller.quitGame();
+			return false;
+		}
+		return true;
 	}
 	public void printMenu(){
 		System.out.println("Welcome to Phase 10");
@@ -23,6 +35,7 @@ public class TextUI {
 		System.out.println("2.) Quit");
 	}
 	public void printNewGame(){
+		scanner = new Scanner(System.in);
 		while(scanner.hasNextInt()){
 			int numberplayer = scanner.nextInt();
 			if(numberplayer <= 1 || numberplayer > 6){
@@ -35,19 +48,6 @@ public class TextUI {
 					//controller.newPlayer(name)
 				}
 				break;
-			}
-		}
-		boolean quit = false;
-		
-		while(quit == false){
-			int input = scanner.nextInt();
-
-			if(input == 1)
-			{
-				printNewGame();
-				break;
-			}else if(input == 2){
-				quit = true;
 			}
 		}
 	}

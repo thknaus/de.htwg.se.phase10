@@ -7,33 +7,28 @@ import de.htwg.se.phase10.aview.tui.TextUI;
 public class Phase10Controller extends Observable {
 	private TextUI tui;
 	public Phase10Controller(){
-		menu();
 	}
 	
-	private void menu(){
-		tui = new TextUI(this);
-		tui.printMenu();
+	public void newGame(){
+				
 	}
-	private void newGame(){
-		tui.printNewGame();
+	public void quitGame(){
+		
 	}
-	private void quitGame(){
-		tui.printQuitGame();
+	public void allPhase(){
+		
 	}
-	private void allPhase(){
-		tui.printAllPhase10();
+	public void currentPhase(){
+		
 	}
-	private void currentPhase(){
-		tui.printCurrentPhase();
+	public void playerHand(){
+		
 	}
-	private void playerHand(){
-		tui.printPlayerHand();
+	public void stackFirstCard(){
+		
 	}
-	private void stackFirstCard(){
-		tui.printStackFirstCard();
-	}
-	private void archive(){
-		tui.printArchive();
+	public void archive(){
+		
 	}
 	
 }
