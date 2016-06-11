@@ -29,4 +29,12 @@ public class Card {
 	public int getSpecialC(){
 		return this.specialC;		
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(this.rank).append(" ").append(this.color).append(this.specialC);
+		return sb.toString();
+	}
+	
 }

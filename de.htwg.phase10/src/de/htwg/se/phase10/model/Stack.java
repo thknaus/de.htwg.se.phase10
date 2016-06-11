@@ -39,4 +39,7 @@ public class Stack {
 	public int getSizeS() {
 		return stack.size();
 	}
+	public Card topCard(){
+		return stack.getLast();
+	}
 }

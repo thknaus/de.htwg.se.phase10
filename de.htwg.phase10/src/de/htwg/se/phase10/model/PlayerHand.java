@@ -10,6 +10,7 @@ public class PlayerHand {
 	private Card [] handcards = new Card[11];
 	private Deck deck;
 	private Stack stack;
+	private String phase;
 	
 	// generatest a new hand
 	public PlayerHand(Deck d, String n) {
@@ -110,8 +111,13 @@ public class PlayerHand {
 	public int getSizeH(){
 		return this.size;
 	}
-	
-	/*@Override
+	public String getCurrentPhase(){
+		return this.phase;
+	}
+	public void setPhase(String nphase){
+		this.phase = nphase;
+	}
+	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		if(handcards != null){
@@ -121,5 +127,5 @@ public class PlayerHand {
 		}
 		sb.append("size: " + this.size);
 		return sb.toString();
-	}*/
+	}
 }

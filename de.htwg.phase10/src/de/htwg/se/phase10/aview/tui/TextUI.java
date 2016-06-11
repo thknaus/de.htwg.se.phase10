@@ -7,17 +7,18 @@ import de.htwg.se.phase10.model.Archive;
 import de.htwg.se.phase10.model.GamePhase;
 import de.htwg.se.phase10.model.PlayerHand;
 import de.htwg.se.phase10.model.Stack;
-import src.de.htwg.sudoku.aview.tui.Matcher;
-import src.de.htwg.sudoku.aview.tui.Pattern;
-import src.de.htwg.sudoku.aview.tui.String;
+
 
 public class TextUI {
 
 	private static Scanner scanner;
 	private Phase10Controller controller;
 
-	private int numberp;
+	private int numberp = 1;
 	private int numberpcount;
+	private String firstplayer;
+	
+	private boolean startgame = false;
 	
 	public TextUI(Phase10Controller cont) {
 		controller = cont;
@@ -25,35 +26,59 @@ public class TextUI {
 	}
 
 	public boolean inputLine(String input) {
-		if(controller.checkNewGame() && numberp == 0){
-			this.numberp = Integer.parseInt(input);
-			numberpcount++;
-			System.out.println("Player 1 name:");
+		if(newPlayer(input)){
 			return true;
-		}else if(controller.checkNewGame() && numberpcount <= numberp){
-			numberpcount++;
-			printNewPlayer(input);
-			return true;
-		}else{
-			controller.setNewGame(false);
 		}
 		
 		if (input.equals("1")) {
+			controller.setNewDeck();
+			controller.setNewStack();
 			printNewGame();
 			controller.setNewGame(true);
 		} else if (input.equals("2")) {
 			printQuitGame();
-			controller.quitGame();
 			return false;
 		}else{
+			printGameField(1);
 			charInput(input);
 		}
 			
 		return true;
 	}
 
+	private boolean newPlayer(String input){
+		if(controller.checkNewGame() && numberp == 1){
+			this.numberp = Integer.parseInt(input);
+			numberpcount++;
+			System.out.println("Player 1 name:");
+			return true;
+		}else if(controller.checkNewGame() && numberpcount < numberp){
+			if(numberpcount == 2){
+				firstplayer = input;
+			}
+			numberpcount++;
+			printNewPlayer(input);
+			return true;
+		}
+		if(numberpcount == numberp){
+			controller.setNewGame(false);
+			printGameField(1);
+			return false;
+		}
+		return false;
+	}
+	private void printGameField(int number){
+		System.out.println("##############################");
+		System.out.println("Player " + number + " its your turn.");
+		System.out.println("Archive:");
+		System.out.println("Stack: " + controller.getStack());
+		System.out.println("Your Hand:" + controller.getHand(number));
+		System.out.println("");
+		System.out.println("Current Phase: " + controller.getCurrentPhase(number));
+		System.out.println("Press d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack, a+number - Play cards to archive, n - new Archive, c+number - choose card");
+	}
 	private void printNewGame() {
-		System.out.println("Choose a player number between 2 - 6");
+		System.out.println("Choose a player number between 2 - 6: ");
 		controller.setNewGame(true);
 		
 	}
@@ -73,7 +98,7 @@ public class TextUI {
 
 	public void charInput(String input) {
 		char c = input.charAt(0);
-		int number;
+		int number = 0;
 		if(input.length() > 1){
 			number = Integer.parseInt(input.substring(1));	
 		}

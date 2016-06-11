@@ -13,13 +13,8 @@ public class GamePhase {
 							"Phase 8:)",
 							"Phase 9:)",
 							"Phase 10:)"};
-	private Phase10Controller controller;
-	public GamePhase(Phase10Controller cont){
-		controller = cont;
-	}
-	public String getCurrentPhase(){
-		return c
-	}
 	
-
+	public String getPhase(int number){
+		return phasen[number];
+	}
 }
