@@ -16,21 +16,46 @@ public class TextUI {
 	private static Scanner scanner;
 	private Phase10Controller controller;
 
+	private int numberp;
+	private int numberpcount;
+	
 	public TextUI(Phase10Controller cont) {
 		controller = cont;
 		printMenu();
 	}
 
 	public boolean inputLine(String input) {
+		if(controller.checkNewGame() && numberp == 0){
+			this.numberp = Integer.parseInt(input);
+			numberpcount++;
+			System.out.println("Player 1 name:");
+			return true;
+		}else if(controller.checkNewGame() && numberpcount <= numberp){
+			numberpcount++;
+			printNewPlayer(input);
+			return true;
+		}else{
+			controller.setNewGame(false);
+		}
+		
 		if (input.equals("1")) {
 			printNewGame();
-			controller.newGame();
+			controller.setNewGame(true);
 		} else if (input.equals("2")) {
 			printQuitGame();
 			controller.quitGame();
 			return false;
+		}else{
+			charInput(input);
 		}
+			
 		return true;
+	}
+
+	private void printNewGame() {
+		System.out.println("Choose a player number between 2 - 6");
+		controller.setNewGame(true);
+		
 	}
 
 	public void printMenu() {
@@ -40,18 +65,10 @@ public class TextUI {
 		System.out.println("2.) Quit");
 	}
 
-	public void printNewGame(int number) {
-		int numberplayer = number;
-		if (numberplayer <= 1 || numberplayer > 6) {
-			System.out.println("Please choose a number of Player between 2 - 6");
-			continue;
-		} else {
-			for (int i = 1; i < numberplayer + 1; i++) {
-				System.out.println("Name Player " + i + " :");
-				// controller.newPlayer(name)
-			}
-			break;
-		}
+	
+	public void printNewPlayer(String name) {
+		controller.newPlayer(name);
+		System.out.println("Player " + numberpcount + " name:");
 	}
 
 	public void charInput(String input) {

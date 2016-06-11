@@ -10,18 +10,33 @@ import de.htwg.se.phase10.model.PlayerHand;
 public class Phase10Controller extends Observable {
 	private TextUI tui;
 	private PlayerHand hand;
+	
 	private Archive[] arrayarch = new Archive[36];
 	private int archsize;
 	private boolean archdrop = false;
-	private boolean stackdrop = false;
 	private int currentarch;
+	
+	private boolean stackdrop = false;
+	
+	private boolean newgame = false;
+	private int numberplayer;
+	
+	
 	public Phase10Controller(){
 		
 	}
 	
-	public void newGame(){
+	public void setNewGame(boolean newgame){
+		this.newgame = newgame;
+	}
+	public boolean checkNewGame(){
+		return newgame;
+	}
+	public void newPlayer(String name){
+		numberplayer = numberplayer + 1;
 		
 	}
+
 	public void quitGame(){
 		
 	}
