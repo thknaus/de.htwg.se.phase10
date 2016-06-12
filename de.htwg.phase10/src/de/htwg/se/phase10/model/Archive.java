@@ -35,4 +35,16 @@ public class Archive {
 	public void cleanArchive(){
 		archive = null;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Archiv: " + this.archnumber + "Cards: ");
+		for(Card c : archive){
+			sb.append(c.getRank()).append(c.getColor()).append(c.getSpecialC());
+			sb.append(" ");
+		}
+		return sb.toString();
+	}
+
 }

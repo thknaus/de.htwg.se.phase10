@@ -43,10 +43,9 @@ public class PlayerHand {
 	}
 	
 	// gets a new card from deck
-	public Card getNewCardH() {
+	public Card pushCardH(Card c) {
 		for (int i = 0; i < handcards.length; i++){
 			if (handcards[i] == null) {
-				Card c = deck.getNewCard();
 				handcards[i] = c;
 				this.size++;
 				return handcards[i];
@@ -122,7 +121,9 @@ public class PlayerHand {
 		StringBuilder sb = new StringBuilder();
 		if(handcards != null){
 			for(Card c : handcards){
-				sb.append(c.getRank()).append("_").append(c.getColor()).append(", \n");
+				if(c != null){
+					sb.append(c.getRank()).append("_").append(c.getColor()).append(", \n");					
+				}
 			}
 		}
 		sb.append("size: " + this.size);

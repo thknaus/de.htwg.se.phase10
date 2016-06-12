@@ -39,14 +39,16 @@ public class TextUI {
 			printQuitGame();
 			return false;
 		}else{
-			printGameField(controller.getCurrentPlayerNumber(),controller.getCurrentPlayerName());
-			charInput(input);
+			return charInput(input);
 		}
 			
 		return true;
 	}
 
 	private boolean newPlayer(String input){
+		if(!controller.checkNewGame()){
+			return false;
+		}
 		if(controller.checkNewGame() && numberp == 1){
 			this.numberp = Integer.parseInt(input);
 			numberpcount++;
@@ -63,7 +65,7 @@ public class TextUI {
 		if(numberpcount > numberp){
 			controller.setNewGame(false);
 			controller.setCurrenPlayerNumber(0);
-			printGameField(1,controller.getCurrentPlayerName());
+			printGameField(1,controller.getCurrentPlayer().getName());
 			return true;
 		}
 		return false;
@@ -71,9 +73,13 @@ public class TextUI {
 	private void printGameField(int number, String name){
 		System.out.println("##############################");
 		System.out.println("Player " + name + " its your turn.");
-		System.out.println("Archive:");
+		System.out.println("");
+		System.out.println("Archive: " + controller.getArchive());
+		System.out.println("");
 		System.out.println("Stack: " + controller.getStack());
-		System.out.println("Your Hand:" + controller.getHand(number));
+		System.out.println("");
+		System.out.println("Your Hand:");
+		System.out.println(controller.getHand(number));
 		System.out.println("");
 		System.out.println("Current Phase: " + controller.getCurrentPhase(number));
 		System.out.println("Press d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack, a+number - Play cards to archive, n - new Archive, c+number - choose card");
@@ -99,7 +105,7 @@ public class TextUI {
 		}
 	}
 
-	public void charInput(String input) {
+	public boolean charInput(String input) {
 		char c = input.charAt(0);
 		int number = 0;
 		if(input.length() > 1){
@@ -117,7 +123,7 @@ public class TextUI {
 			break;
 		// drop to stack
 		case 'f':
-			controller.dropCardStack();
+			controller.setDropCardStack();
 			break;
 		// choose archive
 		case 'a':
@@ -130,11 +136,17 @@ public class TextUI {
 			break;
 		// choose card for archive
 		case 'c':
-			for(int i = 0; i < input.substring(1).length(); i++){
-				controller.dropCardArchive(number);
+			// TODO: hier weiter machen!!!!!
+			if(controller.getDropCardStack()){
+				controller.dropCardStack(number);
 			}
+			controller.dropCardArchive(number);
 			break;
+		case 'q':
+			printQuitGame();
+			return false;
 		}
+		return true;
 	}
 
 	public void printQuitGame() {
@@ -144,21 +156,4 @@ public class TextUI {
 	public void printAllPhase10(GamePhase pall) {
 		System.out.println();
 	}
-
-	public void printCurrentPhase(GamePhase ps) {
-
-	}
-
-	public void printPlayerHand(PlayerHand h) {
-
-	}
-
-	public void printStackFirstCard(Stack stack) {
-
-	}
-
-	public void printArchive(Archive archive) {
-
-	}
-
 }
