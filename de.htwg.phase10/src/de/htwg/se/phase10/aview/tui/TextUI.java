@@ -39,7 +39,7 @@ public class TextUI {
 			printQuitGame();
 			return false;
 		}else{
-			printGameField(1);
+			printGameField(controller.getCurrentPlayerNumber(),controller.getCurrentPlayerName());
 			charInput(input);
 		}
 			
@@ -53,23 +53,24 @@ public class TextUI {
 			System.out.println("Player 1 name:");
 			return true;
 		}else if(controller.checkNewGame() && numberpcount < numberp){
-			if(numberpcount == 2){
-				firstplayer = input;
-			}
 			numberpcount++;
 			printNewPlayer(input);
 			return true;
+		}else if(controller.checkNewGame() && numberpcount == numberp){
+			numberpcount++;
+			printNewPlayer(input);
 		}
-		if(numberpcount == numberp){
+		if(numberpcount > numberp){
 			controller.setNewGame(false);
-			printGameField(1);
-			return false;
+			controller.setCurrenPlayerNumber(0);
+			printGameField(1,controller.getCurrentPlayerName());
+			return true;
 		}
 		return false;
 	}
-	private void printGameField(int number){
+	private void printGameField(int number, String name){
 		System.out.println("##############################");
-		System.out.println("Player " + number + " its your turn.");
+		System.out.println("Player " + name + " its your turn.");
 		System.out.println("Archive:");
 		System.out.println("Stack: " + controller.getStack());
 		System.out.println("Your Hand:" + controller.getHand(number));
@@ -93,7 +94,9 @@ public class TextUI {
 	
 	public void printNewPlayer(String name) {
 		controller.newPlayer(name);
-		System.out.println("Player " + numberpcount + " name:");
+		if(numberpcount <= numberp){
+			System.out.println("Player " + numberpcount + " name:");
+		}
 	}
 
 	public void charInput(String input) {

@@ -25,6 +25,7 @@ public class Phase10Controller extends Observable {
 	
 	private boolean newgame = false;
 	private int numberplayer;
+	private int currentplayer = 1;
 	
 	private Deck deck;
 	private Stack stack;
@@ -60,12 +61,26 @@ public class Phase10Controller extends Observable {
 		
 		if(playerlist == null){
 			playerlist = new LinkedList<>();
-			return;
 		}
 		PlayerHand player = new PlayerHand(this.deck, name);
 		playerlist.add(player);	
 	}
-
+	public String getCurrentPlayerName(){
+		return playerlist.get(this.currentplayer).getName();
+	}
+	public int getCurrentPlayerNumber(){
+		return this.currentplayer;
+	}
+	public void setCurrentPlayerNumber(){
+		if(this.currentplayer < this.numberplayer){
+			this.currentplayer++;
+		}else{
+			this.currentplayer = 1;
+		}
+	}
+	public void setCurrenPlayerNumber(int number){
+		this.currentplayer = number;
+	}
 	public void allPhase(){
 		
 	}
