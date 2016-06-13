@@ -33,7 +33,7 @@ public class Card {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(this.rank).append(" ").append(this.color).append(this.specialC);
+		sb.append(this.rank).append(" ").append(this.color);
 		return sb.toString();
 	}
 	

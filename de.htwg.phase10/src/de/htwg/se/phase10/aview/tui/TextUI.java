@@ -82,7 +82,9 @@ public class TextUI {
 		System.out.println(controller.getHand(number));
 		System.out.println("");
 		System.out.println("Current Phase: " + controller.getCurrentPhase(number));
-		System.out.println("Press d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack, a+number - Play cards to archive, n - new Archive, c+number - choose card");
+		System.out.println("Press");
+		System.out.println("y - done, d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack");
+		System.out.println("a+number - Play cards to archive, n - new Archive, c+number - choose card, q - quit game");
 	}
 	private void printNewGame() {
 		System.out.println("Choose a player number between 2 - 6: ");
@@ -115,7 +117,9 @@ public class TextUI {
 		switch (c) {
 		// get card from deck
 		case 'd':
-			controller.getCardFromDeck();
+			if(!controller.getCardFromDeck()){
+				System.out.println("You have already 10 Cards on your Hand.");
+			}
 			break;
 		// get card from stack
 		case 's':
@@ -133,19 +137,23 @@ public class TextUI {
 		// create new archive
 		case 'n':
 			controller.newArch();
+			System.out.println("Choose card: ");
 			break;
 		// choose card for archive
 		case 'c':
-			// TODO: hier weiter machen!!!!!
 			if(controller.getDropCardStack()){
 				controller.dropCardStack(number);
 			}
 			controller.dropCardArchive(number);
 			break;
+		case 'y':
+			controller.setCurrentPlayerNumber();
+			break;
 		case 'q':
 			printQuitGame();
 			return false;
 		}
+		printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
 		return true;
 	}
 

@@ -25,7 +25,7 @@ public class Phase10Controller extends Observable {
 	
 	private boolean newgame = false;
 	private int numberplayer;
-	private int currentplayer = 1;
+	private int currentplayer;
 	
 	private Deck deck;
 	private Stack stack;
@@ -72,10 +72,10 @@ public class Phase10Controller extends Observable {
 		return this.currentplayer;
 	}
 	public void setCurrentPlayerNumber(){
-		if(this.currentplayer < this.numberplayer){
+		if(this.currentplayer < this.numberplayer-1){
 			this.currentplayer++;
 		}else{
-			this.currentplayer = 1;
+			this.currentplayer = 0;
 		}
 	}
 	public void setCurrenPlayerNumber(int number){
@@ -130,9 +130,12 @@ public class Phase10Controller extends Observable {
 		}
 	}
 
-	public void getCardFromDeck() {
+	public boolean getCardFromDeck() {
 		Card c = this.deck.getNewCard();
-		playerlist.get(this.currentplayer).pushCardH(c);
+		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
+			return false; 
+		}
+		return true;
 	}
 
 	public void getCardFromStack() {
