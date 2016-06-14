@@ -41,7 +41,6 @@ public class TextUI {
 		}else{
 			return charInput(input);
 		}
-			
 		return true;
 	}
 
@@ -113,29 +112,50 @@ public class TextUI {
 		if(input.length() > 1){
 			number = Integer.parseInt(input.substring(1));	
 		}
-		
+
 		switch (c) {
 		// get card from deck
 		case 'd':
 			if(!controller.getCardFromDeck()){
 				System.out.println("You have already 10 Cards on your Hand.");
 			}
+			controller.setPulledCard();
 			break;
 		// get card from stack
 		case 's':
-			controller.getCardFromStack();
+			if(!controller.getCardFromStack()){
+				System.out.println("You have already 10 Cards on your Hand.");
+			}
+			controller.setPulledCard();
 			break;
 		// drop to stack
 		case 'f':
-			controller.setDropCardStack();
+			if(controller.getStackDrop()){
+				System.out.println("You have already droped a card. Continue with y");
+				break;
+			}
+			if(!controller.pulledCard()){
+				printPullCard();
+				break;
+			}
+			controller.setDropedCardStack();
+			System.out.println("Choose card: ");
 			break;
 		// choose archive
 		case 'a':
+			if(!controller.pulledCard()){
+				printPullCard();
+				break;
+			}
 			controller.setArchive(number);
 			System.out.println("Choose card: ");
 			break;
 		// create new archive
 		case 'n':
+			if(!controller.pulledCard()){
+				printPullCard();
+				break;
+			}
 			controller.newArch();
 			System.out.println("Choose card: ");
 			break;
@@ -143,11 +163,22 @@ public class TextUI {
 		case 'c':
 			if(controller.getDropCardStack()){
 				controller.dropCardStack(number);
+				break;
 			}
 			controller.dropCardArchive(number);
 			break;
 		case 'y':
-			controller.setCurrentPlayerNumber();
+			if(!controller.pulledCard()){
+				printPullCard();
+				break;
+			}
+			if(controller.getStackDrop()){
+				controller.setCurrentPlayerNumber();
+				controller.setDropedCardStack();
+				controller.setPulledCard();
+			}else{
+				System.out.println("You have to drop a card first.");
+			}
 			break;
 		case 'q':
 			printQuitGame();
@@ -156,7 +187,9 @@ public class TextUI {
 		printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
 		return true;
 	}
-
+	public void printPullCard(){
+		System.out.println("You have to pull a Card from Deck or Stack first.");
+	}
 	public void printQuitGame() {
 		System.out.println("Game closed...");
 	}

@@ -35,7 +35,9 @@ public class Stack {
 		}
 		return deck;
 	}
-	
+	public void removeLast(){
+		stack.removeLast();
+	}
 	public int getSizeS() {
 		return stack.size();
 	}

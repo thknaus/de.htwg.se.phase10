@@ -22,6 +22,7 @@ public class Phase10Controller extends Observable {
 	private int currentarch;
 	
 	private boolean stackdrop = false;
+	private boolean pulledc = false;
 	
 	private boolean newgame = false;
 	private int numberplayer;
@@ -31,6 +32,7 @@ public class Phase10Controller extends Observable {
 	private Stack stack;
 	private List<PlayerHand> playerlist;
 	private GamePhase phase = new GamePhase();
+	
 	
 	public Phase10Controller(){
 		
@@ -63,6 +65,7 @@ public class Phase10Controller extends Observable {
 			playerlist = new LinkedList<>();
 		}
 		PlayerHand player = new PlayerHand(this.deck, name);
+		player.setPhase(phase.getPhase(0));
 		playerlist.add(player);	
 	}
 	public PlayerHand getCurrentPlayer(){
@@ -88,15 +91,15 @@ public class Phase10Controller extends Observable {
 		}
 		arrayarch[archsize] = new Archive(archsize);
 	}
-	public void newArchive(int number){
-		Archive arch = new Archive(number);
-	}
+
 	public void dropCardArchive(int number){
-		Card c = hand.getHand()[number];
+		PlayerHand p = playerlist.get(this.currentplayer); 
+		Card c = p.getHand()[number];
 		arrayarch[currentarch].putCardToArchive(c);
+		p.dropCardH(c);
 	}
 	public void setArchive(int number){
-		currentarch = number;
+		currentarch = number-1;
 	}
 	public String getArchive(){
 		StringBuilder sb = new StringBuilder();
@@ -113,11 +116,11 @@ public class Phase10Controller extends Observable {
 		
 	}
 
-	public void setDropCardStack() {
-		stackdrop = true;
-	}
-	public void dropCardStack(int number){
 
+	public void dropCardStack(int number){
+		PlayerHand p = playerlist.get(this.currentplayer);
+		Card[] c = p.getHand();
+		this.stack.pushCardS(p.dropCardH(c[number-1]));
 	}
 	public boolean getDropCardStack(){
 		return this.stackdrop;
@@ -138,9 +141,13 @@ public class Phase10Controller extends Observable {
 		return true;
 	}
 
-	public void getCardFromStack() {
+	public boolean getCardFromStack() {
 		Card c = this.stack.topCard();
-		playerlist.get(this.currentplayer).pushCardH(c);
+		this.stack.removeLast();
+		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
+			return false; 
+		}
+		return true;
 	}
 
 	public String getHand(int number) {
@@ -150,8 +157,27 @@ public class Phase10Controller extends Observable {
 
 	public String getCurrentPhase(int number) {
 		PlayerHand h = playerlist.get(number);
-		h.getCurrentPhase();
-		return phase.getPhase(number);
+		return h.getCurrentPhase();
 	}
-	
+	public boolean getStackDrop(){
+		return this.stackdrop;
+	}
+	public void setDropedCardStack() {
+		if(this.stackdrop == false){
+			this.stackdrop = true;
+		}else{
+			this.stackdrop = false;
+		}
+			
+	}
+	public void setPulledCard(){
+		if(this.pulledc == false){
+			this.pulledc = true;
+		}else {
+			this.pulledc = false;
+		}
+	}
+	public boolean pulledCard(){
+		return this.pulledc;
+	}
 }

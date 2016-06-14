@@ -11,9 +11,11 @@ public class PlayerHand {
 	private Deck deck;
 	private Stack stack;
 	private String phase;
+	private int phasen;
 	
 	// generatest a new hand
 	public PlayerHand(Deck d, String n) {
+		GamePhase p = new GamePhase();
 		this.name = n;
 		this.score = 0;
 		this.deck = d;
@@ -113,8 +115,8 @@ public class PlayerHand {
 	public String getCurrentPhase(){
 		return this.phase;
 	}
-	public void setPhase(String nphase){
-		this.phase = nphase;
+	public void setPhase(String p){
+		this.phase = p;
 	}
 	@Override
 	public String toString() {
