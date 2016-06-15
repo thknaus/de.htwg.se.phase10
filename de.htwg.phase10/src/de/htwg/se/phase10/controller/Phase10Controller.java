@@ -86,9 +86,12 @@ public class Phase10Controller extends Observable {
 	}
 
 	public void newArch(){
-		if(archsize != 0){
-			archsize = archsize+1;
+		if(archsize == 0){
+			arrayarch[archsize] = new Archive(1);
+			archsize++;
+			return;
 		}
+		archsize++;
 		arrayarch[archsize] = new Archive(archsize);
 	}
 
@@ -102,12 +105,15 @@ public class Phase10Controller extends Observable {
 		currentarch = number-1;
 	}
 	public String getArchive(){
+		if(this.archsize == 0){
+			return " - no archives generated - ";
+		}
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i<arrayarch.length; i++){
 			if(arrayarch[i] == null){
 				continue;
 			}else{
-				sb.append(arrayarch[i].getArchive());	
+				sb.append(arrayarch[i].toString());	
 			}
 		}
 		return sb.toString();

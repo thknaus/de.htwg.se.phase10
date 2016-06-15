@@ -83,7 +83,7 @@ public class TextUI {
 		System.out.println("Current Phase: " + controller.getCurrentPhase(number));
 		System.out.println("Press");
 		System.out.println("y - done, d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack");
-		System.out.println("a+number - Play cards to archive, n - new Archive, c+number - choose card, q - quit game");
+		System.out.println("a+number - Select a archive, n - new Archive, c+number - choose card, q - quit game");
 	}
 	private void printNewGame() {
 		System.out.println("Choose a player number between 2 - 6: ");
