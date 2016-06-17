@@ -16,20 +16,30 @@ public class Phase10gui extends JFrame implements ActionListener{
 	JMenu menu, submenu; 
 	JRadioButtonMenuItem rbMenuItem;
 	JMenuItem quit;
-	JPanel mainPane1;
+	JFrame field;
 	
 	
 	public Phase10gui(){
 		
-//Hauptfenster bauen.		
-        JPanel mainPanel = new JPanel();
-        
-        mainPanel.add(new Phase10Panel());
-        this.setContentPane(mainPanel);
+//Hauptfenster bauen.
 
 		setTitle("Phase10");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(1024, 840));
+		
+		this.setLayout(new BorderLayout());
+		JButton leftside = new JButton("Left Side");
+		this.add(leftside, BorderLayout.WEST);
+		
+		JButton ground = new JButton("GroundPanel");
+		this.add(ground, BorderLayout.SOUTH); 
+		
+		JButton mainfield = new JButton("MainField");
+		this.add(mainfield, BorderLayout.CENTER);
+		
+		
+
+		//JPanel p = new JPanel(new BoarderLayout());
 
 //Build Menu menu.
 		menuBar = new JMenuBar();
@@ -93,11 +103,7 @@ public class Phase10gui extends JFrame implements ActionListener{
 		menu.add(quit);
 
         
-//Hauptfenster zusammenbauen und ausgeben
-		this.setJMenuBar(menuBar);
-		this.setLayout(new FlowLayout());
-		
-
+//Hauptfenster ausgeben
 		this.pack();
 		this.setVisible(true);
 	}
