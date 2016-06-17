@@ -1,7 +1,7 @@
 /*Brauchen wir shortcuts für das menu? wenn nicht wieder raus*/
 
 
-package de.htwg.se.phase10.gui;
+package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +14,9 @@ public class field extends JFrame implements ActionListener{
 	JMenu menu, submenu; 
 	JRadioButtonMenuItem rbMenuItem;
 	JMenuItem menuItem;
+	
+	JMenuItem quit;
+	
 	
 	public field(){
 		//Hauptfenster
@@ -30,76 +33,57 @@ public class field extends JFrame implements ActionListener{
 		menu.setMnemonic(KeyEvent.VK_M);
 		menuBar.add(menu);
 		
-		JMenuItem NewGame = new JMenuItem("New Game");
-		NewGame.setMnemonic(KeyEvent.VK_N);
-		menu.add(NewGame);
-		
 		
 		menu.addSeparator();
-        submenu = new JMenu("choose number of player");
+        submenu = new JMenu("New Game");
         submenu.setMnemonic(KeyEvent.VK_S);
         menu.add(submenu);
  
+		JMenuItem numberofplayer = new JMenuItem("choose number of player");
+		submenu.add(numberofplayer);
+		
         menu.addSeparator();
         ButtonGroup group = new ButtonGroup();
         
-        rbMenuItem = new JRadioButtonMenuItem("2");
+        rbMenuItem = new JRadioButtonMenuItem("2 Players");
         rbMenuItem.setSelected(true);
         rbMenuItem.setMnemonic(KeyEvent.VK_2);
         group.add(rbMenuItem);
         rbMenuItem.addActionListener(this);
         submenu.add(rbMenuItem);
         
-        rbMenuItem = new JRadioButtonMenuItem("3");
+        rbMenuItem = new JRadioButtonMenuItem("3 Players");
         rbMenuItem.setSelected(true);
         rbMenuItem.setMnemonic(KeyEvent.VK_3);
         group.add(rbMenuItem);
         rbMenuItem.addActionListener(this);
         submenu.add(rbMenuItem);
         
-        rbMenuItem = new JRadioButtonMenuItem("4");
+        rbMenuItem = new JRadioButtonMenuItem("4 Players");
         rbMenuItem.setSelected(true);
         rbMenuItem.setMnemonic(KeyEvent.VK_4);
         group.add(rbMenuItem);
         rbMenuItem.addActionListener(this);
         submenu.add(rbMenuItem);
         
-        rbMenuItem = new JRadioButtonMenuItem("5");
+        rbMenuItem = new JRadioButtonMenuItem("5 Players");
         rbMenuItem.setSelected(false);
         rbMenuItem.setMnemonic(KeyEvent.VK_5);
         group.add(rbMenuItem);
         rbMenuItem.addActionListener(this);
         submenu.add(rbMenuItem);
         
-        rbMenuItem = new JRadioButtonMenuItem("6");
+        rbMenuItem = new JRadioButtonMenuItem("6 Players");
         rbMenuItem.setSelected(false);
         rbMenuItem.setMnemonic(KeyEvent.VK_6);
         group.add(rbMenuItem);
         rbMenuItem.addActionListener(this);
         submenu.add(rbMenuItem);
         
-		JMenuItem Quit = new JMenuItem("Quit");
-		Quit.setMnemonic(KeyEvent.VK_Q);
-		menu.add(Quit);
-		
-        //Build shortcut menu.
-        menu = new JMenu("shortcuts");
-        menu.setMnemonic(KeyEvent.VK_S);
-        menuBar.add(menu);
-        
-        
-        menuItem = new JMenuItem("drop card to archiv",KeyEvent.VK_A);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, ActionEvent.ALT_MASK));
-        menu.add(menuItem);
-        menuItem = new JMenuItem("drop card to stack",KeyEvent.VK_F);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, ActionEvent.ALT_MASK));
-        menu.add(menuItem);
-        menuItem = new JMenuItem("take card from stack",KeyEvent.VK_S);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.ALT_MASK));
-        menu.add(menuItem);
-        menuItem = new JMenuItem("take card from deck",KeyEvent.VK_D);
-        menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D, ActionEvent.ALT_MASK));
-        menu.add(menuItem);
+		JMenuItem quit = new JMenuItem("Quit");
+		quit.setMnemonic(KeyEvent.VK_Q);
+		menu.add(quit);
+
         
 		//Hauptfenster zusammenbauen
 		this.setJMenuBar(menuBar);
@@ -118,6 +102,6 @@ public class field extends JFrame implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		System.exit(0);
 	}
 }
