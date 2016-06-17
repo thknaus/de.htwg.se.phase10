@@ -2,7 +2,7 @@ package de.htwg.se.phase10.aview.tui;
 
 import java.util.Scanner;
 
-import de.htwg.se.phase10.controller.Phase10Controller;
+import de.htwg.se.phase10.controller.impl.Phase10Controller;
 import de.htwg.se.phase10.model.Archive;
 import de.htwg.se.phase10.model.GamePhase;
 import de.htwg.se.phase10.model.PlayerHand;

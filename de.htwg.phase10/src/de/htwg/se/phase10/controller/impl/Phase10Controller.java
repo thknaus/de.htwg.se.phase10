@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Observable;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
+import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.model.Archive;
 import de.htwg.se.phase10.model.Card;
 import de.htwg.se.phase10.model.Deck;
@@ -12,12 +13,12 @@ import de.htwg.se.phase10.model.GamePhase;
 import de.htwg.se.phase10.model.PlayerHand;
 import de.htwg.se.phase10.model.Stack;
 
-public class Phase10Controller extends Observable {
+public class Phase10Controller implements IPhase10Controller {
 	private TextUI tui;
 	private PlayerHand hand;
 	
 	private Archive[] arrayarch = new Archive[36];
-	private int archsize = -1;
+	private int archsize;
 	private boolean archdrop = false;
 	private int currentarch;
 	
@@ -86,13 +87,18 @@ public class Phase10Controller extends Observable {
 	}
 
 	public void newArch(){
+		if(archsize == 0){
+			arrayarch[archsize] = new Archive(1);
+			archsize++;
+			return;
+		}
 		archsize++;
 		arrayarch[archsize] = new Archive(archsize);
 	}
 
 	public void dropCardArchive(int number){
 		PlayerHand p = playerlist.get(this.currentplayer); 
-		Card c = p.getHand()[number-1];
+		Card c = p.getHand()[number];
 		arrayarch[currentarch].putCardToArchive(c);
 		p.dropCardH(c);
 	}
@@ -100,21 +106,19 @@ public class Phase10Controller extends Observable {
 		currentarch = number-1;
 	}
 	public String getArchive(){
+		if(this.archsize == 0){
+			return " - no archives generated - ";
+		}
 		StringBuilder sb = new StringBuilder();
 		for(int i = 0; i<arrayarch.length; i++){
 			if(arrayarch[i] == null){
 				continue;
 			}else{
 				sb.append(arrayarch[i].toString());	
-				sb.append("\n");
 			}
 		}
 		return sb.toString();
 	}
-	public void stackFirstCard(){
-		
-	}
-
 
 	public void dropCardStack(int number){
 		PlayerHand p = playerlist.get(this.currentplayer);
@@ -124,13 +128,13 @@ public class Phase10Controller extends Observable {
 	public boolean getDropCardStack(){
 		return this.stackdrop;
 	}
-	public void moveCard(int number){
+	/*public void moveCard(int number){
 		if(stackdrop == true){
 			stackdrop = false;
 		}else if(archdrop == true){
 			archdrop = false;
 		}
-	}
+	}*/
 
 	public boolean getCardFromDeck() {
 		Card c = this.deck.getNewCard();

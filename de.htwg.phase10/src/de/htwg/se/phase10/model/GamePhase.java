@@ -1,6 +1,6 @@
 package de.htwg.se.phase10.model;
 
-import de.htwg.se.phase10.controller.Phase10Controller;
+import de.htwg.se.phase10.controller.impl.Phase10Controller;
 
 public class GamePhase {
 	private String[] phasen = {"Phase 1:)",
