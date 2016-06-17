@@ -1,10 +1,11 @@
-package de.htwg.se.phase10.controller;
+package de.htwg.se.phase10.controller.impl;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Observable;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
+import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.model.Archive;
 import de.htwg.se.phase10.model.Card;
 import de.htwg.se.phase10.model.Deck;
@@ -12,7 +13,7 @@ import de.htwg.se.phase10.model.GamePhase;
 import de.htwg.se.phase10.model.PlayerHand;
 import de.htwg.se.phase10.model.Stack;
 
-public class Phase10Controller extends Observable {
+public class Phase10Controller implements IPhase10Controller {
 	private TextUI tui;
 	private PlayerHand hand;
 	
@@ -118,10 +119,6 @@ public class Phase10Controller extends Observable {
 		}
 		return sb.toString();
 	}
-	public void stackFirstCard(){
-		
-	}
-
 
 	public void dropCardStack(int number){
 		PlayerHand p = playerlist.get(this.currentplayer);
@@ -131,13 +128,13 @@ public class Phase10Controller extends Observable {
 	public boolean getDropCardStack(){
 		return this.stackdrop;
 	}
-	public void moveCard(int number){
+	/*public void moveCard(int number){
 		if(stackdrop == true){
 			stackdrop = false;
 		}else if(archdrop == true){
 			archdrop = false;
 		}
-	}
+	}*/
 
 	public boolean getCardFromDeck() {
 		Card c = this.deck.getNewCard();

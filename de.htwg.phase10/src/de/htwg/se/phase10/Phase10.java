@@ -3,8 +3,8 @@ package de.htwg.se.phase10;
 import java.util.Scanner;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
-
-import de.htwg.se.phase10.controller.Phase10Controller;
+import de.htwg.se.phase10.controller.IPhase10Controller;
+import de.htwg.se.phase10.controller.impl.Phase10Controller;
 import de.htwg.se.phase10.model.Deck;
 import de.htwg.se.phase10.aview.tui.*;
 
@@ -15,6 +15,7 @@ public class Phase10 {
 	private static Phase10 instance = null;
 	
 	public static void main(String[] args) {
+		//TODO: Change to IPhase10Controller interface
 		controller = new Phase10Controller();
 		TextUI tui = new TextUI(controller);
 		Scanner input = new Scanner(System.in);
