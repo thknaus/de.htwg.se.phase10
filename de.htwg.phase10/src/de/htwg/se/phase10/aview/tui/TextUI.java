@@ -81,7 +81,9 @@ public class TextUI {
 		System.out.println("Your Hand:");
 		System.out.println(controller.getHand(number));
 		System.out.println("");
-		System.out.println("Current Phase: " + controller.getCurrentPhase(number));
+		System.out.println("Current Phase:");
+		System.out.println(controller.getCurrentPhase(number));
+		System.out.println();
 		System.out.println("Press");
 		System.out.println("y - done, d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack");
 		System.out.println("a+number - Select a archive, n - new Archive, c+number - choose card, q - quit game");

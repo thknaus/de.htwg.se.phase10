@@ -7,7 +7,8 @@ public class Archive {
 	private List<Card> archive;
 	private Deck deck;
 	private Stack stack;
-	//test
+
+	private GamePhase phase;
 	
 	//generate a new archive
 	public Archive(int number){
@@ -31,6 +32,7 @@ public class Archive {
 	
 	//put a single card to Archive
 	public void putCardToArchive(Card c){
+		
 		archive.add(c);
 	}
 	
@@ -38,7 +40,13 @@ public class Archive {
 	public void cleanArchive(){
 		archive = null;
 	}
+	public Card get(int i) {
+		return archive.get(i);
+	}
 
+	public int size() {
+		return archive.size();
+	}
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -50,5 +58,4 @@ public class Archive {
 		}
 		return sb.toString();
 	}
-
 }
