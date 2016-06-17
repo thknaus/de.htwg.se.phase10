@@ -4,32 +4,36 @@
 package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Locale;
 
-public class field extends JFrame implements ActionListener{
+
+public class Phase10MenuBar extends JFrame implements ActionListener{
+	
 	JMenuBar menuBar;
 	JMenu menu, submenu; 
 	JRadioButtonMenuItem rbMenuItem;
-	JMenuItem menuItem;
-	
 	JMenuItem quit;
 	
 	
-	public field(){
+	public Phase10MenuBar(){
 		//Hauptfenster
 		this.setTitle("Phase10");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(1024, 840));
 		
 		//Build Menu menu.
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		this.setJMenuBar(menuBar);
 		
 		//Menu1:
-		JMenu menu = new JMenu("Menu");
+		menu = new JMenu("Menu");
 		menu.setMnemonic(KeyEvent.VK_M);
 		menuBar.add(menu);
 		
@@ -80,8 +84,9 @@ public class field extends JFrame implements ActionListener{
         rbMenuItem.addActionListener(this);
         submenu.add(rbMenuItem);
         
-		JMenuItem quit = new JMenuItem("Quit");
-		quit.setMnemonic(KeyEvent.VK_Q);
+        quit = new JMenuItem("Quit");
+        quit.setMnemonic(KeyEvent.VK_Q);
+        quit.addActionListener(this);
 		menu.add(quit);
 
         
@@ -96,12 +101,23 @@ public class field extends JFrame implements ActionListener{
 	
 
 	public static void main(String[] args){
-		JFrame myApp = new field();
+		JFrame myApp = new Phase10MenuBar();
 	}
 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.exit(0);
-	}
+    	Object source = e.getSource();
+    	if(source == quit) {
+    		JOptionPane.setDefaultLocale(Locale.ENGLISH);
+    		int n = JOptionPane.showConfirmDialog(this, "Quit Phase10?", "Close Phase10?", JOptionPane.YES_NO_OPTION);
+    		if(n == JOptionPane.YES_OPTION){
+    			System.exit(0);
+    		} else if(n == JOptionPane.NO_OPTION){
+    			return;
+    		}
+    	}
+
+    }
 }
+
