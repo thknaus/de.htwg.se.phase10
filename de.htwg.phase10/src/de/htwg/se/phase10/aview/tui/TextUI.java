@@ -73,7 +73,8 @@ public class TextUI {
 		System.out.println("##############################");
 		System.out.println("Player " + name + " its your turn.");
 		System.out.println("");
-		System.out.println("Archive: " + controller.getArchive());
+		System.out.println("Archive: "); 
+		System.out.println(controller.getArchive());
 		System.out.println("");
 		System.out.println("Stack: " + controller.getStack());
 		System.out.println("");

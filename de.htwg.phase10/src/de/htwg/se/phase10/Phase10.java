@@ -3,7 +3,6 @@ package de.htwg.se.phase10;
 import java.util.Scanner;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
-
 import de.htwg.se.phase10.controller.Phase10Controller;
 import de.htwg.se.phase10.model.Deck;
 import de.htwg.se.phase10.aview.tui.*;

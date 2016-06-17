@@ -122,9 +122,13 @@ public class PlayerHand {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		if(handcards != null){
-			for(Card c : handcards){
+			for(int i = 0; i < handcards.length; i++){
+				Card c = handcards[i];
+				int pos = i+1;
 				if(c != null){
-					sb.append(c.getRank()).append("_").append(c.getColor()).append(", \n");					
+					sb.append(pos + ": ").append(c.getRank()).append("_").append(c.getColor()).append(", \n");					
+				}else{
+					sb.append("empty, \n");
 				}
 			}
 		}
