@@ -1,38 +1,41 @@
-/*Brauchen wir shortcuts für das menu? wenn nicht wieder raus*/
-
-
 package de.htwg.se.phase10.aview.gui;
 
-import javax.swing.*;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.Locale;
 
 
-public class Phase10MenuBar extends JFrame implements ActionListener{
+
+public class Phase10gui extends JFrame implements ActionListener{
 	
 	JMenuBar menuBar;
 	JMenu menu, submenu; 
 	JRadioButtonMenuItem rbMenuItem;
 	JMenuItem quit;
+	JPanel mainPane1;
 	
 	
-	public Phase10MenuBar(){
-		//Hauptfenster
-		this.setTitle("Phase10");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setPreferredSize(new Dimension(1024, 840));
+	public Phase10gui(){
 		
-		//Build Menu menu.
+//Hauptfenster bauen.		
+        JPanel mainPanel = new JPanel();
+        
+        mainPanel.add(new Phase10Panel());
+        this.setContentPane(mainPanel);
+
+		setTitle("Phase10");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setPreferredSize(new Dimension(1024, 840));
+
+//Build Menu menu.
 		menuBar = new JMenuBar();
 		this.setJMenuBar(menuBar);
 		
-		//Menu1:
+
 		menu = new JMenu("Menu");
 		menu.setMnemonic(KeyEvent.VK_M);
 		menuBar.add(menu);
@@ -90,21 +93,16 @@ public class Phase10MenuBar extends JFrame implements ActionListener{
 		menu.add(quit);
 
         
-		//Hauptfenster zusammenbauen
+//Hauptfenster zusammenbauen und ausgeben
 		this.setJMenuBar(menuBar);
 		this.setLayout(new FlowLayout());
 		
-		//Hauptfenster ausgeben
+
 		this.pack();
 		this.setVisible(true);
 	}
 	
-
-	public static void main(String[] args){
-		JFrame myApp = new Phase10MenuBar();
-	}
-
-
+//ActionEvent
 	@Override
 	public void actionPerformed(ActionEvent e) {
     	Object source = e.getSource();
@@ -119,5 +117,9 @@ public class Phase10MenuBar extends JFrame implements ActionListener{
     	}
 
     }
+	
+//main	
+    public static void main(String[] args) {
+		JFrame myApp = new Phase10gui();
+    }
 }
-
