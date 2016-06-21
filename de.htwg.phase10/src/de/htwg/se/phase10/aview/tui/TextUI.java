@@ -54,7 +54,7 @@ public class TextUI {
 		if(controller.checkNewGame() && numberp == 1){
 			this.numberp = Integer.parseInt(input);
 			numberpcount++;
-			System.out.println("Player 1 name:");
+			LOGGER.info("Player 1 name:");
 			return true;
 		}else if(controller.checkNewGame() && numberpcount < numberp){
 			numberpcount++;
@@ -108,7 +108,7 @@ public class TextUI {
 	public void printNewPlayer(String name) {
 		controller.newPlayer(name);
 		if(numberpcount <= numberp){
-			System.out.println("Player " + numberpcount + " name:");
+			LOGGER.info("Player " + numberpcount + " name:");
 		}
 	}
 
