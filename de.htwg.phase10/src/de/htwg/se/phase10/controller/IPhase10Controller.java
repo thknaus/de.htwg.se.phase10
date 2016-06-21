@@ -127,4 +127,5 @@ public interface IPhase10Controller {
 	void setCheckPhase();
 	boolean getCheckPhase();
 	boolean checkPhase(int a);
+	void setCurrenPlayerNumber(int i);
 }

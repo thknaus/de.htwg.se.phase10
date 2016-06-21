@@ -11,12 +11,14 @@ import de.htwg.se.phase10.aview.tui.*;
 public class Phase10 {
 
 	
-	protected static Phase10Controller controller;
+	protected static IPhase10Controller controller;
 	private static Phase10 instance = null;
 	
 	public static void main(String[] args) {
+		Injector injector = Guice.createInjector(new Phase10Module());
+		controller = injector.getInstance(IPhase10Controller.class);
 		//TODO: Change to IPhase10Controller interface
-		controller = new Phase10Controller();
+		controller = new IPhase10Controller();
 		TextUI tui = new TextUI(controller);
 		Scanner input = new Scanner(System.in);
 		

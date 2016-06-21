@@ -50,7 +50,7 @@ public class Archive {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		int archnum = this.archnumber+1;
+		int archnum = this.archnumber;
 		sb.append("Archiv " + archnum +":"+ " Cards: ");
 		for(Card c : archive){
 			sb.append(c.getRank()).append("_").append(c.getColor());

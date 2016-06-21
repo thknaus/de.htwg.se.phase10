@@ -2,11 +2,13 @@ package de.htwg.se.phase10.aview.tui;
 
 import java.util.Scanner;
 
+import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.impl.Phase10Controller;
 import de.htwg.se.phase10.model.Archive;
 import de.htwg.se.phase10.model.GamePhase;
 import de.htwg.se.phase10.model.PlayerHand;
 import de.htwg.se.phase10.model.Stack;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +16,7 @@ public class TextUI {
 	
 	private static final Logger LOGGER = LogManager.getLogger(TextUI.class.getName());
 	private static Scanner scanner;
-	private Phase10Controller controller;
+	protected IPhase10Controller controller;
 	
 	private int numberp = 1;
 	private int numberpcount;
@@ -23,8 +25,8 @@ public class TextUI {
 	private boolean startgame = false;
 	
 	
-	public TextUI(Phase10Controller cont) {
-		controller = cont;
+	public TextUI(IPhase10Controller controller2) {
+		controller = controller2;
 		printMenu();
 	}
 
@@ -153,6 +155,15 @@ public class TextUI {
 				printPullCard();
 				break;
 			}
+			if(controller.getCheckPhase()){
+				if(controller.checkPhase(number)){
+					LOGGER.info("Phase achieved! Get rid of all of your cards.");
+					controller.setCheckPhase();
+				}else{
+					LOGGER.info("Phase not completed");
+				}
+				break;
+			}
 			controller.setArchive(number);
 			LOGGER.info("Choose card: ");
 			break;
@@ -170,10 +181,6 @@ public class TextUI {
 			if(controller.getDropCardStack()){
 				controller.dropCardStack(number);
 				break;
-			}else if(controller.getCheckPhase()){
-				if(controller.checkPhase(number)){
-					LOGGER.info("Phase achieved! Get rid of all of your cards.");
-				}
 			}
 			controller.dropCardArchive(number);
 			break;
@@ -192,6 +199,7 @@ public class TextUI {
 			break;
 		case 'p':
 			controller.setCheckPhase();
+			break;
 		case 'q':
 			printQuitGame();
 			return false;

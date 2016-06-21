@@ -199,6 +199,6 @@ public class Phase10Controller implements IPhase10Controller {
 
 	public boolean checkPhase(int a) {
 		PlayerHand h = playerlist.get(this.currentplayer);
-		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a]);
+		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1]);
 	}
 }
