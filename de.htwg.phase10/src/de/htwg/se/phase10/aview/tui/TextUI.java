@@ -207,6 +207,6 @@ public class TextUI {
 	}
 
 	public void printAllPhase10(GamePhase pall) {
-		LOGGER.info("");
+		LOGGER.info(" ");
 	}
 }
