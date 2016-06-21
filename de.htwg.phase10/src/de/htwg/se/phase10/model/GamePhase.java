@@ -17,7 +17,7 @@ public class GamePhase {
 		return phasen[number];
 	}
 
-	public boolean checkGamePhase(GamePhase p, Archive arch) {
+	public boolean checkGamePhase(String p, Archive arch) {
 		Archive archive = arch;
 		if (p.toString().startsWith("Phase 1")) {
 			Card c = archive.get(0);

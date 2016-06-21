@@ -7,18 +7,21 @@ import de.htwg.se.phase10.model.Archive;
 import de.htwg.se.phase10.model.GamePhase;
 import de.htwg.se.phase10.model.PlayerHand;
 import de.htwg.se.phase10.model.Stack;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TextUI {
-
+	
+	private static final Logger LOGGER = LogManager.getLogger(TextUI.class.getName());
 	private static Scanner scanner;
 	private Phase10Controller controller;
-
+	
 	private int numberp = 1;
 	private int numberpcount;
 	private String firstplayer;
 	
 	private boolean startgame = false;
+	
 	
 	public TextUI(Phase10Controller cont) {
 		controller = cont;
@@ -70,35 +73,35 @@ public class TextUI {
 		return false;
 	}
 	private void printGameField(int number, String name){
-		System.out.println("##############################");
-		System.out.println("Player " + name + " its your turn.");
-		System.out.println("");
-		System.out.println("Archive: "); 
-		System.out.println(controller.getArchive());
-		System.out.println("");
-		System.out.println("Stack: " + controller.getStack());
-		System.out.println("");
-		System.out.println("Your Hand:");
-		System.out.println(controller.getHand(number));
-		System.out.println("");
-		System.out.println("Current Phase:");
-		System.out.println(controller.getCurrentPhase(number));
-		System.out.println();
-		System.out.println("Press");
-		System.out.println("y - done, d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack");
-		System.out.println("a+number - Select a archive, n - new Archive, c+number - choose card, q - quit game");
+		LOGGER.info("##############################");
+		LOGGER.info("Player " + name + " its your turn.");
+		LOGGER.info("");
+		LOGGER.info("Archive: "); 
+		LOGGER.info(controller.getArchive());
+		LOGGER.info("");
+		LOGGER.info("Stack: " + controller.getStack());
+		LOGGER.info("");
+		LOGGER.info("Your Hand:");
+		LOGGER.info(controller.getHand(number));
+		LOGGER.info("");
+		LOGGER.info("Current Phase:");
+		LOGGER.info(controller.getCurrentPhase(number));
+		LOGGER.info("");
+		LOGGER.info("Press");
+		LOGGER.info("y - done, d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack");
+		LOGGER.info("a+number - Select a archive, n - new Archive, c+number - choose card, q - quit game");
 	}
 	private void printNewGame() {
-		System.out.println("Choose a player number between 2 - 6: ");
+		LOGGER.info("Choose a player number between 2 - 6: ");
 		controller.setNewGame(true);
 		
 	}
 
 	public void printMenu() {
-		System.out.println("Welcome to Phase 10");
-		System.out.println("");
-		System.out.println("1.) Start a new Game");
-		System.out.println("2.) Quit");
+		LOGGER.info("Welcome to Phase 10");
+		LOGGER.info("");
+		LOGGER.info("1.) Start a new Game");
+		LOGGER.info("2.) Quit");
 	}
 
 	
@@ -120,21 +123,21 @@ public class TextUI {
 		// get card from deck
 		case 'd':
 			if(!controller.getCardFromDeck()){
-				System.out.println("You have already 10 Cards on your Hand.");
+				LOGGER.info("You have already 10 Cards on your Hand.");
 			}
 			controller.setPulledCard();
 			break;
 		// get card from stack
 		case 's':
 			if(!controller.getCardFromStack()){
-				System.out.println("You have already 10 Cards on your Hand.");
+				LOGGER.info("You have already 10 Cards on your Hand.");
 			}
 			controller.setPulledCard();
 			break;
 		// drop to stack
 		case 'f':
 			if(controller.getStackDrop()){
-				System.out.println("You have already droped a card. Continue with y");
+				LOGGER.info("You have already droped a card. Continue with y");
 				break;
 			}
 			if(!controller.pulledCard()){
@@ -142,7 +145,7 @@ public class TextUI {
 				break;
 			}
 			controller.setDropedCardStack();
-			System.out.println("Choose card: ");
+			LOGGER.info("Choose card: ");
 			break;
 		// choose archive
 		case 'a':
@@ -151,7 +154,7 @@ public class TextUI {
 				break;
 			}
 			controller.setArchive(number);
-			System.out.println("Choose card: ");
+			LOGGER.info("Choose card: ");
 			break;
 		// create new archive
 		case 'n':
@@ -160,13 +163,17 @@ public class TextUI {
 				break;
 			}
 			controller.newArch();
-			System.out.println("Choose card: ");
+			LOGGER.info("Choose card: ");
 			break;
 		// choose card for archive
 		case 'c':
 			if(controller.getDropCardStack()){
 				controller.dropCardStack(number);
 				break;
+			}else if(controller.getCheckPhase()){
+				if(controller.checkPhase(number)){
+					LOGGER.info("Phase achieved! Get rid of all of your cards.");
+				}
 			}
 			controller.dropCardArchive(number);
 			break;
@@ -180,9 +187,11 @@ public class TextUI {
 				controller.setDropedCardStack();
 				controller.setPulledCard();
 			}else{
-				System.out.println("You have to drop a card first.");
+				LOGGER.info("You have to drop a card first.");
 			}
 			break;
+		case 'p':
+			controller.setCheckPhase();
 		case 'q':
 			printQuitGame();
 			return false;
@@ -191,13 +200,13 @@ public class TextUI {
 		return true;
 	}
 	public void printPullCard(){
-		System.out.println("You have to pull a Card from Deck or Stack first.");
+		LOGGER.info("You have to pull a Card from Deck or Stack first.");
 	}
 	public void printQuitGame() {
-		System.out.println("Game closed...");
+		LOGGER.info("Game closed...");
 	}
 
 	public void printAllPhase10(GamePhase pall) {
-		System.out.println();
+		LOGGER.info("");
 	}
 }

@@ -123,4 +123,8 @@ public interface IPhase10Controller {
 	 * @return pulledcard true or false if a card was pulled or not.
 	 */
 	boolean pulledCard();
+	
+	void setCheckPhase();
+	boolean getCheckPhase();
+	boolean checkPhase(int a);
 }

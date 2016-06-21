@@ -32,8 +32,9 @@ public class Phase10Controller implements IPhase10Controller {
 	private Deck deck;
 	private Stack stack;
 	private List<PlayerHand> playerlist;
-	private GamePhase phase = new GamePhase();
 	
+	private GamePhase phase = new GamePhase();
+	private boolean checkPhase = false;
 	
 	public Phase10Controller(){
 		
@@ -182,5 +183,22 @@ public class Phase10Controller implements IPhase10Controller {
 	}
 	public boolean pulledCard(){
 		return this.pulledc;
+	}
+
+	public void setCheckPhase() {
+		if(this.checkPhase == false){
+			this.checkPhase = true;
+		}else{
+			this.checkPhase = false;
+		}
+	}
+
+	public boolean getCheckPhase() {
+		return this.checkPhase;
+	}
+
+	public boolean checkPhase(int a) {
+		PlayerHand h = playerlist.get(this.currentplayer);
+		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a]);
 	}
 }
