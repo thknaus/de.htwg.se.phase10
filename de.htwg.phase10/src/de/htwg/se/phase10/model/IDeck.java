@@ -1,5 +1,12 @@
 package de.htwg.se.phase10.model;
 
-public interface IDeck {
+import de.htwg.se.phase10.model.impl.Card;
 
+public interface IDeck {
+	void newDeck();
+	boolean cleanDeck();
+	Card getNewCard();
+	boolean pushToDeck(Card s);
+	int getSize();
+	
 }

@@ -2,7 +2,9 @@ package de.htwg.se.phase10.model.impl;
 
 import java.util.*;
 
-public class Deck {
+import de.htwg.se.phase10.model.IDeck;
+
+public class Deck implements IDeck{
 	
 	//public static Object getNewCard;
 	private int size = 0;

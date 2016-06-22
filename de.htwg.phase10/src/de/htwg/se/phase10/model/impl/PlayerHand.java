@@ -2,7 +2,9 @@ package de.htwg.se.phase10.model.impl;
 
 import java.util.*;
 
-public class PlayerHand {
+import de.htwg.se.phase10.model.IPlayerhand;
+
+public class PlayerHand implements IPlayerhand{
 
 	private String name;
 	private int score;

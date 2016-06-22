@@ -1,6 +1,8 @@
 package de.htwg.se.phase10.model.impl;
 
-public class Card {
+import de.htwg.se.phase10.model.ICard;
+
+public class Card implements ICard{
 	
 	private Rank rank;
 	private Color color;
@@ -66,5 +68,4 @@ public class Card {
 		sb.append(this.rank).append(" ").append(this.color);
 		return sb.toString();
 	}
-	
 }
