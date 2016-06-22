@@ -1,4 +1,4 @@
-package de.htwg.se.phase10.model;
+package de.htwg.se.phase10.model.impl;
 
 import java.util.*;
 

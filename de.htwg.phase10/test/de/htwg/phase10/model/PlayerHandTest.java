@@ -1,12 +1,17 @@
 package de.htwg.phase10.model;
 
 import junit.framework.TestCase;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import de.htwg.se.phase10.model.*;
-import de.htwg.se.phase10.model.Card.Color;
-import de.htwg.se.phase10.model.Card.Rank;
+import de.htwg.se.phase10.model.impl.Card;
+import de.htwg.se.phase10.model.impl.Deck;
+import de.htwg.se.phase10.model.impl.PlayerHand;
+import de.htwg.se.phase10.model.impl.Stack;
+import de.htwg.se.phase10.model.impl.Card.Color;
+import de.htwg.se.phase10.model.impl.Card.Rank;
 
 public class PlayerHandTest extends TestCase{
 	private PlayerHand hand;

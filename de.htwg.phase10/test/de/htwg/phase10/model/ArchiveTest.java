@@ -3,6 +3,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.htwg.se.phase10.model.*;
+import de.htwg.se.phase10.model.impl.Archive;
+import de.htwg.se.phase10.model.impl.Card;
+import de.htwg.se.phase10.model.impl.Deck;
+import de.htwg.se.phase10.model.impl.PlayerHand;
 import junit.framework.TestCase;
 
 public class ArchiveTest extends TestCase{

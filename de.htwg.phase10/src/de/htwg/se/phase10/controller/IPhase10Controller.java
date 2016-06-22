@@ -1,7 +1,7 @@
 package de.htwg.se.phase10.controller;
 
-import de.htwg.se.phase10.model.Deck;
-import de.htwg.se.phase10.model.PlayerHand;
+import de.htwg.se.phase10.model.impl.Deck;
+import de.htwg.se.phase10.model.impl.PlayerHand;
 
 /**
  * @author Thomas

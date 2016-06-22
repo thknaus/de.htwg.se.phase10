@@ -6,6 +6,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.htwg.se.phase10.model.*;
+import de.htwg.se.phase10.model.impl.Card;
+import de.htwg.se.phase10.model.impl.Deck;
+import de.htwg.se.phase10.model.impl.Stack;
 
 public class StackTest extends TestCase{
 	private Stack stack;

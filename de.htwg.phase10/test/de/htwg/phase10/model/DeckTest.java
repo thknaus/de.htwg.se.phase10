@@ -6,6 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import de.htwg.se.phase10.model.*;
+import de.htwg.se.phase10.model.impl.Card;
+import de.htwg.se.phase10.model.impl.Deck;
 
 public class DeckTest extends TestCase{
 	private Deck firstDeck;

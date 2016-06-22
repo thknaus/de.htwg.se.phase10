@@ -6,12 +6,12 @@ import java.util.Observable;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.IPhase10Controller;
-import de.htwg.se.phase10.model.Archive;
-import de.htwg.se.phase10.model.Card;
-import de.htwg.se.phase10.model.Deck;
-import de.htwg.se.phase10.model.GamePhase;
-import de.htwg.se.phase10.model.PlayerHand;
-import de.htwg.se.phase10.model.Stack;
+import de.htwg.se.phase10.model.impl.Archive;
+import de.htwg.se.phase10.model.impl.Card;
+import de.htwg.se.phase10.model.impl.Deck;
+import de.htwg.se.phase10.model.impl.GamePhase;
+import de.htwg.se.phase10.model.impl.PlayerHand;
+import de.htwg.se.phase10.model.impl.Stack;
 
 public class Phase10Controller implements IPhase10Controller {
 	private TextUI tui;

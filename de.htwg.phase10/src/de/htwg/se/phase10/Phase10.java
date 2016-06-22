@@ -2,10 +2,13 @@ package de.htwg.se.phase10;
 
 import java.util.Scanner;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.impl.Phase10Controller;
-import de.htwg.se.phase10.model.Deck;
+import de.htwg.se.phase10.model.impl.Deck;
 import de.htwg.se.phase10.aview.tui.*;
 
 public class Phase10 {
@@ -17,8 +20,7 @@ public class Phase10 {
 	public static void main(String[] args) {
 		Injector injector = Guice.createInjector(new Phase10Module());
 		controller = injector.getInstance(IPhase10Controller.class);
-		//TODO: Change to IPhase10Controller interface
-		controller = new IPhase10Controller();
+		
 		TextUI tui = new TextUI(controller);
 		Scanner input = new Scanner(System.in);
 		

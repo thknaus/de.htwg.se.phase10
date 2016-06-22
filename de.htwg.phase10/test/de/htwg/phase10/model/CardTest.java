@@ -2,7 +2,7 @@ package de.htwg.phase10.model;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.model.Card;
+import de.htwg.se.phase10.model.impl.Card;
 import junit.framework.TestCase;
 
 public class CardTest extends TestCase{

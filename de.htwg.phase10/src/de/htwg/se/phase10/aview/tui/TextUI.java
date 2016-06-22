@@ -3,11 +3,10 @@ package de.htwg.se.phase10.aview.tui;
 import java.util.Scanner;
 
 import de.htwg.se.phase10.controller.IPhase10Controller;
-import de.htwg.se.phase10.controller.impl.Phase10Controller;
-import de.htwg.se.phase10.model.Archive;
-import de.htwg.se.phase10.model.GamePhase;
-import de.htwg.se.phase10.model.PlayerHand;
-import de.htwg.se.phase10.model.Stack;
+import de.htwg.se.phase10.model.impl.Archive;
+import de.htwg.se.phase10.model.impl.GamePhase;
+import de.htwg.se.phase10.model.impl.PlayerHand;
+import de.htwg.se.phase10.model.impl.Stack;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
