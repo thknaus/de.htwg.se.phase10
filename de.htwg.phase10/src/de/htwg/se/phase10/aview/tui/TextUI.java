@@ -89,7 +89,7 @@ public class TextUI {
 		LOGGER.info(controller.getCurrentPhase(number));
 		LOGGER.info("");
 		LOGGER.info("Press");
-		LOGGER.info("y - done, d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack");
+		LOGGER.info("d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)");
 		LOGGER.info("a+number - Select a archive, n - new Archive, c+number - choose card, q - quit game");
 	}
 	private void printNewGame() {
@@ -137,10 +137,6 @@ public class TextUI {
 			break;
 		// drop to stack
 		case 'f':
-			if(controller.getStackDrop()){
-				LOGGER.info("You have already droped a card. Continue with y");
-				break;
-			}
 			if(!controller.pulledCard()){
 				printPullCard();
 				break;
@@ -179,22 +175,13 @@ public class TextUI {
 		case 'c':
 			if(controller.getDropCardStack()){
 				controller.dropCardStack(number);
+				controller.setDropedCardStack();
+				controller.setPulledCard();
+				controller.setCurrentPlayerNumber();
+				controller.checkStackTop();
 				break;
 			}
 			controller.dropCardArchive(number);
-			break;
-		case 'y':
-			if(!controller.pulledCard()){
-				printPullCard();
-				break;
-			}
-			if(controller.getStackDrop()){
-				controller.setCurrentPlayerNumber();
-				controller.setDropedCardStack();
-				controller.setPulledCard();
-			}else{
-				LOGGER.info("You have to drop a card first.");
-			}
 			break;
 		case 'p':
 			controller.setCheckPhase();

@@ -166,9 +166,7 @@ public class Phase10Controller implements IPhase10Controller {
 		PlayerHand h = playerlist.get(number);
 		return h.getCurrentPhase();
 	}
-	public boolean getStackDrop(){
-		return this.stackdrop;
-	}
+
 	public void setDropedCardStack() {
 		if(this.stackdrop == false){
 			this.stackdrop = true;
@@ -203,5 +201,10 @@ public class Phase10Controller implements IPhase10Controller {
 	public boolean checkPhase(int a) {
 		PlayerHand h = playerlist.get(this.currentplayer);
 		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1]);
+	}
+	public void checkStackTop(){
+		if(this.stack.topCard().getRank() == Card.Rank.SKIP){
+			setCurrentPlayerNumber();
+		}
 	}
 }

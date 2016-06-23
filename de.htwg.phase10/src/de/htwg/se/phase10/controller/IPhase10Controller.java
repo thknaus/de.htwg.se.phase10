@@ -108,10 +108,6 @@ public interface IPhase10Controller {
 	 */
 	String getCurrentPhase(int number);
 	/**
-	 * @return if stackdrop is set true or false
-	 */
-	boolean getStackDrop();
-	/**
 	 * Sets stackdrop true if its false and false if its true
 	 */
 	void setDropedCardStack();
@@ -128,4 +124,5 @@ public interface IPhase10Controller {
 	boolean getCheckPhase();
 	boolean checkPhase(int a);
 	void setCurrenPlayerNumber(int i);
+	void checkStackTop();
 }
