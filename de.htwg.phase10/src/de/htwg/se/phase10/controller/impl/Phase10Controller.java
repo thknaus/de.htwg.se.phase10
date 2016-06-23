@@ -207,7 +207,11 @@ public class Phase10Controller implements IPhase10Controller {
 
 	public boolean checkPhase(int a) {
 		PlayerHand h = playerlist.get(this.currentplayer);
-		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1]);
+		if(phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1])){
+			h.setCurrentPhaseAchieved(true);
+			return true;
+		}
+		return false;
 	}
 	public void setNextPhase(){
 		PlayerHand p = playerlist.get(this.currentplayer);
@@ -248,6 +252,7 @@ public class Phase10Controller implements IPhase10Controller {
 		for(PlayerHand h : playerlist){
 			h.cleanHand();
 			h.newHand();
+			h.setCurrentPhaseAchieved(false);
 		}
 		for(Archive a : arrayarch){
 			if(a == null){
@@ -257,6 +262,7 @@ public class Phase10Controller implements IPhase10Controller {
 		}
 		this.archsize = 0;
 		stack.backToDeckS(this.deck);
+		stack.pushCardS(deck.getNewCard());
 	}
 
 }

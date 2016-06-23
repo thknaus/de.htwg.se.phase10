@@ -90,7 +90,7 @@ public class TextUI {
 		LOGGER.info("");
 		LOGGER.info("Press");
 		LOGGER.info("d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)");
-		LOGGER.info("a+number - Select a archive, y - check archive n - new Archive, c+number - choose card, q - quit game");
+		LOGGER.info("a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game");
 	}
 	private void printNewGame() {
 		LOGGER.info("Choose a player number between 2 - 6: ");
@@ -190,9 +190,6 @@ public class TextUI {
 				break;
 			}
 			controller.dropCardArchive(number);
-			break;
-		case 'p':
-			controller.setCheckPhase();
 			break;
 		case 'y':
 			controller.setCheckPhase();

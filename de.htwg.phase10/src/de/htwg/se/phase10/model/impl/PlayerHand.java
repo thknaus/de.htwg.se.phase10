@@ -14,7 +14,7 @@ public class PlayerHand implements IPlayerHand{
 	private Stack stack;
 	private String phase;
 	private int phasen;
-	
+	private boolean currentPhaseAchieved = false;
 	// generatest a new hand
 	public PlayerHand(Deck d, String n) {
 		GamePhase p = new GamePhase();
@@ -152,5 +152,11 @@ public class PlayerHand implements IPlayerHand{
 		}
 		sb.append("size: " + this.size);
 		return sb.toString();
+	}
+	public boolean getCurrentPhaseAchieved(){
+		return currentPhaseAchieved;
+	}
+	public void setCurrentPhaseAchieved(boolean p){
+		this.currentPhaseAchieved = p;
 	}
 }
