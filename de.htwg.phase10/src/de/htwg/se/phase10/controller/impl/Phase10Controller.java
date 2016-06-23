@@ -39,6 +39,8 @@ public class Phase10Controller implements IPhase10Controller {
 	private GamePhase phase = new GamePhase();
 	private boolean checkPhase = false;
 	
+	private boolean checkArchive = false;
+	
 	private boolean roundOver = false;
 	
 	public Phase10Controller(){
@@ -207,6 +209,31 @@ public class Phase10Controller implements IPhase10Controller {
 		PlayerHand h = playerlist.get(this.currentplayer);
 		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1]);
 	}
+	public void setNextPhase(){
+		PlayerHand p = playerlist.get(this.currentplayer);
+		String pnumber = p.getCurrentPhase().toString();
+		if(pnumber.startsWith("Phase 1")){
+			p.setPhase(phase.getPhase(1));
+		}else if(pnumber.startsWith("Phase 2")){
+			p.setPhase(phase.getPhase(2));
+		}else if (pnumber.startsWith("Phase 3")){
+			p.setPhase(phase.getPhase(3));
+		}else if (pnumber.startsWith("Phase 4")){
+			p.setPhase(phase.getPhase(4));
+		}else if (pnumber.startsWith("Phase 5")){
+			p.setPhase(phase.getPhase(5));
+		}else if (pnumber.startsWith("Phase 6")){
+			p.setPhase(phase.getPhase(6));
+		}else if (pnumber.startsWith("Phase 7")){
+			p.setPhase(phase.getPhase(7));
+		}else if (pnumber.startsWith("Phase 8")){
+			p.setPhase(phase.getPhase(8));
+		}else if (pnumber.startsWith("Phase 9")){
+			p.setPhase(phase.getPhase(9));
+		}else if (pnumber.startsWith("Phase 10")){
+			p.setPhase(phase.getPhase(10));
+		}
+	}
 	public boolean checkStackTop(){
 		if(this.stack.topCard().getRank() == Card.Rank.SKIP){
 			setCurrentPlayerNumber();
@@ -231,5 +258,6 @@ public class Phase10Controller implements IPhase10Controller {
 		this.archsize = 0;
 		stack.backToDeckS(this.deck);
 	}
+
 }
 

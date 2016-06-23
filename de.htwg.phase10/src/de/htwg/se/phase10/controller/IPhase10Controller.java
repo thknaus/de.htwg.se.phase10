@@ -123,8 +123,10 @@ public interface IPhase10Controller {
 	void setCheckPhase();
 	boolean getCheckPhase();
 	boolean checkPhase(int a);
+	void setNextPhase();
 	void setCurrenPlayerNumber(int i);
 	boolean checkStackTop();
 	boolean getRoundOver();
 	void startNewRound();
+
 }

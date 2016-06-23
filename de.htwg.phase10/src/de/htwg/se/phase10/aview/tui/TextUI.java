@@ -90,7 +90,7 @@ public class TextUI {
 		LOGGER.info("");
 		LOGGER.info("Press");
 		LOGGER.info("d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)");
-		LOGGER.info("a+number - Select a archive, n - new Archive, c+number - choose card, q - quit game");
+		LOGGER.info("a+number - Select a archive, y - check archive n - new Archive, c+number - choose card, q - quit game");
 	}
 	private void printNewGame() {
 		LOGGER.info("Choose a player number between 2 - 6: ");
@@ -152,8 +152,9 @@ public class TextUI {
 			}
 			if(controller.getCheckPhase()){
 				if(controller.checkPhase(number)){
-					LOGGER.info("Phase achieved! Get rid of all of your cards.");
+					LOGGER.info("Phase achieved! Get rid of all your cards.");
 					controller.setCheckPhase();
+					controller.setNextPhase();
 				}else{
 					LOGGER.info("Phase not completed");
 				}
@@ -192,6 +193,10 @@ public class TextUI {
 			break;
 		case 'p':
 			controller.setCheckPhase();
+			break;
+		case 'y':
+			controller.setCheckPhase();
+			LOGGER.info("Select an Archive to check");
 			break;
 		case 'q':
 			printQuitGame();
