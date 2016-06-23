@@ -21,6 +21,9 @@ public class PlayerHand implements IPlayerHand{
 		this.name = n;
 		this.score = 0;
 		this.deck = d;
+		newHand();
+	}
+	public void newHand(){
 		for(int i = 0; i < 11; i++){
 			if(i == 10){
 				handcards[i] = null;
@@ -44,6 +47,14 @@ public class PlayerHand implements IPlayerHand{
 	// returns the current Hand
 	public Card[] getHand(){
 		return this.handcards;
+	}
+	public boolean checkHandNull(){
+		for(Card c: this.handcards){
+			if(c != null){
+				return false;
+			}
+		}
+		return true;
 	}
 	
 	// gets a new card from deck
@@ -119,6 +130,11 @@ public class PlayerHand implements IPlayerHand{
 	}
 	public void setPhase(String p){
 		this.phase = p;
+	}
+	public void cleanHand(){
+		for(int i = 0; i<handcards.length; i++){
+			handcards[i] = null;
+		}
 	}
 	@Override
 	public String toString() {

@@ -124,5 +124,7 @@ public interface IPhase10Controller {
 	boolean getCheckPhase();
 	boolean checkPhase(int a);
 	void setCurrenPlayerNumber(int i);
-	void checkStackTop();
+	boolean checkStackTop();
+	boolean getRoundOver();
+	void startNewRound();
 }

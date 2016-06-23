@@ -39,6 +39,8 @@ public class Phase10Controller implements IPhase10Controller {
 	private GamePhase phase = new GamePhase();
 	private boolean checkPhase = false;
 	
+	private boolean roundOver = false;
+	
 	public Phase10Controller(){
 		
 	}
@@ -102,7 +104,7 @@ public class Phase10Controller implements IPhase10Controller {
 
 	public void dropCardArchive(int number){
 		PlayerHand p = playerlist.get(this.currentplayer); 
-		Card c = p.getHand()[number];
+		Card c = p.getHand()[number-1];
 		arrayarch[currentarch].putCardToArchive(c);
 		p.dropCardH(c);
 	}
@@ -128,6 +130,9 @@ public class Phase10Controller implements IPhase10Controller {
 		PlayerHand p = playerlist.get(this.currentplayer);
 		Card[] c = p.getHand();
 		this.stack.pushCardS(p.dropCardH(c[number-1]));
+		if(p.checkHandNull()){
+			this.roundOver = true;
+		}
 	}
 	public boolean getDropCardStack(){
 		return this.stackdrop;
@@ -158,7 +163,7 @@ public class Phase10Controller implements IPhase10Controller {
 	}
 
 	public String getHand(int number) {
-		PlayerHand h = playerlist.get(number);
+		PlayerHand h = playerlist.get(this.currentplayer);
 		return h.toString();
 	}
 
@@ -202,9 +207,29 @@ public class Phase10Controller implements IPhase10Controller {
 		PlayerHand h = playerlist.get(this.currentplayer);
 		return phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1]);
 	}
-	public void checkStackTop(){
+	public boolean checkStackTop(){
 		if(this.stack.topCard().getRank() == Card.Rank.SKIP){
 			setCurrentPlayerNumber();
+			return true;
 		}
+		return false;
+	}
+	public boolean getRoundOver(){
+		return this.roundOver;
+	}
+	public void startNewRound(){
+		for(PlayerHand h : playerlist){
+			h.cleanHand();
+			h.newHand();
+		}
+		for(Archive a : arrayarch){
+			if(a == null){
+				continue;
+			}
+			a.cleanArchive();
+		}
+		this.archsize = 0;
+		stack.backToDeckS(this.deck);
 	}
 }
+

@@ -178,7 +178,14 @@ public class TextUI {
 				controller.setDropedCardStack();
 				controller.setPulledCard();
 				controller.setCurrentPlayerNumber();
-				controller.checkStackTop();
+				if(controller.checkStackTop()){
+					LOGGER.info("Player skiped - Skip card");
+				}
+				if(controller.getRoundOver()){
+					controller.startNewRound();
+					LOGGER.info("Next ROUND!!!");
+				}
+				
 				break;
 			}
 			controller.dropCardArchive(number);
