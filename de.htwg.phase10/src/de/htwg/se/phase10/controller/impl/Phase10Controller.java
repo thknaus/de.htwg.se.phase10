@@ -6,6 +6,9 @@ import java.util.Observable;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.IPhase10Controller;
+import de.htwg.se.phase10.model.IDeck;
+import de.htwg.se.phase10.model.IPlayerHand;
+import de.htwg.se.phase10.model.IStack;
 import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.Card;
 import de.htwg.se.phase10.model.impl.Deck;
@@ -16,7 +19,7 @@ import de.htwg.se.phase10.model.impl.Stack;
 public class Phase10Controller implements IPhase10Controller {
 	private TextUI tui;
 	private PlayerHand hand;
-	
+
 	private Archive[] arrayarch = new Archive[36];
 	private int archsize;
 	private boolean archdrop = false;

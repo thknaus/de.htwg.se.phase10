@@ -2,9 +2,8 @@ package de.htwg.se.phase10.model.impl;
 
 import java.util.*;
 
-import de.htwg.se.phase10.model.IArchive;
 
-public class Archive implements IArchive{
+public class Archive {
 	private int archnumber;
 	private List<Card> archive;
 	private Deck deck;

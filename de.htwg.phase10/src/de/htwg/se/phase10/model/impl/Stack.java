@@ -3,7 +3,9 @@ package de.htwg.se.phase10.model.impl;
 import java.util.Collections;
 import java.util.LinkedList;
 
-public class Stack {
+import de.htwg.se.phase10.model.IStack;
+
+public class Stack implements IStack {
 	private LinkedList<Card> stack;
 	private Deck deck;
 	public Stack() {
