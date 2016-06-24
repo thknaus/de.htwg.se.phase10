@@ -26,26 +26,29 @@ public class GamePhase {
 			}
 			for (int i = 0; i < archive.size(); i++) {
 				Card d = archive.get(i);
-				if (c.getRank() != d.getRank() || d.getRank() != Card.Rank.JOKER) {
+				if (!(c.getRank().name().equals(d.getRank().name()) || d.getRank().name().equals(Card.Rank.JOKER.name()))) {
 					return false;
 				}
 			}
 		} else if (p.toString().startsWith("Phase 2")) {
 			Card c = archive.get(0);
-			if(archive.size() != 3 || archive.size() != 4){
+			int a = archive.size();
+			if(archive.size() != 3 && archive.size() != 4){
 				return false;
 			}
 			if (archive.size() == 3) {
 				for (int i = 0; i < archive.size(); i++) {
 					Card d = archive.get(i);
-					if (c.getRank() != d.getRank()|| d.getRank() != Card.Rank.JOKER) {
+					if (!(c.getRank().name().equals(d.getRank().name()) || d.getRank().name().equals(Card.Rank.JOKER.name()))) {
 						return false;
 					}
 				}
-			} else if (archive.size() == 4) {
-				for (int i = 0; i < archive.size(); i++) {
+			} else {
+				for (int i = 1; i < archive.size(); i++) {
 					Card d = archive.get(i);
-					if (d.getRankValue(d) != c.getRankValue(c) + i + 1 || d.getRank() != Card.Rank.JOKER) {
+					int j = d.getRankValue();
+					int z = c.getRankValue()+ i;
+					if (d.getRankValue() != c.getRankValue()+ i && d.getRank() != Card.Rank.JOKER) {
 						return false;
 					}
 
@@ -60,7 +63,7 @@ public class GamePhase {
 			for (int i = 0; i < archive.size(); i++) {
 				Card d = archive.get(i);
 				if (c.getRank() != d.getRank()
-						|| d.getRankValue(d) != c.getRankValue(c) + i + 1 || d.getRank() != Card.Rank.JOKER) {
+						|| d.getRankValue() != c.getRankValue() + i + 1 || d.getRank() != Card.Rank.JOKER) {
 					return false;
 				}
 			}
@@ -72,7 +75,7 @@ public class GamePhase {
 			}
 			for (int i = 0; i < archive.size(); i++) {
 				Card d = archive.get(i);
-				if (d.getRankValue(d) != c.getRankValue(c) + i + 1 || d.getRank() != Card.Rank.JOKER) {
+				if (d.getRankValue() != c.getRankValue() + i + 1 || d.getRank() != Card.Rank.JOKER) {
 					return false;
 				}
 			}
@@ -83,7 +86,7 @@ public class GamePhase {
 			}
 			for (int i = 0; i < archive.size(); i++) {
 				Card d = archive.get(i);
-				if (d.getRankValue(d) != c.getRankValue(c) + i + 1 || d.getRank() != Card.Rank.JOKER) {
+				if (d.getRankValue() != c.getRankValue() + i + 1 || d.getRank() != Card.Rank.JOKER) {
 					return false;
 				}
 			}
@@ -94,7 +97,7 @@ public class GamePhase {
 			}
 			for (int i = 0; i < archive.size(); i++) {
 				Card d = archive.get(i);
-				if (d.getRankValue(d) != c.getRankValue(c) + i + 1 || d.getRank() != Card.Rank.JOKER) {
+				if (d.getRankValue() != c.getRankValue() + i + 1 || d.getRank() != Card.Rank.JOKER) {
 					return false;
 				}
 			}
@@ -120,7 +123,7 @@ public class GamePhase {
 			}
 		} else if (p.toString().startsWith("Phase 9")) {
 			Card c = archive.get(0);
-			if (archive.size() != 5 || archive.size() != 2) {
+			if (archive.size() != 5 && archive.size() != 2) {
 				return false;
 			}
 			for (Card d : archive.getArchive()) {
@@ -130,7 +133,7 @@ public class GamePhase {
 			}
 		} else if (p.toString().startsWith("Phase 10")) {
 			Card c = archive.get(0);
-			if (archive.size() != 5 || archive.size() != 3) {
+			if (archive.size() != 5 && archive.size() != 3) {
 				return false;
 			}
 			for (Card d : archive.getArchive()) {

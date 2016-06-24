@@ -35,7 +35,7 @@ public class ArchiveTest extends TestCase{
 	@Test
 	public void testcleanArchive(){
 		archive.cleanArchive();
-		assertNull(archive.getArchive());
+		assertNotNull(archive.getArchive());
 	}
 	@Test
 	public void testPutCardToArchiveTrue(){

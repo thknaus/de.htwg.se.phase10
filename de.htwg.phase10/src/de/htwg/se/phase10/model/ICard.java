@@ -6,7 +6,7 @@ import de.htwg.se.phase10.model.impl.Card.Rank;
 
 public interface ICard {
 	Rank getRank();
-	int getRankValue(Card c);
+	int getRankValue();
 	Color getColor();
 	int getSpecialC();
 	
