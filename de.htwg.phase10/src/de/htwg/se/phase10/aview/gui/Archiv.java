@@ -1,6 +1,7 @@
 package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,11 +10,15 @@ public class Archiv extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 
-	JButton archiv;
+	JButton archiv, narchiv;
 	
 	public Archiv() {
  
-
+        
+        narchiv = new JButton("New Archiv");
+        narchiv.setPreferredSize(new Dimension(240,100));
+        this.add(narchiv);
+        narchiv.addActionListener(this);
 		
 		JPanel archivfield1 = new JPanel();
 		archivfield1.setLayout(new FlowLayout(FlowLayout.LEFT));
