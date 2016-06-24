@@ -1,6 +1,7 @@
 package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,9 +12,12 @@ public class DeckStackField extends JPanel implements ActionListener{
 	
 	
 	private JTextField textfield;
-    private JButton stack, deck;
+    private JButton stack, deck, narchiv;
     
 	public DeckStackField() {
+		
+		
+		this.setBackground(Color.BLACK);
 		
         deck = new JButton("Deck");
         deck.setPreferredSize(new Dimension(240,100));
@@ -26,9 +30,10 @@ public class DeckStackField extends JPanel implements ActionListener{
         stack.setPreferredSize(new Dimension(240,100));
         this.add(stack);
         stack.addActionListener(this);
+
         
         textfield = new JTextField("Hier kommen die Meldungen");
-        textfield.setPreferredSize(new Dimension(482,100));
+        textfield.setPreferredSize(new Dimension(1000,100));
         textfield.setEditable(false);
         this.add(textfield);
 	}
