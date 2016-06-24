@@ -136,6 +136,14 @@ public class PlayerHand implements IPlayerHand{
 			handcards[i] = null;
 		}
 	}
+	
+	public boolean getCurrentPhaseAchieved(){
+		return currentPhaseAchieved;
+	}
+	public void setCurrentPhaseAchieved(boolean p){
+		this.currentPhaseAchieved = p;
+	}
+	
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -152,11 +160,5 @@ public class PlayerHand implements IPlayerHand{
 		}
 		sb.append("size: " + this.size);
 		return sb.toString();
-	}
-	public boolean getCurrentPhaseAchieved(){
-		return currentPhaseAchieved;
-	}
-	public void setCurrentPhaseAchieved(boolean p){
-		this.currentPhaseAchieved = p;
 	}
 }

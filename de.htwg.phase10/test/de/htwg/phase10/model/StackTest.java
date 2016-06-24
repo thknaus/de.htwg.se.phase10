@@ -49,5 +49,19 @@ public class StackTest extends TestCase{
 		stack.pushCardS(exampleCard);
 		assertEquals(1, stack.getSizeS());
 	}
+	@Test
+	public void testRemoveLast(){
+		Card d = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
+		stack.pushCardS(d);
+		stack.removeLast();
+		assertEquals(0, stack.getSizeS());
+	}
+	
+	@Test
+	public void testTopCard(){
+		Card d = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
+		stack.pushCardS(d);
+		assertEquals(d, stack.topCard());
+	}
 	
 }

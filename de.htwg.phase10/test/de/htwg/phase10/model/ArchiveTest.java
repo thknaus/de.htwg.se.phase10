@@ -22,15 +22,12 @@ public class ArchiveTest extends TestCase{
 		archive = new Archive(10);
 	}
 	
-	@Test
-	public void testNewArchive(){		
-		archive.newArchive(hand.getHand());
-	}
-	
+
 	@Test
 	public void testGetCurrentArchive(){
-		archive.newArchive(hand.getHand());
-		assertNotNull(archive.getArchive());
+		Card c = hand.getHand()[0];
+		archive.putCardToArchive(hand.getHand()[0]);
+		assertEquals(c, archive.getArchive()[0]);
 	}
 	@Test
 	public void testcleanArchive(){
@@ -45,10 +42,29 @@ public class ArchiveTest extends TestCase{
 	}
 	@Test
 	public void testPutCardToArchiveFalse(){
-		archive.newArchive(hand.getHand());
 		Card c = deck.getNewCard();
 		Card d = deck.getNewCard();
 		archive.putCardToArchive(c);
 		//assertFalse(archive.putCardToArchive(d));
+	}
+	@Test
+	public void testGetCard(){
+		Card c = deck.getNewCard();
+		archive.putCardToArchive(c);
+		assertEquals(c, archive.get(0));
+	}
+	@Test
+	public void testSize(){
+		Card c = deck.getNewCard();
+		archive.putCardToArchive(c);
+		assertEquals(1, archive.size());
+	}
+	@Test
+	public void testToString(){
+		assertEquals("Archive 10: Cards: ", archive.toString());
+		Card c = deck.getNewCard();
+		archive.putCardToArchive(c);
+		String s = "Archive 10: Cards: "+ c.getRank() +"_"+ c.getColor() + ", ";
+		assertEquals(s, archive.toString());
 	}
 }

@@ -375,5 +375,207 @@ public class GamePhaseTest extends TestCase{
 		Archive arch = new Archive(1);
 		String p = "Phase 8";
 		
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.YELLOW, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+	}
+	
+	@Test
+	public void testCheckGamePhase9(){
+		Archive arch = new Archive(1);
+		String p = "Phase 9";
+		
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.FOUR, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.FIVE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.SIX, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.SEVEN, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.FIVE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+	}
+	
+	@Test
+	public void testCheckGamePhase10(){
+		Archive arch = new Archive(1);
+		String p = "Phase 10";
+		
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.FOUR, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.FIVE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.SIX, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.SEVEN, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertTrue(gamephase.checkGamePhase(p, arch));
+		
+		arch.cleanArchive();
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.FIVE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
+		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
+		assertFalse(gamephase.checkGamePhase(p, arch));
+		
+	}
+	
+	@Test
+	public void testReturnFalse(){
+		Archive arch = new Archive(1);
+		String p = "Phase 10asdf";
+		assertFalse(gamephase.checkGamePhase(p, arch));
+	}
+	
+	@Test
+	public void testGetPhase(){
+		String p = "Phase 1: 2 triplet";
+		String a = gamephase.getPhase(0);
+		assertEquals(p, gamephase.getPhase(0));
 	}
 }

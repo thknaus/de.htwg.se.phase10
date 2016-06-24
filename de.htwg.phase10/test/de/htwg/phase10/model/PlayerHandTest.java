@@ -90,8 +90,36 @@ public class PlayerHandTest extends TestCase{
 		assertFalse(hand.containsCard(exampleCard));
 	}
 
-	
-
+	@Test
+	public void testCheckHandNull(){
+		assertFalse(hand.checkHandNull());
+		hand.cleanHand();
+		assertTrue(hand.checkHandNull());
+	}
+	@Test
+	public void testPushCardHand(){
+		Card c = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
+		assertEquals(c, hand.pushCardH(c));
+		assertEquals(null, hand.pushCardH(c));
+	}
+	@Test
+	public void testGetCurrentPhase(){
+		hand.setPhase("Phase 1");
+		assertEquals("Phase 1", hand.getCurrentPhase());
+	}
+	@Test
+	public void testSetCurrentPhaseAchieved(){
+		hand.setCurrentPhaseAchieved(true);
+		assertEquals(true, hand.getCurrentPhaseAchieved());
+	}
+	@Test
+	public void testToString(){
+		String s = hand.toString();
+		assertEquals(s, hand.toString());
+		hand.cleanHand();
+		String d = hand.toString();
+		assertEquals(d, hand.toString());
+	}
 	/*
 	@Test
 	public void getStackCard(){
