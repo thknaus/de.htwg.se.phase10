@@ -50,12 +50,18 @@ public class Phase10Controller implements IPhase10Controller {
 	public void setNewGame(boolean newgame){
 		this.newgame = newgame;
 	}
+	public boolean checkNewGame(){
+		return newgame;
+	}
+	
+	
 	public void setNewDeck(){
 		deck = new Deck();
 	}
 	public Deck getDeck(){
 		return this.deck;
 	}
+	
 	public void setNewStack(){
 		this.stack = new Stack();
 		this.stack.pushCardS(this.deck.getNewCard());
@@ -64,9 +70,7 @@ public class Phase10Controller implements IPhase10Controller {
 		return this.stack.topCard().toString();
 	}
 	
-	public boolean checkNewGame(){
-		return newgame;
-	}
+
 	public void newPlayer(String name){
 		numberplayer = numberplayer + 1;
 		
@@ -94,6 +98,8 @@ public class Phase10Controller implements IPhase10Controller {
 		this.currentplayer = number;
 	}
 
+	
+	
 	public void newArch(){
 		if(archsize == 0){
 			arrayarch[archsize] = new Archive(1);
