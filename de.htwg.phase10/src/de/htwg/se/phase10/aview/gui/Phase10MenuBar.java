@@ -7,6 +7,10 @@ import java.awt.event.KeyEvent;
 import java.util.Locale;
 
 public class Phase10MenuBar extends JMenuBar implements ActionListener{
+
+	private static final long serialVersionUID = 1L;
+	
+	
 	JMenuBar menuBar;
 	JMenu menu, submenu; 
 	JRadioButtonMenuItem rbMenuItem;
@@ -86,4 +90,5 @@ public class Phase10MenuBar extends JMenuBar implements ActionListener{
 			}
 		}
 	}
+
 }

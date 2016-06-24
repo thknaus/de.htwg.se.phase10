@@ -3,43 +3,37 @@ package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.util.Locale;
 
+public class Phase10gui extends JFrame{
 
-
-public class Phase10gui extends JFrame implements ActionListener{
+	private static final long serialVersionUID = 1L;
 	
-
 	JFrame field;
-	
+	JMenuBar Phase10MenuBar;
 	
 	public Phase10gui(){
 		
-//Hauptfenster bauen.
-
+//MEnuBar einbinden		
+		Phase10MenuBar menuB = new Phase10MenuBar();
+		this.setJMenuBar(menuB.menuBar);
+		
+//Hauptfenster bauen.	
+		JPanel mainPanel = new JPanel();
 		setTitle("Phase10");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setPreferredSize(new Dimension(1024, 840));
-		
-		this.setLayout(new BorderLayout());
-		JButton leftside = new JButton("Left Side");
-		this.add(leftside, BorderLayout.WEST);
-		
-		JButton ground = new JButton("GroundPanel");
-		this.add(ground, BorderLayout.SOUTH); 
-		
-		JButton mainfield = new JButton("MainField");
-		this.add(mainfield, BorderLayout.CENTER);
-		
-		
+		setPreferredSize(new Dimension(1024, 880));
+		//falls wir eine farbe haben wollen
+		//mainPanel.setBackground(Color.BLACK);
 
-		//JPanel p = new JPanel(new BoarderLayout());
+		
+		mainPanel.add(new DeckStackField());
+		mainPanel.add(new Archiv());
+		mainPanel.add(new HandCard());
+		mainPanel.add(new ToolBar());
+		
+		this.setContentPane(mainPanel);
 
-
-
+	
         
 //Hauptfenster ausgeben
 		this.pack();
@@ -47,17 +41,11 @@ public class Phase10gui extends JFrame implements ActionListener{
 	}
 	
 
-	
-//main	
+
+
+	//main	
     public static void main(String[] args) {
+		@SuppressWarnings("unused")
 		JFrame myApp = new Phase10gui();
     }
-
-
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
 }
