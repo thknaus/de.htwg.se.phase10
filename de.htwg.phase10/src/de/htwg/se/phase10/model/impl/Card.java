@@ -25,8 +25,8 @@ public class Card implements ICard{
 	public Rank getRank() {
 		return this.rank;
 	}
-	public int getRankValue(Card c){
-		switch (c.getRank()){
+	public int getRankValue(){
+		switch (this.getRank()){
 			case ONE:
 				return 1;
 			case TWO:

@@ -42,7 +42,7 @@ public class Archive {
 	
 	//clean the Desk
 	public void cleanArchive(){
-		archive = null;
+		archive = new LinkedList<>();
 	}
 	public Card get(int i) {
 		return archive.get(i);
