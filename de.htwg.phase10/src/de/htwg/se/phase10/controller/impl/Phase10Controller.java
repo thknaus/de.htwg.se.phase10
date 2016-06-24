@@ -79,7 +79,7 @@ public class Phase10Controller implements IPhase10Controller {
 		}
 		PlayerHand player = new PlayerHand(this.deck, name);
 		player.setPhase(phase.getPhase(0));
-		playerlist.add(player);	
+		playerlist.add(player);
 	}
 	public PlayerHand getCurrentPlayer(){
 		return playerlist.get(this.currentplayer);
@@ -134,6 +134,7 @@ public class Phase10Controller implements IPhase10Controller {
 		return sb.toString();
 	}
 
+	
 	public void dropCardStack(int number){
 		PlayerHand p = playerlist.get(this.currentplayer);
 		Card[] c = p.getHand();

@@ -7,6 +7,7 @@ import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.impl.Phase10Controller;
 import de.htwg.se.phase10.model.impl.Card;
 import de.htwg.se.phase10.model.impl.Deck;
+import de.htwg.se.phase10.model.impl.PlayerHand;
 import junit.framework.TestCase;
 
 public class Phase10ControllerTest extends TestCase {
@@ -14,6 +15,8 @@ public class Phase10ControllerTest extends TestCase {
 	@Before
 	public void setUp(){
 		con = new Phase10Controller();
+		con.setNewDeck();
+		con.setNewStack();
 	}
 	@Test
 	public void testSetNewGame(){
@@ -28,15 +31,47 @@ public class Phase10ControllerTest extends TestCase {
 	}
 	
 	@Test
-	public void setNewStack(){
-		con.setNewGame(true);
+	public void testSetNewStack(){
 		con.setNewStack();
 		assertEquals(con.getStack(), con.getStack());
 	}
 	@Test
-	public void setNewPlayer(){
+	public void testSetNewPlayer(){
 		con.newPlayer("a");
 		assertEquals("a", con.getCurrentPlayer().getName());
 	}
+	@Test
+	public void testGetCurrentPlayerNumber(){
+		con.newPlayer("a");
+		assertEquals(0, con.getCurrentPlayerNumber());
+	}
+	@Test
+	public void testSetCurrentPlayerNumber(){
+		con.newPlayer("a");
+		con.setCurrentPlayerNumber();
+		con.setCurrenPlayerNumber(0);
+		assertEquals(0, con.getCurrentPlayerNumber());
+		con.newPlayer("b");
+		con.setCurrentPlayerNumber();
+		assertEquals(1, con.getCurrentPlayerNumber());
+	}
+	@Test
+	public void testNewArchive(){
+		assertEquals(" - no archives generated - ", con.getArchive());
+		con.newArch();
+		con.newArch();
+		assertEquals("Archive 1: Cards: Archive 2: Cards: ", con.getArchive());
+	}
+	@Test
+	public void testDropCardToArchive(){
+		con.newArch();
+		con.newPlayer("a");
+		PlayerHand h = con.getCurrentPlayer();
+		Card c = h.getHand()[0];
+		con.setArchive(1);
+		con.dropCardArchive(1);
+		assertEquals("Archive 1: Cards: "+c.getRank() + "_" + c.getColor() +", ",con.getArchive());
+	}
+
 
 }
