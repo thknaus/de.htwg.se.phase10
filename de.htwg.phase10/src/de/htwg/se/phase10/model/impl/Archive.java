@@ -19,6 +19,9 @@ public class Archive {
 	
 	//get the current Archive
 	public Card[] getArchive(){
+		if(archive == null){
+			return null;
+		}
 		Card[] c = new Card[archive.size()];
 		for(int i = 0; i<archive.size(); i++){
 			c[i] = archive.get(i);

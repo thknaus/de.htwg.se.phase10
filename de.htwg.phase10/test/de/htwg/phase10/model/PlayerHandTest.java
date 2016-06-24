@@ -73,17 +73,7 @@ public class PlayerHandTest extends TestCase{
 		assertTrue(hand.containsCard(exampleCard));
 	}
 	
-	@Test
-	public void testGetNewCardH(){
-		testDropCardH();
-		assertNotNull(hand.getNewCardH());
-	}
-	@Test
-	public void testGetNewCardHNull(){
-		hand.getNewCardH();
-		assertNull(hand.getNewCardH());
-	}
-	
+
 	@Test
 	public void testContainsCard(){
 		hand.setCardHand(exampleCard);
