@@ -16,6 +16,7 @@ public class StackTest extends TestCase{
 	private int size;
 	private Card exampleCard = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 	
+	
 	@Before
 	public void setUp(){
 		stack = new Stack();
