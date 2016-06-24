@@ -1,6 +1,7 @@
 package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,9 @@ public class DeckStackField extends JPanel implements ActionListener{
     private JButton stack, deck, narchiv;
     
 	public DeckStackField() {
+		
+		
+		this.setBackground(Color.BLACK);
 		
         deck = new JButton("Deck");
         deck.setPreferredSize(new Dimension(240,100));

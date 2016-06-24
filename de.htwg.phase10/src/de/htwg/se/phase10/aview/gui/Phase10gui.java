@@ -24,7 +24,7 @@ public class Phase10gui extends JFrame{
 		setPreferredSize(new Dimension(1920, 1040));
 		setResizable(false);
 		//falls wir eine farbe haben wollen
-		//mainPanel.setBackground(Color.BLACK);
+		mainPanel.setBackground(Color.BLACK);
 
 		
 		mainPanel.add(new DeckStackField());

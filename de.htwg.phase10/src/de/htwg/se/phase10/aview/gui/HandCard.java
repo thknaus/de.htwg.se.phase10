@@ -1,6 +1,7 @@
 package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,8 @@ public class HandCard extends JPanel implements ActionListener{
 	private JButton card;
     
 	public HandCard() {
+		
+		this.setBackground(Color.BLACK);
 		
 		card = new JButton("Card1");
 		card.setPreferredSize(new Dimension(80,30));
