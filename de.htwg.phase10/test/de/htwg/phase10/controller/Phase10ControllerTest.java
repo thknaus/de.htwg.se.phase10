@@ -72,6 +72,17 @@ public class Phase10ControllerTest extends TestCase {
 		con.dropCardArchive(1);
 		assertEquals("Archive 1: Cards: "+c.getRank() + "_" + c.getColor() +", ",con.getArchive());
 	}
+	
+	@Test
+	public void testDropCardStack(){
+		con.newPlayer("a");
+		PlayerHand h = con.getCurrentPlayer();
+		Card c = h.getHand()[0];
+		con.dropCardStack(1);
+		System.out.println(con.getStack());
+		assertEquals(c.getRank() + " " + c.getColor(),con.getStack());
+		
+	}
 
 
 }
