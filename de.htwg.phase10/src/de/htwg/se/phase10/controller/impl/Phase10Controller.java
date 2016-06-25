@@ -62,6 +62,15 @@ public class Phase10Controller implements IPhase10Controller {
 		return this.deck;
 	}
 	
+	public boolean getCardFromDeck() {
+		Card c = this.deck.getNewCard();
+		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
+			return false; 
+		}
+		return true;
+	}
+	
+	
 	public void setNewStack(){
 		this.stack = new Stack();
 		this.stack.pushCardS(this.deck.getNewCard());
@@ -143,25 +152,6 @@ public class Phase10Controller implements IPhase10Controller {
 			this.roundOver = true;
 		}
 	}
-	public boolean getDropCardStack(){
-		return this.stackdrop;
-	}
-	/*public void moveCard(int number){
-		if(stackdrop == true){
-			stackdrop = false;
-		}else if(archdrop == true){
-			archdrop = false;
-		}
-	}*/
-
-	public boolean getCardFromDeck() {
-		Card c = this.deck.getNewCard();
-		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
-			return false; 
-		}
-		return true;
-	}
-
 	public boolean getCardFromStack() {
 		Card c = this.stack.topCard();
 		this.stack.removeLast();
@@ -170,6 +160,31 @@ public class Phase10Controller implements IPhase10Controller {
 		}
 		return true;
 	}
+	
+	public boolean getDropCardStack(){
+		return this.stackdrop;
+	}
+	public void setDropedCardStack() {
+		if(this.stackdrop == false){
+			this.stackdrop = true;
+		}else{
+			this.stackdrop = false;
+		}
+	}
+	public boolean checkStackTop(){
+		if(this.stack.topCard().getRank() == Card.Rank.SKIP){
+			setCurrentPlayerNumber();
+			return true;
+		}
+		return false;
+	}
+	/*public void moveCard(int number){
+		if(stackdrop == true){
+			stackdrop = false;
+		}else if(archdrop == true){
+			archdrop = false;
+		}
+	}*/
 
 	public String getHand(int number) {
 		PlayerHand h = playerlist.get(this.currentplayer);
@@ -181,14 +196,7 @@ public class Phase10Controller implements IPhase10Controller {
 		return h.getCurrentPhase();
 	}
 
-	public void setDropedCardStack() {
-		if(this.stackdrop == false){
-			this.stackdrop = true;
-		}else{
-			this.stackdrop = false;
-		}
-			
-	}
+
 	public void setPulledCard(){
 		if(this.pulledc == false){
 			this.pulledc = true;
@@ -223,35 +231,29 @@ public class Phase10Controller implements IPhase10Controller {
 	public void setNextPhase(){
 		PlayerHand p = playerlist.get(this.currentplayer);
 		String pnumber = p.getCurrentPhase().toString();
-		if(pnumber.startsWith("Phase 1")){
+		if(pnumber.startsWith("Phase 1: 2 triplet")){
 			p.setPhase(phase.getPhase(1));
-		}else if(pnumber.startsWith("Phase 2")){
+		}else if(pnumber.startsWith("Phase 2: 1 triplet + 1 row of four")){
 			p.setPhase(phase.getPhase(2));
-		}else if (pnumber.startsWith("Phase 3")){
+		}else if (pnumber.startsWith("Phase 3: 1 quadruplet + 1 row of four")){
 			p.setPhase(phase.getPhase(3));
-		}else if (pnumber.startsWith("Phase 4")){
+		}else if (pnumber.startsWith("Phase 4: 1 row of seven")){
 			p.setPhase(phase.getPhase(4));
-		}else if (pnumber.startsWith("Phase 5")){
+		}else if (pnumber.startsWith("Phase 5: 1 row of eight")){
 			p.setPhase(phase.getPhase(5));
-		}else if (pnumber.startsWith("Phase 6")){
+		}else if (pnumber.startsWith("Phase 6: 1 row of nine")){
 			p.setPhase(phase.getPhase(6));
-		}else if (pnumber.startsWith("Phase 7")){
+		}else if (pnumber.startsWith("Phase 7: 2 quadruplet")){
 			p.setPhase(phase.getPhase(7));
-		}else if (pnumber.startsWith("Phase 8")){
+		}else if (pnumber.startsWith("Phase 8: 7 cards of the same color")){
 			p.setPhase(phase.getPhase(8));
-		}else if (pnumber.startsWith("Phase 9")){
+		}else if (pnumber.startsWith("Phase 9: 1 quintuplet + 1 twin")){
 			p.setPhase(phase.getPhase(9));
-		}else if (pnumber.startsWith("Phase 10")){
-			p.setPhase(phase.getPhase(10));
+		}else if (pnumber.startsWith("Phase 10: 1 quintuplet + 1 triplet")){
+			p.setPhase(phase.getPhase(0));
 		}
 	}
-	public boolean checkStackTop(){
-		if(this.stack.topCard().getRank() == Card.Rank.SKIP){
-			setCurrentPlayerNumber();
-			return true;
-		}
-		return false;
-	}
+
 	public boolean getRoundOver(){
 		return this.roundOver;
 	}

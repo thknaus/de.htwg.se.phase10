@@ -19,7 +19,7 @@ public class GamePhase {
 
 	public boolean checkGamePhase(String p, Archive arch) {
 		Archive archive = arch;
-		if (p.toString().startsWith("Phase 1") && p.length() == 7) {
+		if (p.toString().startsWith("Phase 1: 2 triplet")) {
 			Card c = archive.get(0);
 			if (archive.size() != 3){
 				return false;
@@ -30,7 +30,7 @@ public class GamePhase {
 					return false;
 				}
 			}
-		} else if (p.toString().startsWith("Phase 2")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 2: 1 triplet + 1 row of four")) {
 			Card c = archive.get(0);
 			int a = archive.size();
 			if(archive.size() != 3 && archive.size() != 4){
@@ -52,7 +52,7 @@ public class GamePhase {
 				}
 			}
 			return true;
-		} else if (p.toString().startsWith("Phase 3")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 3: 1 quadruplet + 1 row of four")) {
 			Card c = archive.get(0);
 			if (archive.size() != 4) {
 				return false;
@@ -73,7 +73,7 @@ public class GamePhase {
 					}
 				}
 			}
-		} else if (p.toString().startsWith("Phase 4")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 4: 1 row of seven")) {
 			Card c = archive.get(0);
 			if (archive.size() != 7) {
 				return false;
@@ -84,7 +84,7 @@ public class GamePhase {
 					return false;
 				}
 			}
-		} else if (p.toString().startsWith("Phase 5")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 5: 1 row of eight")) {
 			Card c = archive.get(0);
 			if (archive.size() != 8) {
 				return false;
@@ -95,7 +95,7 @@ public class GamePhase {
 					return false;
 				}
 			}
-		} else if (p.toString().startsWith("Phase 6")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 6: 1 row of nine")) {
 			Card c = archive.get(0);
 			if (archive.size() != 9) {
 				return false;
@@ -106,7 +106,7 @@ public class GamePhase {
 					return false;
 				}
 			}
-		} else if (p.toString().startsWith("Phase 7")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 7: 2 quadruplet")) {
 			Card c = archive.get(0);
 			if (archive.size() != 8) {
 				return false;
@@ -125,7 +125,7 @@ public class GamePhase {
 					}
 				}
 			}
-		} else if (p.toString().startsWith("Phase 8")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 8: 7 cards of the same color")) {
 			Card c = archive.get(0);
 			if (archive.size() != 7) {
 				return false;
@@ -135,7 +135,7 @@ public class GamePhase {
 					return false;
 				}
 			}
-		} else if (p.toString().startsWith("Phase 9")&& p.length() == 7) {
+		} else if (p.toString().startsWith("Phase 9: 1 quintuplet + 1 twin")) {
 			Card c = archive.get(0);
 			if (archive.size() != 7) {
 				return false;
@@ -154,7 +154,7 @@ public class GamePhase {
 					}
 				}
 			}
-		} else if (p.toString().startsWith("Phase 10")&& p.length() == 8) {
+		} else if (p.toString().startsWith("Phase 10: 1 quintuplet + 1 triplet")) {
 			Card c = archive.get(0);
 			if (archive.size() != 8) {
 				return false;

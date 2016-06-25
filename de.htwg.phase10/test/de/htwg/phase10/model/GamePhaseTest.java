@@ -19,7 +19,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase1(){
 		Archive arch = new Archive(1);
-		String p = "Phase 1";
+		String p = "Phase 1: 2 triplet";
 		
 		Card c1 = new Card(Card.Rank.EIGHT, Card.Color.GREEN, 0);
 		arch.putCardToArchive(c1);
@@ -52,7 +52,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase2(){
 		Archive arch = new Archive(1);
-		String p = "Phase 2";
+		String p = "Phase 2: 1 triplet + 1 row of four";
 		
 		Card c1 = new Card(Card.Rank.EIGHT, Card.Color.GREEN, 0);
 		arch.putCardToArchive(c1);
@@ -106,7 +106,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase3(){
 		Archive arch = new Archive(1);
-		String p = "Phase 3";
+		String p = "Phase 3: 1 quadruplet + 1 row of four";
 		
 		Card c1 = new Card(Card.Rank.EIGHT, Card.Color.GREEN, 0);
 		arch.putCardToArchive(c1);
@@ -161,7 +161,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase4(){
 		Archive arch = new Archive(1);
-		String p = "Phase 4";
+		String p = "Phase 4: 1 row of seven";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
@@ -206,7 +206,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase5(){
 		Archive arch = new Archive(1);
-		String p = "Phase 5";
+		String p = "Phase 5: 1 row of eight";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
@@ -255,7 +255,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase6(){
 		Archive arch = new Archive(1);
-		String p = "Phase 6";
+		String p = "Phase 6: 1 row of nine";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
@@ -306,7 +306,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase7(){
 		Archive arch = new Archive(1);
-		String p = "Phase 7";
+		String p = "Phase 7: 2 quadruplet";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
@@ -373,7 +373,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase8(){
 		Archive arch = new Archive(1);
-		String p = "Phase 8";
+		String p = "Phase 8: 7 cards of the same color";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
@@ -418,7 +418,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase9(){
 		Archive arch = new Archive(1);
-		String p = "Phase 9";
+		String p = "Phase 9: 1 quintuplet + 1 twin";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
@@ -490,7 +490,7 @@ public class GamePhaseTest extends TestCase{
 	@Test
 	public void testCheckGamePhase10(){
 		Archive arch = new Archive(1);
-		String p = "Phase 10";
+		String p = "Phase 10: 1 quintuplet + 1 triplet";
 		
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
