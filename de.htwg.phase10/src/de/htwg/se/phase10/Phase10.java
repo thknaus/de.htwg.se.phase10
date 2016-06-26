@@ -10,6 +10,7 @@ import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.impl.Phase10Controller;
 import de.htwg.se.phase10.model.impl.Deck;
 import de.htwg.se.phase10.aview.tui.*;
+import de.htwg.se.phase10.aview.gui.*;
 
 public class Phase10 {
 
@@ -22,7 +23,10 @@ public class Phase10 {
 		controller = injector.getInstance(IPhase10Controller.class);
 		
 		TextUI tui = new TextUI(controller);
+		
 		Scanner input = new Scanner(System.in);
+		
+		//Phase10gui gui = new Phase10gui(controller);
 		
 		boolean checkinput = true;
 		

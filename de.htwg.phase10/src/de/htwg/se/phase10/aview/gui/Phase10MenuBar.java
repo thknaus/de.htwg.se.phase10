@@ -28,58 +28,8 @@ public class Phase10MenuBar extends JMenuBar implements ActionListener{
 		menu = new JMenu("Menu");
 		menu.setMnemonic(KeyEvent.VK_M);
 		menuBar.add(menu);
-					
-					
-		menu.addSeparator();
-		submenu = new JMenu("New Game");
-		submenu.setMnemonic(KeyEvent.VK_S);
-		submenu.addActionListener(this);
-		menu.add(submenu);
-			 
-		JMenuItem numberofplayer = new JMenuItem("choose number of player");
-		submenu.add(numberofplayer);
 
-		menu.addSeparator();
-		
-		
-		ButtonGroup group = new ButtonGroup();			     
-			        
-		rbMenuItem2 = new JRadioButtonMenuItem("2 Players");
-		rbMenuItem2.setSelected(true);
-		rbMenuItem2.setMnemonic(KeyEvent.VK_3);
-		group.add(rbMenuItem2);
-		rbMenuItem2.addActionListener(this);
-		submenu.add(rbMenuItem2);
-			        
-		rbMenuItem3 = new JRadioButtonMenuItem("3 Players");
-		rbMenuItem3.setSelected(true);
-		rbMenuItem3.setMnemonic(KeyEvent.VK_4);
-		group.add(rbMenuItem3);
-		rbMenuItem3.addActionListener(this);
-		submenu.add(rbMenuItem3);
-			        
-		rbMenuItem4 = new JRadioButtonMenuItem("4 Players");
-		rbMenuItem4.setSelected(false);
-		rbMenuItem4.setMnemonic(KeyEvent.VK_5);
-		group.add(rbMenuItem4);
-		rbMenuItem4.addActionListener(this);
-		submenu.add(rbMenuItem4);
-		
-		rbMenuItem5 = new JRadioButtonMenuItem("5 Players");
-		rbMenuItem5.setSelected(true);
-		rbMenuItem5.setMnemonic(KeyEvent.VK_2);
-		group.add(rbMenuItem5);
-		rbMenuItem5.addActionListener(this);
-		submenu.add(rbMenuItem5);
-			        
-		rbMenuItem6 = new JRadioButtonMenuItem("6 Players");
-		rbMenuItem6.setSelected(false);
-		rbMenuItem6.setMnemonic(KeyEvent.VK_6);
-		group.add(rbMenuItem6);
-		rbMenuItem6.addActionListener(this);
-		submenu.add(rbMenuItem6);
-		
-		start = new JMenuItem("start");
+		start = new JMenuItem("start new game");
 		start.setMnemonic(KeyEvent.VK_Q);
 		start.addActionListener(this);
 		menu.add(start);
@@ -102,8 +52,11 @@ public class Phase10MenuBar extends JMenuBar implements ActionListener{
 				return;
 			}
 		}
-		if(source == rbMenuItem2){
-			controller.checkNewGame();
+		
+		
+		if(source == start){
+			controller.setNewGame(true);
+			NofPlayer nop= new NofPlayer();
 		}
 		if(source == rbMenuItem3){
 			

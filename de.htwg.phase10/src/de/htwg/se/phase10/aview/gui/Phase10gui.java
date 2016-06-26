@@ -3,6 +3,8 @@ package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
 
+import de.htwg.se.phase10.controller.IPhase10Controller;
+
 import java.awt.*;
 
 public class Phase10gui extends JFrame{
@@ -13,8 +15,10 @@ public class Phase10gui extends JFrame{
 	JMenuBar Phase10MenuBar;
 	Color starbucks = new Color(0x00592D);
 	
+	public Phase10gui(IPhase10Controller controller){
+	
+	}
 	public Phase10gui(){
-		
 //MEnuBar einbinden		
 		Phase10MenuBar menuB = new Phase10MenuBar();
 		this.setJMenuBar(menuB.menuBar);
