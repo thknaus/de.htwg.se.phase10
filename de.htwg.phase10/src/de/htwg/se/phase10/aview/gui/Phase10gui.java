@@ -2,6 +2,7 @@ package de.htwg.se.phase10.aview.gui;
 
 
 import javax.swing.*;
+
 import java.awt.*;
 
 public class Phase10gui extends JFrame{
@@ -10,6 +11,7 @@ public class Phase10gui extends JFrame{
 	
 	JFrame field;
 	JMenuBar Phase10MenuBar;
+	Color starbucks = new Color(0x00592D);
 	
 	public Phase10gui(){
 		
@@ -24,7 +26,7 @@ public class Phase10gui extends JFrame{
 		setPreferredSize(new Dimension(1920, 1040));
 		setResizable(false);
 		//falls wir eine farbe haben wollen
-		mainPanel.setBackground(Color.BLACK);
+		mainPanel.setBackground(starbucks);
 
 		
 		mainPanel.add(new DeckStackField());
