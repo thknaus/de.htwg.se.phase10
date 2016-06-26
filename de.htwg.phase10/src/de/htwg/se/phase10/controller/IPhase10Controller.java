@@ -2,12 +2,13 @@ package de.htwg.se.phase10.controller;
 
 import de.htwg.se.phase10.model.impl.Deck;
 import de.htwg.se.phase10.model.impl.PlayerHand;
+import de.htwg.se.phase10.util.observer.IObservable;
 
 /**
  * @author Thomas
  *
  */
-public interface IPhase10Controller {
+public interface IPhase10Controller extends IObservable {
 	/**
 	 * Sets a boolean to check if a new game has been started.
 	 * @param newgame set true if a new game will be started

@@ -2,7 +2,6 @@ package de.htwg.se.phase10.controller.impl;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Observable;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.IPhase10Controller;
@@ -15,8 +14,10 @@ import de.htwg.se.phase10.model.impl.Deck;
 import de.htwg.se.phase10.model.impl.GamePhase;
 import de.htwg.se.phase10.model.impl.PlayerHand;
 import de.htwg.se.phase10.model.impl.Stack;
+import de.htwg.se.phase10.util.observer.Event;
+import de.htwg.se.phase10.util.observer.IObserver;import de.htwg.se.phase10.util.observer.Observable;
 
-public class Phase10Controller implements IPhase10Controller {
+public class Phase10Controller extends Observable implements IPhase10Controller {
 	private TextUI tui;
 	private PlayerHand hand;
 
@@ -273,6 +274,5 @@ public class Phase10Controller implements IPhase10Controller {
 		stack.backToDeckS(this.deck);
 		stack.pushCardS(deck.getNewCard());
 	}
-
 }
 

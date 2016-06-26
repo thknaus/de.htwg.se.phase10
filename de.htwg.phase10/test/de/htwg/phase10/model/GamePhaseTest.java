@@ -29,25 +29,43 @@ public class GamePhaseTest extends TestCase{
 		
 		Card c2 = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 		Card c3 = new Card(Card.Rank.EIGHT, Card.Color.RED, 0);
-
+		Card c4 = new Card(Card.Rank.ELEVEN, Card.Color.BLUE,0);
+		Card c5 = new Card(Card.Rank.ELEVEN, Card.Color.YELLOW,0);
+		Card c6 = new Card(Card.Rank.ELEVEN, Card.Color.GREEN,0);
 		
 		arch.putCardToArchive(c2);
 		arch.putCardToArchive(c3);
-		
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(c6);
 		assertTrue(gamephase.checkGamePhase(p, arch));
 		
 		arch.cleanArchive();
 		arch.putCardToArchive(c1);
-		arch.putCardToArchive(c2);
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 0));
+		arch.putCardToArchive(c3);
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
 		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 0));
 		assertTrue(gamephase.checkGamePhase(p, arch));
 		
 		arch.cleanArchive();
 		arch.putCardToArchive(c1);
 		arch.putCardToArchive(c2);
-		arch.putCardToArchive(new Card(Card.Rank.ELEVEN, Card.Color.YELLOW, 0));
+		arch.putCardToArchive(c3);
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.YELLOW, 0));
 		assertFalse(gamephase.checkGamePhase(p, arch));
 		
+		arch.cleanArchive();
+		arch.putCardToArchive(c1);
+		arch.putCardToArchive(c2);
+		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.YELLOW, 0));
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(c6);
+		assertFalse(gamephase.checkGamePhase(p, arch));
 	}
 	@Test
 	public void testCheckGamePhase2(){
@@ -62,10 +80,18 @@ public class GamePhaseTest extends TestCase{
 		
 		Card c2 = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 		Card c3 = new Card(Card.Rank.EIGHT, Card.Color.RED, 0);
+		Card c4 = new Card(Card.Rank.ONE, Card.Color.BLUE, 0);
+		Card c5 = new Card(Card.Rank.TWO, Card.Color.BLUE, 0);
+		Card c6 = new Card(Card.Rank.THREE, Card.Color.BLUE, 0);
+		Card c7 = new Card(Card.Rank.FOUR, Card.Color.BLUE, 0);
 
 		
 		arch.putCardToArchive(c2);
 		arch.putCardToArchive(c3);
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(c6);
+		arch.putCardToArchive(c7);
 		int a = arch.size();
 		assertTrue(gamephase.checkGamePhase(p, arch));
 		
@@ -73,34 +99,31 @@ public class GamePhaseTest extends TestCase{
 		arch.putCardToArchive(c1);
 		arch.putCardToArchive(c2);
 		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 0));
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 0));
+		arch.putCardToArchive(c7);
 		assertTrue(gamephase.checkGamePhase(p, arch));
-		
-		arch.cleanArchive();
-		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.FOUR, Card.Color.BLUE, 0));
-		assertTrue(gamephase.checkGamePhase(p, arch));
-		
+			
 		arch.cleanArchive();
 		arch.putCardToArchive(c1);
 		arch.putCardToArchive(c2);
 		arch.putCardToArchive(new Card(Card.Rank.ELEVEN, Card.Color.YELLOW, 0));
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(c6);
+		arch.putCardToArchive(c7);
 		assertFalse(gamephase.checkGamePhase(p, arch));
 		
 		arch.cleanArchive();
+		arch.putCardToArchive(c1);
+		arch.putCardToArchive(c2);
+		arch.putCardToArchive(c3);
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.FIVE, Card.Color.BLUE, 0));
 		assertFalse(gamephase.checkGamePhase(p, arch));
-		
-		arch.cleanArchive();
-		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
-		assertTrue(gamephase.checkGamePhase(p, arch));
 	}
 	
 	@Test
@@ -116,47 +139,55 @@ public class GamePhaseTest extends TestCase{
 		
 		Card c2 = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
 		Card c3 = new Card(Card.Rank.EIGHT, Card.Color.RED, 0);
-		Card c4 = new Card(Card.Rank.EIGHT, Card.Color.YELLOW, 0);
+		Card c4 = new Card(Card.Rank.EIGHT, Card.Color.RED, 0);
+		Card c5 = new Card(Card.Rank.ONE, Card.Color.BLUE, 0);
+		Card c6 = new Card(Card.Rank.TWO, Card.Color.BLUE, 0);
+		Card c7 = new Card(Card.Rank.THREE, Card.Color.BLUE, 0);
+		Card c8 = new Card(Card.Rank.FOUR, Card.Color.BLUE, 0);
+
 		
 		arch.putCardToArchive(c2);
 		arch.putCardToArchive(c3);
 		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(c6);
+		arch.putCardToArchive(c7);
+		arch.putCardToArchive(c8);
+		int a = arch.size();
 		assertTrue(gamephase.checkGamePhase(p, arch));
 		
 		arch.cleanArchive();
 		arch.putCardToArchive(c1);
 		arch.putCardToArchive(c2);
-		arch.putCardToArchive(c3);
 		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 0));
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 0));
+		arch.putCardToArchive(c7);
+		arch.putCardToArchive(c8);
 		assertTrue(gamephase.checkGamePhase(p, arch));
-		
-		arch.cleanArchive();
-		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.FOUR, Card.Color.BLUE, 0));
-		assertTrue(gamephase.checkGamePhase(p, arch));
-		
+			
 		arch.cleanArchive();
 		arch.putCardToArchive(c1);
 		arch.putCardToArchive(c2);
-		arch.putCardToArchive(c3);
 		arch.putCardToArchive(new Card(Card.Rank.ELEVEN, Card.Color.YELLOW, 0));
+		arch.putCardToArchive(c4);
+		arch.putCardToArchive(c5);
+		arch.putCardToArchive(c6);
+		arch.putCardToArchive(c7);
+		arch.putCardToArchive(c8);
 		assertFalse(gamephase.checkGamePhase(p, arch));
 		
 		arch.cleanArchive();
+		arch.putCardToArchive(c1);
+		arch.putCardToArchive(c2);
+		arch.putCardToArchive(c3);
+		arch.putCardToArchive(c4);
 		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
 		arch.putCardToArchive(new Card(Card.Rank.FIVE, Card.Color.BLUE, 0));
 		assertFalse(gamephase.checkGamePhase(p, arch));
-		
-		arch.cleanArchive();
-		arch.putCardToArchive(new Card(Card.Rank.ONE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.TWO, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.THREE, Card.Color.BLUE, 0));
-		arch.putCardToArchive(new Card(Card.Rank.JOKER, Card.Color.WHITE, 1));
-		assertTrue(gamephase.checkGamePhase(p, arch));
 	}
 	@Test
 	public void testCheckGamePhase4(){
