@@ -121,13 +121,45 @@ public interface IPhase10Controller extends IObservable {
 	 */
 	boolean pulledCard();
 	
+	/**
+	 * set Check Phase true or false;
+	 */
 	void setCheckPhase();
+	
+	/**
+	 * get value of check phase
+	 * @return true if check phase is true, false if false
+	 */
 	boolean getCheckPhase();
+	/**
+	 * Check if Archive at index a is equal to the current players phase
+	 * @param a - index of the archive
+	 * @return true if phase achieved, false if not
+	 */
 	boolean checkPhase(int a);
+	/**
+	 * set players current phase to the next phase
+	 */
 	void setNextPhase();
+	/**
+	 * change currentplayer by number
+	 * @param i - number of the new player
+	 */
 	void setCurrenPlayerNumber(int i);
+	/**
+	 * check if the top card on the stack is equals skip, if so set next player
+	 * @return true if top card equals skip card, else return false
+	 */
 	boolean checkStackTop();
+	/**
+	 * get round over
+	 * @return true if round is over, false if round is not over
+	 */
 	boolean getRoundOver();
+	
+	/**
+	 * start a new round if round over.
+	 */
 	void startNewRound();
 
 }

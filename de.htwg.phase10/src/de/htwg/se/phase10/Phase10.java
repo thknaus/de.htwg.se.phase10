@@ -26,8 +26,6 @@ public class Phase10 {
 		
 		Scanner input = new Scanner(System.in);
 		
-		//Phase10gui gui = new Phase10gui(controller);
-		
 		boolean checkinput = true;
 		
 		
