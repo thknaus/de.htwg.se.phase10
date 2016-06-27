@@ -13,16 +13,18 @@ import java.util.Locale;
 public class Phase10MenuBar extends JMenuBar implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
-	protected IPhase10Controller controller;
+	private IPhase10Controller controller;
 	
 	JMenuBar menuBar;
 	JMenu menu, submenu; 
 	JRadioButtonMenuItem rbMenuItem6, rbMenuItem5, rbMenuItem4;
 	JRadioButtonMenuItem rbMenuItem3, rbMenuItem2, rbMenuItem1;
 	JMenuItem quit, start;
-	
-	public Phase10MenuBar(){
+	Phase10gui gui;
+	public Phase10MenuBar(Phase10gui g, IPhase10Controller con){
 	//Build Menu menu.
+		this.controller = con;
+		this.gui = g;
 		menuBar = new JMenuBar();
 		
 		menu = new JMenu("Menu");
@@ -56,7 +58,7 @@ public class Phase10MenuBar extends JMenuBar implements ActionListener{
 		
 		if(source == start){
 			controller.setNewGame(true);
-			NofPlayer nop= new NofPlayer();
+			gui.setNofPlayer();
 		}
 		if(source == rbMenuItem3){
 			

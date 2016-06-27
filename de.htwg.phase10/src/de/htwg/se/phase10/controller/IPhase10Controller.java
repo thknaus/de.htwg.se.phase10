@@ -17,6 +17,15 @@ public interface IPhase10Controller extends IObservable {
 	/**
 	 * Generates a new Deck for a new Game.
 	 */
+	boolean checkNewGame();
+	/**
+	 * Quit game
+	 */
+	void quitGame();
+	/**
+	 * Generates a new Player.
+	 * @param name = New players name
+	 */
 	void setNewDeck();
 	/**
 	 * Gets the current Deck.
@@ -35,11 +44,6 @@ public interface IPhase10Controller extends IObservable {
 	/**
 	 * Checks if a new game has been started.
 	 * @return true if new game, false if a game is running.
-	 */
-	boolean checkNewGame();
-	/**
-	 * Generates a new Player.
-	 * @param name = New players name
 	 */
 	void newPlayer(String name);
 	/**

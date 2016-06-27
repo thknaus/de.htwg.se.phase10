@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
+import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.model.IDeck;
 import de.htwg.se.phase10.model.IPlayerHand;
@@ -43,10 +44,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	private boolean checkArchive = false;
 	
 	private boolean roundOver = false;
-	
-	public Phase10Controller(){
-		
-	}
+
 	
 	public void setNewGame(boolean newgame){
 		this.newgame = newgame;
@@ -55,9 +53,12 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		return newgame;
 	}
 	
-	
+	public void quitGame(){
+		notifyObservers(new ExitGameEvent());
+	}
 	public void setNewDeck(){
 		deck = new Deck();
+		notifyObservers();
 	}
 	public Deck getDeck(){
 		return this.deck;

@@ -2,16 +2,19 @@ package de.htwg.se.phase10.aview.tui;
 
 import java.util.Scanner;
 
+import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.GamePhase;
 import de.htwg.se.phase10.model.impl.PlayerHand;
 import de.htwg.se.phase10.model.impl.Stack;
+import de.htwg.se.phase10.util.observer.Event;
+import de.htwg.se.phase10.util.observer.IObserver;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class TextUI {
+public class TextUI implements IObserver{
 	
 	private static final Logger LOGGER = LogManager.getLogger(TextUI.class.getName());
 	private static Scanner scanner;
@@ -22,10 +25,11 @@ public class TextUI {
 	private String firstplayer;
 	
 	private boolean startgame = false;
-	
+	private boolean quitgame = false;
 	
 	public TextUI(IPhase10Controller controller2) {
 		controller = controller2;
+		controller.addObserver(this);
 		printMenu();
 	}
 
@@ -114,6 +118,9 @@ public class TextUI {
 	}
 
 	public boolean charInput(String input) {
+		if(this.quitgame){
+			return false;
+		}
 		char c = input.charAt(0);
 		int number = 0;
 		if(input.length() > 1){
@@ -211,5 +218,14 @@ public class TextUI {
 
 	public void printAllPhase10(GamePhase pall) {
 		LOGGER.info(" ");
+	}
+
+	@Override
+	public void update(Event e) {
+		if(e instanceof ExitGameEvent){
+			printQuitGame();
+		}
+		this.quitgame = true;
+		
 	}
 }

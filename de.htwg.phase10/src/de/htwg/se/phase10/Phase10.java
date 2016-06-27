@@ -17,12 +17,31 @@ public class Phase10 {
 	
 	protected static IPhase10Controller controller;
 	private static Phase10 instance = null;
-	
-	public static void main(String[] args) {
+	private TextUI tui;
+	private Phase10gui gui;
+	private Phase10(){
 		Injector injector = Guice.createInjector(new Phase10Module());
 		controller = injector.getInstance(IPhase10Controller.class);
+		tui = new TextUI(controller);
+		gui = new Phase10gui(controller);
+	}
+	public static Phase10 getInstance(){
+		if(instance == null){
+			instance = new Phase10();
+		}
+		return instance;
 		
-		TextUI tui = new TextUI(controller);
+	}
+	
+	public TextUI getTui(){
+		return tui;
+	}
+	public Phase10gui getGui(){
+		return gui;
+	}
+	
+	public static void main(String[] args) {
+		Phase10 game = Phase10.getInstance();
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -30,7 +49,7 @@ public class Phase10 {
 		
 		
 		while(checkinput){
-			checkinput = tui.inputLine(input.nextLine());
+			checkinput = game.getTui().inputLine(input.nextLine());
 		}
 		
 		
