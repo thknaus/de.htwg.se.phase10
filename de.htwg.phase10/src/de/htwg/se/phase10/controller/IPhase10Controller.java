@@ -166,4 +166,8 @@ public interface IPhase10Controller extends IObservable {
 	 */
 	void startNewRound();
 
+	/**
+	 * @return status of the game
+	 */
+	GameStatus getStatus();
 }

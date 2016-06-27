@@ -25,7 +25,7 @@ public class TextUI implements IObserver{
 	private String firstplayer;
 	
 	private boolean startgame = false;
-	private boolean quitgame = false;
+	private boolean quit;
 	
 	public TextUI(IPhase10Controller controller2) {
 		controller = controller2;
@@ -59,7 +59,7 @@ public class TextUI implements IObserver{
 		if(controller.checkNewGame() && numberp == 1){
 			this.numberp = Integer.parseInt(input);
 			numberpcount++;
-			LOGGER.info("Player 1 name:");
+			LOGGER.info("ADDPLAYER - Player 1 name:");
 			return true;
 		}else if(controller.checkNewGame() && numberpcount < numberp){
 			numberpcount++;
@@ -113,12 +113,12 @@ public class TextUI implements IObserver{
 	public void printNewPlayer(String name) {
 		controller.newPlayer(name);
 		if(numberpcount <= numberp){
-			LOGGER.info("Player " + numberpcount + " name:");
+			LOGGER.info(controller.getStatus()+ "-" + " Player " + numberpcount + " name:");
 		}
 	}
 
 	public boolean charInput(String input) {
-		if(this.quitgame){
+		if(this.quit){
 			return false;
 		}
 		char c = input.charAt(0);
@@ -159,7 +159,7 @@ public class TextUI implements IObserver{
 			}
 			if(controller.getCheckPhase()){
 				if(controller.checkPhase(number)){
-					LOGGER.info("Phase achieved! Get rid of all your cards.");
+					LOGGER.info(controller.getStatus() + "-" + " Phase achieved! Get rid of all your cards.");
 					controller.setCheckPhase();
 					controller.setNextPhase();
 				}else{
@@ -177,7 +177,7 @@ public class TextUI implements IObserver{
 				break;
 			}
 			controller.newArch();
-			LOGGER.info("Choose card: ");
+			LOGGER.info(controller.getStatus() + "-" + " Choose card: ");
 			break;
 		// choose card for archive
 		case 'c':
@@ -191,7 +191,7 @@ public class TextUI implements IObserver{
 				}
 				if(controller.getRoundOver()){
 					controller.startNewRound();
-					LOGGER.info("Next ROUND!!!");
+					LOGGER.info(controller.getStatus() + "-" + " Next ROUND!!!");
 				}
 				
 				break;
@@ -203,7 +203,7 @@ public class TextUI implements IObserver{
 			LOGGER.info("Select an Archive to check");
 			break;
 		case 'q':
-			printQuitGame();
+			controller.quitGame();
 			return false;
 		}
 		printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
@@ -213,7 +213,7 @@ public class TextUI implements IObserver{
 		LOGGER.info("You have to pull a Card from Deck or Stack first.");
 	}
 	public void printQuitGame() {
-		LOGGER.info("Game closed...");
+		LOGGER.info(controller.getStatus() +"-"+ " Game closed...");
 	}
 
 	public void printAllPhase10(GamePhase pall) {
@@ -223,9 +223,8 @@ public class TextUI implements IObserver{
 	@Override
 	public void update(Event e) {
 		if(e instanceof ExitGameEvent){
+			this.quit = true;
 			printQuitGame();
 		}
-		this.quitgame = true;
-		
 	}
 }

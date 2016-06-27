@@ -3,7 +3,6 @@ package de.htwg.se.phase10.util.observer;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Observable implements IObservable{
 	
 	private List<IObserver> subscribers = new ArrayList<IObserver>(2);

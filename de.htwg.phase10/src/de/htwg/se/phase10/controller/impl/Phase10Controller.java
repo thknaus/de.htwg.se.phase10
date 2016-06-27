@@ -5,6 +5,7 @@ import java.util.List;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.ExitGameEvent;
+import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.model.IDeck;
 import de.htwg.se.phase10.model.IPlayerHand;
@@ -45,9 +46,11 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	
 	private boolean roundOver = false;
 
+	private GameStatus status = GameStatus.WELCOME;
 	
 	public void setNewGame(boolean newgame){
 		this.newgame = newgame;
+		status = GameStatus.NEWGAME;
 	}
 	public boolean checkNewGame(){
 		return newgame;
@@ -55,9 +58,11 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	
 	public void quitGame(){
 		notifyObservers(new ExitGameEvent());
+		status = GameStatus.EXITGAME;
 	}
 	public void setNewDeck(){
 		deck = new Deck();
+		status = GameStatus.NEWDECK;
 		notifyObservers();
 	}
 	public Deck getDeck(){
@@ -76,6 +81,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	public void setNewStack(){
 		this.stack = new Stack();
 		this.stack.pushCardS(this.deck.getNewCard());
+		status = GameStatus.NEWSTACK;
 	}
 	public String getStack(){
 		return this.stack.topCard().toString();
@@ -91,6 +97,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		PlayerHand player = new PlayerHand(this.deck, name);
 		player.setPhase(phase.getPhase(0));
 		playerlist.add(player);
+		status = GameStatus.ADDPLAYER;
 	}
 	public PlayerHand getCurrentPlayer(){
 		return playerlist.get(this.currentplayer);
@@ -119,6 +126,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		}
 		archsize++;
 		arrayarch[archsize] = new Archive(archsize);
+		status = GameStatus.NEWARCHIVE;
 	}
 
 	public void dropCardArchive(int number){
@@ -257,6 +265,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	}
 
 	public boolean getRoundOver(){
+		status = GameStatus.ROUNDOVER;
 		return this.roundOver;
 	}
 	public void startNewRound(){
@@ -274,6 +283,11 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		this.archsize = 0;
 		stack.backToDeckS(this.deck);
 		stack.pushCardS(deck.getNewCard());
+		status = GameStatus.NEXTROUND;
+	}
+	@Override
+	public GameStatus getStatus() {
+		return this.status;
 	}
 }
 
