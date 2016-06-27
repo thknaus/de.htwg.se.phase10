@@ -48,7 +48,6 @@ public class Phase10gui extends JFrame implements IObserver{
 	}
 	public void setNofPlayer(){
 		mainPanel.add(new NofPlayer());
-		this.pack();
 	}
 
 	@Override
