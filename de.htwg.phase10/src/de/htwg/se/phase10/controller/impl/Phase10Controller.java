@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
+import de.htwg.se.phase10.controller.AddPlayer;
 import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
@@ -106,7 +107,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		playerlist.add(player);
 		status = GameStatus.ADDPLAYER;
 		this.name = name;
-		notifyObservers();
+		notifyObservers(new AddPlayer());
 	}
 	public int getNumberP(){
 		return this.numberplayer;

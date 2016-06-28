@@ -3,6 +3,7 @@ package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
 
+import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.util.observer.Event;
 import de.htwg.se.phase10.util.observer.IObserver;
@@ -27,6 +28,7 @@ public class Phase10gui extends JFrame implements IObserver{
 	public Phase10gui(IPhase10Controller con){
 //MEnuBar einbinden	
 		this.controller = con;
+		this.controller.addObserver(this);
 		Phase10MenuBar menuB = new Phase10MenuBar(this, controller);
 		this.setJMenuBar(menuB.menuBar);
 		
@@ -72,5 +74,6 @@ public class Phase10gui extends JFrame implements IObserver{
 
 	public void HandCardUpdate() {
 		this.hand.updateHand();
+		controller.notifyObservers();
 	}
 }

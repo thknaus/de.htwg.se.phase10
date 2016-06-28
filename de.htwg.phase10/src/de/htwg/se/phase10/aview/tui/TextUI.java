@@ -2,6 +2,7 @@ package de.htwg.se.phase10.aview.tui;
 
 import java.util.Scanner;
 
+import de.htwg.se.phase10.controller.AddPlayer;
 import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
@@ -223,7 +224,7 @@ public class TextUI implements IObserver{
 			printQuitGame();
 		}else if(e instanceof StartGame){
 			printNewGame();
-		}else if(controller.getStatus() == GameStatus.ADDPLAYER){
+		}else if(e instanceof AddPlayer){
 			printNewPlayer(controller.getName());
 		}else{
 			printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
