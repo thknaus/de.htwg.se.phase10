@@ -38,7 +38,7 @@ public class Phase10gui extends JFrame implements IObserver{
 		setTitle("Phase10");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(1920, 1040));
-		setResizable(false);
+		setResizable(true);
 		//falls wir eine farbe haben wollen
 		mainPanel.setBackground(starbucks);
 

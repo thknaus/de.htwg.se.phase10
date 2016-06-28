@@ -65,7 +65,7 @@ public class Card implements ICard{
 		return this.specialC;		
 	}
 	public void setIcon(){
-		icon = new ImageIcon(new ImageIcon("./img/" + this.getRank() + this.getColor() +".jpg").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH));
+		icon = new ImageIcon(new ImageIcon("./img/" + this.getRank() + this.getColor() +".jpg").getImage().getScaledInstance(100,120, java.awt.Image.SCALE_SMOOTH));
 	}
 	public ImageIcon getIcon(){
 		return icon;

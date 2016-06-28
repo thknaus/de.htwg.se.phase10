@@ -14,7 +14,7 @@ public class DeckStackField extends JPanel implements ActionListener{
 	private IPhase10Controller controller;
 	
 	JTextField textfield;
-    JButton stack, deck, narchiv;
+    JButton stack, deck, narchiv, phasen1, halter, phasen2;
     JPanel STD;
     Phase10gui gui;
     Color starbucks = new Color(0x00592D);
@@ -26,16 +26,30 @@ public class DeckStackField extends JPanel implements ActionListener{
 		
 		STD = new JPanel();
 		STD.setName("Deck and Stack");
-		STD.setPreferredSize(new Dimension(1900, 120));
+		STD.setPreferredSize(new Dimension(1900, 130));
 		STD.setBackground(starbucks);
 		this.setBackground(starbucks);
 		
-        deck = new JButton();
-        deck.setIcon(new ImageIcon(new ImageIcon("./img/deck2.png").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH)));
-        deck.setPreferredSize(new Dimension(80,100));
-        STD.add(deck);
-        deck.addActionListener(this);
+		phasen1 = new JButton();
+		phasen1.setIcon(new ImageIcon(new ImageIcon("./img/phasen1.jpg").getImage().getScaledInstance(100,120, java.awt.Image.SCALE_SMOOTH)));
+		phasen1.setPreferredSize(new Dimension(100,120));
+		phasen1.setOpaque(false);
+		phasen1.setContentAreaFilled(true);
+		phasen1.setBorderPainted(false);
+        STD.add(phasen1);
+        phasen2 = new JButton();
+        phasen2.setIcon(new ImageIcon(new ImageIcon("./img/phasen2.jpg").getImage().getScaledInstance(100,120, java.awt.Image.SCALE_SMOOTH)));
+        phasen2.setPreferredSize(new Dimension(100,120));
+        phasen2.setOpaque(false);
+        phasen2.setContentAreaFilled(true);
+        phasen2.setBorderPainted(false);
+        STD.add(phasen2);
         
+        deck = new JButton();
+        deck.setIcon(new ImageIcon(new ImageIcon("./img/deck2.png").getImage().getScaledInstance(100,120, java.awt.Image.SCALE_SMOOTH)));
+        deck.setPreferredSize(new Dimension(100,120));
+        STD.add(deck);
+        deck.addActionListener(this);        
         
         stack = new JButton();
         stack.setIcon(null);
@@ -43,12 +57,19 @@ public class DeckStackField extends JPanel implements ActionListener{
 		stack.setContentAreaFilled(false);
 		stack.setBorderPainted(true);
         stack.setName("Stack");
-        stack.setPreferredSize(new Dimension(80,100));
+        stack.setPreferredSize(new Dimension(100,120));
         STD.add(stack);
         stack.addActionListener(this);
-               
+        
+        halter = new JButton();
+        halter.setPreferredSize(new Dimension(1000,120));
+        halter.setOpaque(false);
+        halter.setContentAreaFilled(false);
+        halter.setBorderPainted(false);
+        STD.add(halter);
+        
         textfield = new JTextField("Welcome to Phase 10.");
-        textfield.setPreferredSize(new Dimension(1000,100));
+        textfield.setPreferredSize(new Dimension(400,100));
         textfield.setEditable(false);
         STD.add(textfield);
         this.add(STD);

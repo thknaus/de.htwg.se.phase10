@@ -27,57 +27,57 @@ public class HandCard extends JPanel implements ActionListener{
 		this.setBackground(starbucks);
 		
 		card1 = new JButton();
-		card1.setPreferredSize(new Dimension(80,100));
+		card1.setPreferredSize(new Dimension(100,120));
 	    this.add(card1);
 	    card1.addActionListener(this);  
 	    
 		card2 = new JButton();
-		card2.setPreferredSize(new Dimension(80,100));
+		card2.setPreferredSize(new Dimension(100,120));
 	    this.add(card2);
 	    card2.addActionListener(this);
 	    
 		card3 = new JButton();
-		card3.setPreferredSize(new Dimension(80,100));
+		card3.setPreferredSize(new Dimension(100,120));
 	    this.add(card3);
 	    card3.addActionListener(this);
 	    
 		card4 = new JButton();
-		card4.setPreferredSize(new Dimension(80,100));
+		card4.setPreferredSize(new Dimension(100,120));
 	    this.add(card4);
 	    card4.addActionListener(this);
 	    
 		card5 = new JButton();
-		card5.setPreferredSize(new Dimension(80,100));
+		card5.setPreferredSize(new Dimension(100,120));
 	    this.add(card5);
 	    card5.addActionListener(this);
 	    
 		card6 = new JButton();
-		card6.setPreferredSize(new Dimension(80,100));
+		card6.setPreferredSize(new Dimension(100,120));
 	    this.add(card6);
 	    card6.addActionListener(this);
 	    
 		card7 = new JButton();
-		card7.setPreferredSize(new Dimension(80,100));
+		card7.setPreferredSize(new Dimension(100,120));
 	    this.add(card7);
 	    card7.addActionListener(this);
 	    
 		card8 = new JButton();
-		card8.setPreferredSize(new Dimension(80,100));
+		card8.setPreferredSize(new Dimension(100,120));
 	    this.add(card8);
 	    card8.addActionListener(this);
 	    
 		card9 = new JButton();
-		card9.setPreferredSize(new Dimension(80,100));
+		card9.setPreferredSize(new Dimension(100,120));
 	    this.add(card9);
 	    card9.addActionListener(this);
 	    
 		card10 = new JButton();
-		card10.setPreferredSize(new Dimension(80,100));
+		card10.setPreferredSize(new Dimension(100,120));
 	    this.add(card10);
 	    card10.addActionListener(this);
 	    
 		card11 = new JButton();
-		card11.setPreferredSize(new Dimension(80,100));
+		card11.setPreferredSize(new Dimension(100,120));
 	    this.add(card11);
 	    card11.addActionListener(this);
 	}
