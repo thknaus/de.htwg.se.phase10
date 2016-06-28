@@ -39,6 +39,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive1.setOpaque(false);
         archive1.setContentAreaFilled(false);
         archive1.setBorderPainted(true);
+        archive1.addActionListener(this);
         archivefield1.add(archive1);
         
         archive2 = new JButton("");
@@ -46,6 +47,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive2.setOpaque(false);
         archive2.setContentAreaFilled(false);
         archive2.setBorderPainted(true);
+        archive2.addActionListener(this);
         archivefield1.add(archive2);	
 
 
@@ -63,6 +65,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive3.setOpaque(false);
         archive3.setContentAreaFilled(false);
         archive3.setBorderPainted(true);
+        archive3.addActionListener(this);
         archivefield2.add(archive3);
         
         archive4 = new JButton("");
@@ -70,6 +73,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive4.setOpaque(false);
         archive4.setContentAreaFilled(false);
         archive4.setBorderPainted(true);
+        archive4.addActionListener(this);
         archivefield2.add(archive4);	
 
         
@@ -87,6 +91,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive5.setOpaque(false);
         archive5.setContentAreaFilled(false);
         archive5.setBorderPainted(true);
+        archive5.addActionListener(this);
         archivefield3.add(archive5);
         
         archive6 = new JButton("");
@@ -94,6 +99,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive6.setOpaque(false);
         archive6.setContentAreaFilled(false);
         archive6.setBorderPainted(true);
+        archive6.addActionListener(this);
         archivefield3.add(archive6);	
 
 //field4
@@ -110,6 +116,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive7.setOpaque(false);
         archive7.setContentAreaFilled(false);
         archive7.setBorderPainted(true);
+        archive7.addActionListener(this);
         archivefield4.add(archive7);
         
         archive8 = new JButton("");
@@ -117,6 +124,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive8.setOpaque(false);
         archive8.setContentAreaFilled(false);
         archive8.setBorderPainted(true);
+        archive8.addActionListener(this);
         archivefield4.add(archive8);	
 
         
@@ -134,6 +142,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive9.setOpaque(false);
         archive9.setContentAreaFilled(false);
         archive9.setBorderPainted(true);
+        archive9.addActionListener(this);
         archivefield5.add(archive9);
         
         archive10 = new JButton("");
@@ -141,6 +150,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive10.setOpaque(false);
         archive10.setContentAreaFilled(false);
         archive10.setBorderPainted(true);
+        archive10.addActionListener(this);
         archivefield5.add(archive10);	
 
        
@@ -158,6 +168,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive11.setOpaque(false);
         archive11.setContentAreaFilled(false);
         archive11.setBorderPainted(true);
+        archive11.addActionListener(this);
         archivefield6.add(archive11);
         
         archive12 = new JButton("");
@@ -165,14 +176,52 @@ public class ArchiveField extends JPanel implements ActionListener{
         archive12.setOpaque(false);
         archive12.setContentAreaFilled(false);
         archive12.setBorderPainted(true);
+        archive12.addActionListener(this);
         archivefield6.add(archive12);	
 
 	}
 	
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
+		if(!controller.pulledCard()){
+			gui.deckStackInfo("You have to pull a card first.");
+		}
 		if(source == archive1){
-			
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive2){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive3){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive4){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive5){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive6){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive7){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive8){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive9){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive10){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive11){
+			controller.newArch();
+			controller.notifyObservers();
+		}else if(source == archive12){
+			controller.newArch();
+			controller.notifyObservers();
 		}
 	}
 	

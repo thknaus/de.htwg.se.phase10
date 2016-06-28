@@ -79,4 +79,8 @@ public class Phase10gui extends JFrame implements IObserver{
 		this.hand.updateHand();
 		controller.notifyObservers();
 	}
+
+	public void deckStackInfo(String s) {
+		dsfield.textfield.setText(s);
+	}
 }

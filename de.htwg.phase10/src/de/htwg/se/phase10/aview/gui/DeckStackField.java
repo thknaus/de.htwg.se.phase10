@@ -47,7 +47,7 @@ public class DeckStackField extends JPanel implements ActionListener{
         STD.add(stack);
         stack.addActionListener(this);
                
-        textfield = new JTextField("Hier kommen die Meldungen");
+        textfield = new JTextField("Welcome to Phase 10.");
         textfield.setPreferredSize(new Dimension(1000,100));
         textfield.setEditable(false);
         STD.add(textfield);
