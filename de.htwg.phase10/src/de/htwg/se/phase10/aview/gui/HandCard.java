@@ -16,6 +16,8 @@ public class HandCard extends JPanel implements ActionListener{
 	private JButton card;
 	Color starbucks = new Color(0x00592D);
 	Phase10gui gui;
+	ImageIcon HCard1, HCard2;
+	
 	
 	public HandCard(Phase10gui g, IPhase10Controller con) {
 		
@@ -23,12 +25,15 @@ public class HandCard extends JPanel implements ActionListener{
 		this.gui = g;
 		this.setBackground(starbucks);
 		
-		card = new JButton("Card1");
+		HCard1 = new ImageIcon(new ImageIcon("./img/red_03.jpg").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH));
+		HCard2 = new ImageIcon(new ImageIcon("./img/green_11.jpg").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH));
+		
+		card = new JButton(HCard1);
 		card.setPreferredSize(new Dimension(80,100));
 	    this.add(card);
-	    card.addActionListener(this);
+	    card.addActionListener(this);  
 	    
-		card = new JButton("Card2");
+		card = new JButton(HCard2);
 		card.setPreferredSize(new Dimension(80,100));
 	    this.add(card);
 	    card.addActionListener(this);

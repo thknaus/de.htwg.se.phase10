@@ -18,7 +18,7 @@ public class DeckStackField extends JPanel implements ActionListener{
     JPanel STD;
     Phase10gui gui;
     Color starbucks = new Color(0x00592D);
-    ImageIcon deckCard;
+    ImageIcon deckCard, sCard;
     
 	public DeckStackField(Phase10gui g, IPhase10Controller con) {
 		
@@ -26,7 +26,8 @@ public class DeckStackField extends JPanel implements ActionListener{
 		this.gui = g;
 		
 		deckCard = new ImageIcon(new ImageIcon("./img/deck2.png").getImage().getScaledInstance(240, 100, java.awt.Image.SCALE_SMOOTH));
-		
+		sCard = new ImageIcon(new ImageIcon("./img/yellow_08.jpg").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH));
+
 		STD = new JPanel();
 		STD.setName("Deck and Stack");
 		STD.setPreferredSize(new Dimension(1900, 120));
@@ -39,8 +40,9 @@ public class DeckStackField extends JPanel implements ActionListener{
         deck.addActionListener(this);
         
         
-        stack = new JButton("Stack");
-        stack.setPreferredSize(new Dimension(240,100));
+        stack = new JButton(sCard);
+        stack.setName("Stack");
+        stack.setPreferredSize(new Dimension(80,100));
         STD.add(stack);
         stack.addActionListener(this);
         
