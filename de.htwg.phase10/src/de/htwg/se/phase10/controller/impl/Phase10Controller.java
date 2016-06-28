@@ -7,6 +7,7 @@ import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
+import de.htwg.se.phase10.controller.StartGame;
 import de.htwg.se.phase10.model.IDeck;
 import de.htwg.se.phase10.model.IPlayerHand;
 import de.htwg.se.phase10.model.IStack;
@@ -34,6 +35,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	private boolean newgame = false;
 	private int numberplayer;
 	private int currentplayer;
+	private String name = "";
 	
 	private Deck deck;
 	private Stack stack;
@@ -50,7 +52,12 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	
 	public void setNewGame(boolean newgame){
 		this.newgame = newgame;
-		status = GameStatus.NEWGAME;
+		if(this.newgame){
+			notifyObservers(new StartGame());
+			setNewDeck();
+			setNewStack();
+			status = GameStatus.NEWGAME;
+		}
 	}
 	public boolean checkNewGame(){
 		return newgame;
@@ -63,7 +70,6 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	public void setNewDeck(){
 		deck = new Deck();
 		status = GameStatus.NEWDECK;
-		notifyObservers();
 	}
 	public Deck getDeck(){
 		return this.deck;
@@ -74,6 +80,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
 			return false; 
 		}
+		notifyObservers();
 		return true;
 	}
 	
@@ -98,6 +105,14 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		player.setPhase(phase.getPhase(0));
 		playerlist.add(player);
 		status = GameStatus.ADDPLAYER;
+		this.name = name;
+		notifyObservers();
+	}
+	public int getNumberP(){
+		return this.numberplayer;
+	}
+	public String getName(){
+		return this.name;
 	}
 	public PlayerHand getCurrentPlayer(){
 		return playerlist.get(this.currentplayer);

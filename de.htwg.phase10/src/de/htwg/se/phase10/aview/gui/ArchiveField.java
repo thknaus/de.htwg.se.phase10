@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Archiv extends JPanel implements ActionListener{
+public class ArchiveField extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
 	private IPhase10Controller controller;
@@ -21,7 +21,7 @@ public class Archiv extends JPanel implements ActionListener{
 	Phase10gui gui;
 	Color starbucksb = new Color(0xEAC784);
 	
-	public Archiv(Phase10gui g, IPhase10Controller con) {
+	public ArchiveField(Phase10gui g, IPhase10Controller con) {
 
 		this.controller = con;
 		this.gui = g;

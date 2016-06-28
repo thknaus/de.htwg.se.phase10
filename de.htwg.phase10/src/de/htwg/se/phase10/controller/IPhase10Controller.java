@@ -170,4 +170,14 @@ public interface IPhase10Controller extends IObservable {
 	 * @return status of the game
 	 */
 	GameStatus getStatus();
+	
+	/**
+	 * @return the Name of the New player.
+	 */
+	String getName();
+	
+	/**
+	 * @return number of player.
+	 */
+	int getNumberP();
 }

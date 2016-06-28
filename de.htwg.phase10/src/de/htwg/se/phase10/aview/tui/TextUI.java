@@ -3,7 +3,9 @@ package de.htwg.se.phase10.aview.tui;
 import java.util.Scanner;
 
 import de.htwg.se.phase10.controller.ExitGameEvent;
+import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
+import de.htwg.se.phase10.controller.StartGame;
 import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.GamePhase;
 import de.htwg.se.phase10.model.impl.PlayerHand;
@@ -39,9 +41,6 @@ public class TextUI implements IObserver{
 		}
 		
 		if (input.equals("1")) {
-			controller.setNewDeck();
-			controller.setNewStack();
-			printNewGame();
 			controller.setNewGame(true);
 		} else if (input.equals("2")) {
 			printQuitGame();
@@ -63,11 +62,11 @@ public class TextUI implements IObserver{
 			return true;
 		}else if(controller.checkNewGame() && numberpcount < numberp){
 			numberpcount++;
-			printNewPlayer(input);
+			controller.newPlayer(input);
 			return true;
 		}else if(controller.checkNewGame() && numberpcount == numberp){
 			numberpcount++;
-			printNewPlayer(input);
+			controller.newPlayer(input);
 		}
 		if(numberpcount > numberp){
 			controller.setNewGame(false);
@@ -98,8 +97,6 @@ public class TextUI implements IObserver{
 	}
 	private void printNewGame() {
 		LOGGER.info("Choose a player number between 2 - 6: ");
-		controller.setNewGame(true);
-		
 	}
 
 	public void printMenu() {
@@ -111,9 +108,8 @@ public class TextUI implements IObserver{
 
 	
 	public void printNewPlayer(String name) {
-		controller.newPlayer(name);
 		if(numberpcount <= numberp){
-			LOGGER.info(controller.getStatus()+ "-" + " Player " + numberpcount + " name:");
+			LOGGER.info(controller.getStatus()+ "-" + " Player " + controller.getNumberP() + " name:");
 		}
 	}
 
@@ -225,6 +221,12 @@ public class TextUI implements IObserver{
 		if(e instanceof ExitGameEvent){
 			this.quit = true;
 			printQuitGame();
+		}else if(e instanceof StartGame){
+			printNewGame();
+		}else if(controller.getStatus() == GameStatus.ADDPLAYER){
+			printNewPlayer(controller.getName());
+		}else{
+			printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
 		}
 	}
 }

@@ -14,6 +14,12 @@ public class Phase10gui extends JFrame implements IObserver{
 	private static final long serialVersionUID = 1L;
 	private JPanel mainPanel;
 	private IPhase10Controller controller;
+	
+	private HandCard hand;
+	private ToolBar toolb;
+	private DeckStackField dsfield;
+	private ArchiveField arch;
+	
 	JFrame field;
 	JMenuBar Phase10MenuBar;
 	Color starbucks = new Color(0x00592D);
@@ -33,12 +39,15 @@ public class Phase10gui extends JFrame implements IObserver{
 		//falls wir eine farbe haben wollen
 		mainPanel.setBackground(starbucks);
 
-
-		mainPanel.add(new DeckStackField(this, controller));
-		mainPanel.add(new Archiv(this, controller));
-	
-		mainPanel.add(new HandCard(this, controller));
-		mainPanel.add(new ToolBar(this, controller));
+		dsfield = new DeckStackField(this, controller);
+		arch = new ArchiveField(this, controller);
+		hand = new HandCard(this, controller);
+		toolb = new ToolBar(this, controller);
+		
+		mainPanel.add(dsfield);
+		mainPanel.add(arch);
+		mainPanel.add(hand);
+		mainPanel.add(toolb);
 		this.setContentPane(mainPanel);
 
 	
@@ -49,15 +58,19 @@ public class Phase10gui extends JFrame implements IObserver{
 	}
 	
 	public void setNofPlayer(){
-		mainPanel.add(new NofPlayer(this, controller));
+		new NofPlayer(this, controller);
 	}
 
 	public void Name() {
-		mainPanel.add(new Name(this, controller));
+		new Name(this, controller);
 	}
 	
 	@Override
 	public void update(Event e) {
 				
+	}
+
+	public void HandCardUpdate() {
+		this.hand.updateHand();
 	}
 }

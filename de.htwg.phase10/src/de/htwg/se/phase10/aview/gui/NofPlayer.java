@@ -77,7 +77,6 @@ public class NofPlayer extends JFrame implements ActionListener{
 		if(source == number2||source == number3||source == number4||source == number5
 				||source == number6){
 			this.setVisible(false);
-			controller.setNewGame(true);
 			gui.Name();
 		}	
 	}

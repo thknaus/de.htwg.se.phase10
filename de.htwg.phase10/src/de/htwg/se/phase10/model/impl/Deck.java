@@ -51,20 +51,26 @@ public class Deck implements IDeck{
 	
 	private void newDeckNC(Card.Rank rank,Card.Color color) {
 		for (int k = 0; k < 4; k++){
-			cards.add(new Card(rank, color, 1));
+			Card c = new Card(rank, color, 1);
+			cards.add(c);
+			c.setIcon();
 			this.size++;
 		}
 	}
 	
 	private void newDeckSpCS(Card.Rank rank,Card.Color color) {
 		for (int j = 0; j < 2; j++) {
-			cards.add(new Card(rank, color, 1));
+			Card c = new Card(rank, color, 1);
+			cards.add(c);
+			c.setIcon();
 			this.size++;
 		}
 	}
 	
 	private void newDeckSpCJ(Card.Rank rank,Card.Color color) {
-		cards.add(new Card(rank, color, 0));
+		Card c = new Card(rank, color, 0);
+		cards.add(c);
+		c.setIcon();
 		this.size++;
 	}
 

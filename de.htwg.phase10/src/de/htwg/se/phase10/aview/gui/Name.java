@@ -9,7 +9,7 @@ public class Name extends JFrame implements ActionListener{
 	
 	private static final long serialVersionUID = 1L;
 	private IPhase10Controller controller;
-	
+	private Phase10gui gui;
 	JTextField feld1, feld2, feld3;
 	JTextField feld4, feld5, feld6;
 	
@@ -24,7 +24,8 @@ public class Name extends JFrame implements ActionListener{
 	Color starbucks = new Color(0x00592D);
 	
 	public Name(Phase10gui g, IPhase10Controller con){
-
+		controller = con;
+		gui = g;
 		this.setTitle("Name of Players");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setPreferredSize(new Dimension(400, 260));
@@ -46,11 +47,17 @@ public class Name extends JFrame implements ActionListener{
 		feld6 = new JTextField("", 10);
 
 		ok1 = new JButton("ok");
+		ok1.addActionListener(this);
 		ok2 = new JButton("ok");
+		ok2.addActionListener(this);
 		ok3 = new JButton("ok");
+		ok3.addActionListener(this);
 		ok4 = new JButton("ok");
+		ok4.addActionListener(this);
 		ok5 = new JButton("ok");
+		ok5.addActionListener(this);
 		ok6 = new JButton("ok");
+		ok6.addActionListener(this);
 		
 		// Felder und Buttons zu Panels zusammenfassen
 		JPanel panel1 = new JPanel();
@@ -100,6 +107,20 @@ public class Name extends JFrame implements ActionListener{
 		Object source = e.getSource();
 		if(source == finish) {
 			this.setVisible(false);
+			controller.setNewGame(false);
+			gui.HandCardUpdate();
+		}else if(source == ok1){
+			controller.newPlayer(feld1.getText());
+		}else if(source == ok2){
+			controller.newPlayer(feld2.getText());
+		}else if(source == ok3){
+			controller.newPlayer(feld3.getText());
+		}else if(source == ok4){
+			controller.newPlayer(feld4.getText());
+		}else if(source == ok5){
+			controller.newPlayer(feld5.getText());
+		}else if(source == ok6){
+			controller.newPlayer(feld6.getText());
 		}
 
 	}

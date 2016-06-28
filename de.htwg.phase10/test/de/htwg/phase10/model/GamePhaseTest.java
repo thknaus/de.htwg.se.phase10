@@ -3,7 +3,7 @@ package de.htwg.phase10.model;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.se.phase10.aview.gui.Archiv;
+import de.htwg.se.phase10.aview.gui.ArchiveField;
 import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.Card;
 import de.htwg.se.phase10.model.impl.Deck;

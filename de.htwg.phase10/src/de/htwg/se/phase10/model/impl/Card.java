@@ -1,5 +1,7 @@
 package de.htwg.se.phase10.model.impl;
 
+import javax.swing.ImageIcon;
+
 import de.htwg.se.phase10.model.ICard;
 
 public class Card implements ICard{
@@ -7,6 +9,7 @@ public class Card implements ICard{
 	private Rank rank;
 	private Color color;
 	private int specialC;
+	private ImageIcon icon;
 	
 	public enum Color {
 		BLUE, RED, GREEN, YELLOW, WHITE;
@@ -61,7 +64,12 @@ public class Card implements ICard{
 	public int getSpecialC(){
 		return this.specialC;		
 	}
-
+	public void setIcon(){
+		icon = new ImageIcon(new ImageIcon("./img/" + this.getRank() + this.getColor() +".jpg").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH));
+	}
+	public ImageIcon getIcon(){
+		return icon;
+	}
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
