@@ -1,6 +1,9 @@
 package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
+
+import de.htwg.se.phase10.controller.IPhase10Controller;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,13 +11,16 @@ import java.awt.event.ActionListener;
 public class HandCard extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
+	private IPhase10Controller controller;
 	
 	private JButton card;
 	Color starbucks = new Color(0x00592D);
+	Phase10gui gui;
 	
-	public HandCard() {
+	public HandCard(Phase10gui g, IPhase10Controller con) {
 		
-		//this.setBackground(Color.BLACK);
+		this.controller = con;
+		this.gui = g;
 		this.setBackground(starbucks);
 		
 		card = new JButton("Card1");

@@ -33,11 +33,12 @@ public class Phase10gui extends JFrame implements IObserver{
 		//falls wir eine farbe haben wollen
 		mainPanel.setBackground(starbucks);
 
-		
-		mainPanel.add(new DeckStackField());
-		mainPanel.add(new Archiv());
-		mainPanel.add(new HandCard());
-		mainPanel.add(new ToolBar());
+
+		mainPanel.add(new DeckStackField(this, controller));
+		mainPanel.add(new Archiv(this, controller));
+	
+		mainPanel.add(new HandCard(this, controller));
+		mainPanel.add(new ToolBar(this, controller));
 		this.setContentPane(mainPanel);
 
 	

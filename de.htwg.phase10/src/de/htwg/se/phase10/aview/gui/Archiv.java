@@ -2,6 +2,8 @@ package de.htwg.se.phase10.aview.gui;
 
 import javax.swing.*;
 
+import de.htwg.se.phase10.controller.IPhase10Controller;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,16 +11,21 @@ import java.awt.event.ActionListener;
 public class Archiv extends JPanel implements ActionListener{
 
 	private static final long serialVersionUID = 1L;
-
+	private IPhase10Controller controller;
+	
 	JButton archiv1, archiv2, archiv3, archiv4;
 	JButton archiv5, archiv6, archiv7, archiv8;
 	JButton archiv9, archiv10, archiv11, archiv12;
 	JButton archiv13, archiv14, archiv15, archiv16;
 	JButton archiv17, archiv18, archiv19, archiv20;
+	Phase10gui gui;
 	Color starbucksb = new Color(0xEAC784);
 	
-	public Archiv() {
-//field1	
+	public Archiv(Phase10gui g, IPhase10Controller con) {
+
+		this.controller = con;
+		this.gui = g;
+		
 		JPanel archivfield1 = new JPanel();
 		archivfield1.setLayout(new FlowLayout(FlowLayout.LEFT));
 		archivfield1.setBackground(starbucksb);
