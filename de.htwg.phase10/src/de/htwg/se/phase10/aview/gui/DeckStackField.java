@@ -18,39 +18,35 @@ public class DeckStackField extends JPanel implements ActionListener{
     JPanel STD;
     Phase10gui gui;
     Color starbucks = new Color(0x00592D);
-    ImageIcon deckCard, sCard;
     
 	public DeckStackField(Phase10gui g, IPhase10Controller con) {
 		
 		this.controller = con;
 		this.gui = g;
 		
-		deckCard = new ImageIcon(new ImageIcon("./img/deck2.png").getImage().getScaledInstance(240, 100, java.awt.Image.SCALE_SMOOTH));
-		sCard = new ImageIcon(new ImageIcon("./img/yellow_08.jpg").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH));
-
 		STD = new JPanel();
 		STD.setName("Deck and Stack");
 		STD.setPreferredSize(new Dimension(1900, 120));
 		STD.setBackground(starbucks);
 		this.setBackground(starbucks);
 		
-        deck = new JButton(deckCard);
-        deck.setPreferredSize(new Dimension(240,100));
+        deck = new JButton();
+        deck.setIcon(new ImageIcon(new ImageIcon("./img/deck2.png").getImage().getScaledInstance(80, 100, java.awt.Image.SCALE_SMOOTH)));
+        deck.setPreferredSize(new Dimension(80,100));
         STD.add(deck);
         deck.addActionListener(this);
         
         
-        stack = new JButton(sCard);
+        stack = new JButton();
+        stack.setIcon(null);
+		stack.setOpaque(false);
+		stack.setContentAreaFilled(false);
+		stack.setBorderPainted(true);
         stack.setName("Stack");
         stack.setPreferredSize(new Dimension(80,100));
         STD.add(stack);
         stack.addActionListener(this);
-        
-        narchiv = new JButton("New Aarchiv");
-        narchiv.setPreferredSize(new Dimension(240,100));
-        STD.add(narchiv);
-        stack.addActionListener(this);
-        
+               
         textfield = new JTextField("Hier kommen die Meldungen");
         textfield.setPreferredSize(new Dimension(1000,100));
         textfield.setEditable(false);
@@ -59,7 +55,33 @@ public class DeckStackField extends JPanel implements ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e) {
+		Object source = e.getSource();
+		if(source == stack){
+			if(!controller.getCardFromStack()){
+				textfield.setText("You have already 11 Cards on your hand.");
+			}else{
+				gui.HandCardUpdate();
+				controller.setPulledCard();
+				textfield.setText("Pulled card from Stack");
+			}
+		}else if(source == deck){
+			if(!controller.getCardFromDeck()){
+				textfield.setText("You have already 11 Cards on your hand.");
+			}else{
+				controller.setPulledCard();
+				textfield.setText("Pulled card from deck.");
+			}
+		}
 
 	}
-	
+	public void updateStack(){
+		if(controller.getStack() == null){
+			stack.setOpaque(false);
+			stack.setContentAreaFilled(false);
+			stack.setBorderPainted(true);
+			stack.setIcon(null);
+		}else{
+			stack.setIcon(controller.getStack().getIcon());
+		}
+	}
 }

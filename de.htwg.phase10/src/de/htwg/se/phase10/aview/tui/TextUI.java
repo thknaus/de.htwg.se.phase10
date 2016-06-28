@@ -7,6 +7,7 @@ import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.StartGame;
+import de.htwg.se.phase10.controller.UpdateStack;
 import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.GamePhase;
 import de.htwg.se.phase10.model.impl.PlayerHand;
@@ -84,7 +85,11 @@ public class TextUI implements IObserver{
 		LOGGER.info("Archive: "); 
 		LOGGER.info(controller.getArchive());
 		LOGGER.info("");
-		LOGGER.info("Stack: " + controller.getStack());
+		if(controller.getStack() != null){
+			LOGGER.info("Stack: " + controller.getStack().toString());	
+		}else{
+			LOGGER.info("Stack: - empty -");
+		}
 		LOGGER.info("");
 		LOGGER.info("Your Hand:");
 		LOGGER.info(controller.getHand(number));
@@ -128,14 +133,16 @@ public class TextUI implements IObserver{
 		// get card from deck
 		case 'd':
 			if(!controller.getCardFromDeck()){
-				LOGGER.info("You have already 10 Cards on your Hand.");
+				LOGGER.info("You have already 11 Cards on your Hand.");
+				break;
 			}
 			controller.setPulledCard();
 			break;
 		// get card from stack
 		case 's':
 			if(!controller.getCardFromStack()){
-				LOGGER.info("You have already 10 Cards on your Hand.");
+				LOGGER.info("You have already 11 Cards on your Hand.");
+				break;
 			}
 			controller.setPulledCard();
 			break;
@@ -226,6 +233,8 @@ public class TextUI implements IObserver{
 			printNewGame();
 		}else if(e instanceof AddPlayer){
 			printNewPlayer(controller.getName());
+		}else if(e instanceof UpdateStack){
+			LOGGER.info("Card from Deck to Stack.");
 		}else{
 			printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
 		}

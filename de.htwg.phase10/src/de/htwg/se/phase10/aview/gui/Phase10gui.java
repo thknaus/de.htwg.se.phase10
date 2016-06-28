@@ -5,6 +5,7 @@ import javax.swing.*;
 
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
+import de.htwg.se.phase10.controller.UpdateStack;
 import de.htwg.se.phase10.util.observer.Event;
 import de.htwg.se.phase10.util.observer.IObserver;
 
@@ -69,7 +70,9 @@ public class Phase10gui extends JFrame implements IObserver{
 	
 	@Override
 	public void update(Event e) {
-				
+		if(e instanceof UpdateStack){
+			dsfield.updateStack();
+		}
 	}
 
 	public void HandCardUpdate() {

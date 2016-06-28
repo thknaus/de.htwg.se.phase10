@@ -1,5 +1,6 @@
 package de.htwg.se.phase10.controller;
 
+import de.htwg.se.phase10.model.impl.Card;
 import de.htwg.se.phase10.model.impl.Deck;
 import de.htwg.se.phase10.model.impl.PlayerHand;
 import de.htwg.se.phase10.util.observer.IObservable;
@@ -40,7 +41,7 @@ public interface IPhase10Controller extends IObservable {
 	 * Gets the current Stack.
 	 * @return returns the Top Card on the Stack as String
 	 */
-	String getStack();
+	Card getStack();
 	/**
 	 * Checks if a new game has been started.
 	 * @return true if new game, false if a game is running.

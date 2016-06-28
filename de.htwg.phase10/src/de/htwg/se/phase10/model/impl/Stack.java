@@ -44,6 +44,9 @@ public class Stack implements IStack {
 		return stack.size();
 	}
 	public Card topCard(){
+		if(stack.isEmpty()){
+			return null;
+		}
 		return stack.getLast();
 	}
 }

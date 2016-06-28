@@ -9,6 +9,7 @@ import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.StartGame;
+import de.htwg.se.phase10.controller.UpdateStack;
 import de.htwg.se.phase10.model.IDeck;
 import de.htwg.se.phase10.model.IPlayerHand;
 import de.htwg.se.phase10.model.IStack;
@@ -90,9 +91,10 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		this.stack = new Stack();
 		this.stack.pushCardS(this.deck.getNewCard());
 		status = GameStatus.NEWSTACK;
+		notifyObservers(new UpdateStack());
 	}
-	public String getStack(){
-		return this.stack.topCard().toString();
+	public Card getStack(){
+		return this.stack.topCard();
 	}
 	
 
@@ -184,6 +186,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
 			return false; 
 		}
+		notifyObservers(new UpdateStack());
 		return true;
 	}
 	
