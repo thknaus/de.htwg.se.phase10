@@ -68,6 +68,7 @@ public class DeckStackField extends JPanel implements ActionListener{
 			if(!controller.getCardFromDeck()){
 				textfield.setText("You have already 11 Cards on your hand.");
 			}else{
+				gui.HandCardUpdate();
 				controller.setPulledCard();
 				textfield.setText("Pulled card from deck.");
 			}
