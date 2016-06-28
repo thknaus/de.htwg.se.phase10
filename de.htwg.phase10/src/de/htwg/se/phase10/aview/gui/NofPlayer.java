@@ -12,23 +12,22 @@ public class NofPlayer extends JFrame implements ActionListener{
 	private IPhase10Controller controller;
 	
 	JPanel numberofplayer;
-	Color starbucksb = new Color(0xEAC784);
-	Color starbucks = new Color(0x00592D);
 	JButton number2, number3, number4, number5, number6;
 	Phase10gui gui;
+	
+	Color starbucksb = new Color(0xEAC784);
+	Color starbucks = new Color(0x00592D);
 	
 	public NofPlayer(Phase10gui g, IPhase10Controller con){
 		
 		this.controller = con;
 		this.gui = g;
-		
-		numberofplayer = new JPanel();
-		setTitle("Choos Number of Player");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setPreferredSize(new Dimension(100, 180));
-		setResizable(false);
-		numberofplayer.setBackground(starbucks);
-		
+
+		this.setTitle("Choos Number of Player");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setPreferredSize(new Dimension(500, 120));
+		this.setBackground(starbucks);
+
 		
 		number2 = new JButton("2 Player");
 		number3 = new JButton("3 Player");
@@ -48,18 +47,26 @@ public class NofPlayer extends JFrame implements ActionListener{
 	    number5.setContentAreaFilled(false);
 	    number6.setContentAreaFilled(false);
 		
-	    numberofplayer.setLayout(new BoxLayout(numberofplayer, BoxLayout.Y_AXIS));
-	    numberofplayer.add(number2);
-	    numberofplayer.add(number3);
-	    numberofplayer.add(number4);
-	    numberofplayer.add(number5);
-	    numberofplayer.add(number6);
 	    
-		this.setLayout(new FlowLayout());
+		numberofplayer = new JPanel();
+		this.setLayout(new GridLayout(5,1));
+		numberofplayer.add(number2);
+		numberofplayer.add(number3);
+		numberofplayer.add(number4);
+		numberofplayer.add(number5);
+		numberofplayer.add(number6);
 		numberofplayer.setBackground(starbucksb);
-		this.add(numberofplayer);
-		this.setBackground(starbucks);
-	    
+		
+		numberofplayer.setBorder(BorderFactory.createEtchedBorder());
+		
+		JPanel nop = new JPanel();
+		nop.setLayout(new BoxLayout(nop, BoxLayout.PAGE_AXIS));
+		nop.add(numberofplayer);
+		nop.setBackground(starbucks);
+		
+		nop.setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+		this.setContentPane(nop);
+		
 		this.pack();
 		this.setVisible(true);
 	}
