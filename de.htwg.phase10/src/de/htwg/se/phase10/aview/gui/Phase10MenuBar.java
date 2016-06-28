@@ -1,6 +1,6 @@
 package de.htwg.se.phase10.aview.gui;
 
-import javax.sound.midi.ControllerEventListener;
+
 import javax.swing.*;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 
@@ -21,6 +21,7 @@ public class Phase10MenuBar extends JMenuBar implements ActionListener{
 	JRadioButtonMenuItem rbMenuItem3, rbMenuItem2, rbMenuItem1;
 	JMenuItem quit, start;
 	Phase10gui gui;
+	
 	public Phase10MenuBar(Phase10gui g, IPhase10Controller con){
 	//Build Menu menu.
 		this.controller = con;
@@ -59,18 +60,6 @@ public class Phase10MenuBar extends JMenuBar implements ActionListener{
 		if(source == start){
 			controller.setNewGame(true);
 			gui.setNofPlayer();
-		}
-		if(source == rbMenuItem3){
-			
-		}
-		if(source == rbMenuItem4){
-			
-		}
-		if(source == rbMenuItem5){
-			
-		}
-		if(source == rbMenuItem6){
-			
 		}
 	}
 

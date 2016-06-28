@@ -8,13 +8,20 @@ import java.awt.event.ActionListener;
 
 public class NofPlayer extends JFrame implements ActionListener{
 
+	private static final long serialVersionUID = 1L;
+	private IPhase10Controller controller;
+	
 	JPanel numberofplayer;
 	Color starbucksb = new Color(0xEAC784);
 	Color starbucks = new Color(0x00592D);
 	JButton number2, number3, number4, number5, number6;
+	Phase10gui gui;
 	
-	public NofPlayer(){
-
+	public NofPlayer(Phase10gui g, IPhase10Controller con){
+		
+		this.controller = con;
+		this.gui = g;
+		
 		numberofplayer = new JPanel();
 		setTitle("Choos Number of Player");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,8 +66,13 @@ public class NofPlayer extends JFrame implements ActionListener{
 	
 
 	public void actionPerformed(ActionEvent e) {
-
-			
+		Object source = e.getSource();
+		if(source == number2||source == number3||source == number4||source == number5
+				||source == number6){
+			this.setVisible(false);
+			controller.setNewGame(true);
+			gui.Name();
+		}	
 	}
 
 }

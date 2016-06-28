@@ -46,13 +46,17 @@ public class Phase10gui extends JFrame implements IObserver{
 		this.pack();
 		this.setVisible(true);
 	}
+	
 	public void setNofPlayer(){
-		mainPanel.add(new NofPlayer());
+		mainPanel.add(new NofPlayer(this, controller));
 	}
 
+	public void Name() {
+		mainPanel.add(new Name(this, controller));
+	}
+	
 	@Override
 	public void update(Event e) {
-		// TODO Auto-generated method stub
-		
+				
 	}
 }

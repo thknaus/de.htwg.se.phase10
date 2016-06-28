@@ -23,7 +23,7 @@ public class Phase10 {
 		Injector injector = Guice.createInjector(new Phase10Module());
 		controller = injector.getInstance(IPhase10Controller.class);
 		tui = new TextUI(controller);
-		//gui = new Phase10gui(controller);
+		gui = new Phase10gui(controller);
 	}
 	public static Phase10 getInstance(){
 		if(instance == null){

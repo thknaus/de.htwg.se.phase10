@@ -3,9 +3,12 @@ package de.htwg.se.phase10.aview.gui;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Locale;
+import de.htwg.se.phase10.controller.IPhase10Controller;
 
 public class Name extends JFrame implements ActionListener{
+	
+	private static final long serialVersionUID = 1L;
+	private IPhase10Controller controller;
 	
 	JTextField feld1, feld2, feld3;
 	JTextField feld4, feld5, feld6;
@@ -15,15 +18,16 @@ public class Name extends JFrame implements ActionListener{
 	
 	JButton ok1, ok2, ok3;
 	JButton ok4, ok5, ok6;
+	JButton finish;
 	
 	Color starbucksb = new Color(0xEAC784);
 	Color starbucks = new Color(0x00592D);
 	
-	public Name(){
+	public Name(Phase10gui g, IPhase10Controller con){
 
 		this.setTitle("Name of Players");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setPreferredSize(new Dimension(400, 240));
+		this.setPreferredSize(new Dimension(400, 260));
 		this.setBackground(starbucks);
 
 		player1 = new JLabel("Player 1");
@@ -72,11 +76,15 @@ public class Name extends JFrame implements ActionListener{
 		panel1.setBackground(starbucksb);
 		
 		panel1.setBorder(BorderFactory.createEtchedBorder());
-			
+		
+		finish = new JButton("Finish");
+		finish.addActionListener(this);
+		
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
 		panel.add(panel1);
+		panel.add(finish);
 		panel.setBackground(starbucks);
 
 		
@@ -86,12 +94,13 @@ public class Name extends JFrame implements ActionListener{
 		this.pack();
 		this.setVisible(true);
 	}
-	public void actionPerformed(ActionEvent e){
-		
-	}
 	
-	public static void main(String[] args){
-		JFrame myApp = new Name();
-		
+
+	public void actionPerformed(ActionEvent e){
+		Object source = e.getSource();
+		if(source == finish) {
+			this.setVisible(false);
+		}
+
 	}
 }
