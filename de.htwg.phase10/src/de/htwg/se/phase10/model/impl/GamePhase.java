@@ -1,9 +1,5 @@
 package de.htwg.se.phase10.model.impl;
 
-import java.util.Arrays;
-
-import de.htwg.se.phase10.controller.impl.Phase10Controller;
-
 public class GamePhase {
 	private String[] phasen = { "Phase 1: 2 triplet",
 			"Phase 2: 1 triplet + 1 row of four",
@@ -41,7 +37,6 @@ public class GamePhase {
 			}
 		} else if (p.toString().startsWith("Phase 2: 1 triplet + 1 row of four")) {
 			Card c = archive.get(0);
-			int a = archive.size();
 			
 			if(archive.size() != 7){
 				return false;

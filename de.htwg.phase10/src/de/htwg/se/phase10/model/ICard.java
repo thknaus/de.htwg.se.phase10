@@ -1,6 +1,7 @@
 package de.htwg.se.phase10.model;
 
-import de.htwg.se.phase10.model.impl.Card;
+import javax.swing.ImageIcon;
+
 import de.htwg.se.phase10.model.impl.Card.Color;
 import de.htwg.se.phase10.model.impl.Card.Rank;
 
@@ -9,5 +10,7 @@ public interface ICard {
 	int getRankValue();
 	Color getColor();
 	int getSpecialC();
+	void setIcon();
+	ImageIcon getIcon();
 	
 }

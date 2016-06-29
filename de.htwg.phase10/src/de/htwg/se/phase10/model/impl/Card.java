@@ -24,10 +24,11 @@ public class Card implements ICard{
 		this.color = color;
 		this.specialC = s;
 	}
-
+	@Override
 	public Rank getRank() {
 		return this.rank;
 	}
+	@Override
 	public int getRankValue(){
 		switch (this.getRank()){
 			case ONE:
@@ -58,15 +59,19 @@ public class Card implements ICard{
 				return 0;
 		}
 	}
+	@Override
 	public Color getColor(){
 		return this.color;
 	}
+	@Override
 	public int getSpecialC(){
 		return this.specialC;		
 	}
+	@Override
 	public void setIcon(){
 		icon = new ImageIcon(new ImageIcon("./img/" + this.getRank() + this.getColor() +".jpg").getImage().getScaledInstance(100,120, java.awt.Image.SCALE_SMOOTH));
 	}
+	@Override
 	public ImageIcon getIcon(){
 		return icon;
 	}

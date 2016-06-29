@@ -4,14 +4,10 @@ import java.util.Scanner;
 
 import de.htwg.se.phase10.controller.AddPlayer;
 import de.htwg.se.phase10.controller.ExitGameEvent;
-import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.StartGame;
 import de.htwg.se.phase10.controller.UpdateStack;
-import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.GamePhase;
-import de.htwg.se.phase10.model.impl.PlayerHand;
-import de.htwg.se.phase10.model.impl.Stack;
 import de.htwg.se.phase10.util.observer.Event;
 import de.htwg.se.phase10.util.observer.IObserver;
 
@@ -21,14 +17,13 @@ import org.apache.logging.log4j.Logger;
 public class TextUI implements IObserver{
 	
 	private static final Logger LOGGER = LogManager.getLogger(TextUI.class.getName());
-	private static Scanner scanner;
 	protected IPhase10Controller controller;
 	
 	private int numberp = 1;
 	private int numberpcount;
-	private String firstplayer;
+	//private String firstplayer;
 	
-	private boolean startgame = false;
+	//private boolean startgame = false;
 	private boolean quit;
 	
 	public TextUI(IPhase10Controller controller2) {
@@ -42,9 +37,9 @@ public class TextUI implements IObserver{
 			return true;
 		}
 		
-		if (input.equals("1")) {
+		if ("1".equals(input)) {
 			controller.setNewGame(true);
-		} else if (input.equals("2")) {
+		} else if ("2".equals(input)) {
 			printQuitGame();
 			return false;
 		}else{
@@ -115,7 +110,7 @@ public class TextUI implements IObserver{
 	
 	public void printNewPlayer(String name) {
 		if(numberpcount <= numberp){
-			LOGGER.info(controller.getStatus()+ "-" + " Player " + controller.getNumberP() + " name:");
+			LOGGER.info(controller.getStatus()+ "-" + " Player " + controller.getNumberP() + " name:" + name);
 		}
 	}
 
@@ -215,6 +210,8 @@ public class TextUI implements IObserver{
 		case 'q':
 			controller.quitGame();
 			return false;
+		default:
+			return true;
 		}
 		printGameField(controller.getCurrentPlayerNumber(), controller.getCurrentPlayer().getName());
 		return true;
@@ -224,10 +221,6 @@ public class TextUI implements IObserver{
 	}
 	public void printQuitGame() {
 		LOGGER.info(controller.getStatus() +"-"+ " Game closed...");
-	}
-
-	public void printAllPhase10(GamePhase pall) {
-		LOGGER.info(" ");
 	}
 
 	@Override

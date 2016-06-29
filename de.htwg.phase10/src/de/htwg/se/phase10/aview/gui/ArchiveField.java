@@ -25,7 +25,6 @@ public class ArchiveField extends JPanel implements ActionListener{
 	JButton archive9, archive10;
 	
 	String abutton;
-	//JButton a1,a2,a3,a4,a5,a6,a7;
 	
 	Phase10gui gui;
 	Color starbucksb = new Color(0xEAC784);
@@ -334,7 +333,7 @@ public class ArchiveField extends JPanel implements ActionListener{
         archivefield2.add(archive2b17);*/
         
 	}
-	
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
 		if(!controller.pulledCard()){
@@ -481,6 +480,8 @@ public class ArchiveField extends JPanel implements ActionListener{
 				break;
 			case "a1b15":
 				archive1b15.setIcon(c.getIcon());
+				break;
+			default:
 				break;
 		}
 	}

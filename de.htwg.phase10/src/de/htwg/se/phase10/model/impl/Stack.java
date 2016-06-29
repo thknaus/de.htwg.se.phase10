@@ -1,52 +1,53 @@
 package de.htwg.se.phase10.model.impl;
 
-import java.util.Collections;
 import java.util.LinkedList;
 
 import de.htwg.se.phase10.model.IStack;
 
 public class Stack implements IStack {
-	private LinkedList<Card> stack;
+	private LinkedList<Card> stackL;
 	private Deck deck;
 	public Stack() {
-		stack = new LinkedList<Card>();
+		stackL = new LinkedList<Card>();
 	}
-
+	@Override
 	public Card pullCardS() {
-		if(stack.size() == 0){
+		if(stackL.isEmpty()){
 			return null;
 		}
-		Card c = stack.getLast();
-		stack.removeLast();
+		Card c = stackL.getLast();
+		stackL.removeLast();
 		return c;
 	}
 
-	
+	@Override	
 	public void pushCardS(Card c) {
-		stack.add(c);
+		stackL.add(c);
 	}
-	
+	@Override
 	public Deck backToDeckS(Deck d) {
 		this.deck = d;
-		if (stack.size() >= 1) {
-			for(Card sc : stack){
+		if (!stackL.isEmpty()) {
+			for(Card sc : stackL){
 				this.deck.pushToDeck(sc);
-				stack.removeLast();
+				stackL.removeLast();
 			}
 			pullCardS();
 		}
 		return deck;
 	}
+	@Override
 	public void removeLast(){
-		stack.removeLast();
+		stackL.removeLast();
 	}
+	@Override
 	public int getSizeS() {
-		return stack.size();
+		return stackL.size();
 	}
 	public Card topCard(){
-		if(stack.isEmpty()){
+		if(stackL.isEmpty()){
 			return null;
 		}
-		return stack.getLast();
+		return stackL.getLast();
 	}
 }

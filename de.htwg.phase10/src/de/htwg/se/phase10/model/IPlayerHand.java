@@ -15,4 +15,9 @@ public interface IPlayerHand {
 	int getSizeH();
 	String getCurrentPhase();
 	void setPhase(String p);
+	void setCurrentPhaseAchieved(boolean p);
+	boolean getCurrentPhaseAchieved();
+	void cleanHand();
+	boolean checkHandNull();
+	void setScore(int s);
 }

@@ -7,9 +7,6 @@ import com.google.inject.Injector;
 
 import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.IPhase10Controller;
-import de.htwg.se.phase10.controller.impl.Phase10Controller;
-import de.htwg.se.phase10.model.impl.Deck;
-import de.htwg.se.phase10.aview.tui.*;
 import de.htwg.se.phase10.aview.gui.*;
 
 public class Phase10 {

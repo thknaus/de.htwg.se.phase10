@@ -5,49 +5,49 @@ import java.util.*;
 
 public class Archive {
 	private int archnumber;
-	private List<Card> archive;
-	private Deck deck;
-	private Stack stack;
+	private List<Card> arch;
+	//private Deck deck;
+	//private Stack stack;
 
-	private GamePhase phase;
+	//private GamePhase phase;
 	
 	//generate a new archive
 	public Archive(int number){
 		archnumber = number;
-		archive = new LinkedList<>();
+		arch = new LinkedList<>();
 	}
 	
 	//get the current Archive
 	public Card[] getArchive(){
-		Card[] c = new Card[archive.size()];
-		for(int i = 0; i<archive.size(); i++){
-			c[i] = archive.get(i);
+		Card[] c = new Card[arch.size()];
+		for(int i = 0; i<arch.size(); i++){
+			c[i] = arch.get(i);
 		}
 		return c;
 	}
 	
 	//put a single card to Archive
 	public void putCardToArchive(Card c){
-		archive.add(c);
+		arch.add(c);
 	}
 	
 	//clean the Desk
 	public void cleanArchive(){
-		archive = new LinkedList<>();
+		arch = new LinkedList<>();
 	}
 	public Card get(int i) {
-		return archive.get(i);
+		return arch.get(i);
 	}
 
 	public int size() {
-		return archive.size();
+		return arch.size();
 	}
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		int archnum = this.archnumber;
 		sb.append("Archive " + archnum +":"+ " Cards: ");
-		for(Card c : archive){
+		for(Card c : arch){
 			sb.append(c.getRank()).append("_").append(c.getColor());
 			sb.append(", ");
 		}

@@ -10,25 +10,21 @@ import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.StartGame;
 import de.htwg.se.phase10.controller.UpdateStack;
-import de.htwg.se.phase10.model.IDeck;
-import de.htwg.se.phase10.model.IPlayerHand;
-import de.htwg.se.phase10.model.IStack;
 import de.htwg.se.phase10.model.impl.Archive;
 import de.htwg.se.phase10.model.impl.Card;
 import de.htwg.se.phase10.model.impl.Deck;
 import de.htwg.se.phase10.model.impl.GamePhase;
 import de.htwg.se.phase10.model.impl.PlayerHand;
 import de.htwg.se.phase10.model.impl.Stack;
-import de.htwg.se.phase10.util.observer.Event;
-import de.htwg.se.phase10.util.observer.IObserver;import de.htwg.se.phase10.util.observer.Observable;
+import de.htwg.se.phase10.util.observer.Observable;
 
 public class Phase10Controller extends Observable implements IPhase10Controller {
-	private TextUI tui;
-	private PlayerHand hand;
+	//private TextUI tui;
+	//private PlayerHand hand;
 
 	private Archive[] arrayarch = new Archive[36];
 	private int archsize;
-	private boolean archdrop = false;
+	//private boolean archdrop = false;
 	private int currentarch;
 	
 	private boolean stackdrop = false;
@@ -46,12 +42,12 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	private GamePhase phase = new GamePhase();
 	private boolean checkPhase = false;
 	
-	private boolean checkArchive = false;
+	//private boolean checkArchive = false;
 	
 	private boolean roundOver = false;
 
 	private GameStatus status = GameStatus.WELCOME;
-	
+	@Override
 	public void setNewGame(boolean newgame){
 		this.newgame = newgame;
 		if(this.newgame){
@@ -61,22 +57,25 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			status = GameStatus.NEWGAME;
 		}
 	}
+	@Override
 	public boolean checkNewGame(){
 		return newgame;
 	}
-	
+	@Override
 	public void quitGame(){
 		notifyObservers(new ExitGameEvent());
 		status = GameStatus.EXITGAME;
 	}
+	@Override
 	public void setNewDeck(){
 		deck = new Deck();
 		status = GameStatus.NEWDECK;
 	}
+	@Override
 	public Deck getDeck(){
 		return this.deck;
 	}
-	
+	@Override
 	public boolean getCardFromDeck() {
 		Card c = this.deck.getNewCard();
 		if(playerlist.get(this.currentplayer).pushCardH(c) == null){
@@ -86,18 +85,19 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		return true;
 	}
 	
-	
+	@Override
 	public void setNewStack(){
 		this.stack = new Stack();
 		this.stack.pushCardS(this.deck.getNewCard());
 		status = GameStatus.NEWSTACK;
 		notifyObservers(new UpdateStack());
 	}
+	@Override
 	public Card getStack(){
 		return this.stack.topCard();
 	}
 	
-
+	@Override
 	public void newPlayer(String name){
 		numberplayer = numberplayer + 1;
 		
@@ -111,18 +111,23 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		this.name = name;
 		notifyObservers(new AddPlayer());
 	}
+	@Override
 	public int getNumberP(){
 		return this.numberplayer;
 	}
+	@Override
 	public String getName(){
 		return this.name;
 	}
+	@Override
 	public PlayerHand getCurrentPlayer(){
 		return playerlist.get(this.currentplayer);
 	}
+	@Override
 	public int getCurrentPlayerNumber(){
 		return this.currentplayer;
 	}
+	@Override
 	public void setCurrentPlayerNumber(){
 		if(this.currentplayer < this.numberplayer-1){
 			this.currentplayer++;
@@ -130,12 +135,12 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			this.currentplayer = 0;
 		}
 	}
+	@Override
 	public void setCurrenPlayerNumber(int number){
 		this.currentplayer = number;
 	}
-
 	
-	
+	@Override
 	public void newArch(){
 		if(archsize == 0){
 			arrayarch[archsize] = new Archive(1);
@@ -146,16 +151,18 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		arrayarch[archsize] = new Archive(archsize);
 		status = GameStatus.NEWARCHIVE;
 	}
-
+	@Override
 	public void dropCardArchive(int number){
 		PlayerHand p = playerlist.get(this.currentplayer); 
 		Card c = p.getHand()[number-1];
 		arrayarch[currentarch].putCardToArchive(c);
 		p.dropCardH(c);
 	}
+	@Override
 	public void setArchive(int number){
 		currentarch = number-1;
 	}
+	@Override
 	public String getArchive(){
 		if(this.archsize == 0){
 			return " - no archives generated - ";
@@ -171,7 +178,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		return sb.toString();
 	}
 
-	
+	@Override
 	public void dropCardStack(int number){
 		PlayerHand p = playerlist.get(this.currentplayer);
 		Card[] c = p.getHand();
@@ -180,6 +187,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			this.roundOver = true;
 		}
 	}
+	@Override
 	public boolean getCardFromStack() {
 		Card c = this.stack.topCard();
 		this.stack.removeLast();
@@ -189,10 +197,11 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		notifyObservers(new UpdateStack());
 		return true;
 	}
-	
+	@Override
 	public boolean getDropCardStack(){
 		return this.stackdrop;
 	}
+	@Override
 	public void setDropedCardStack() {
 		if(this.stackdrop == false){
 			this.stackdrop = true;
@@ -200,6 +209,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			this.stackdrop = false;
 		}
 	}
+	@Override
 	public boolean checkStackTop(){
 		if(this.stack.topCard().getRank() == Card.Rank.SKIP){
 			setCurrentPlayerNumber();
@@ -207,25 +217,19 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		}
 		return false;
 	}
-	/*public void moveCard(int number){
-		if(stackdrop == true){
-			stackdrop = false;
-		}else if(archdrop == true){
-			archdrop = false;
-		}
-	}*/
 
+	@Override
 	public String getHand(int number) {
 		PlayerHand h = playerlist.get(this.currentplayer);
 		return h.toString();
 	}
-
+	@Override
 	public String getCurrentPhase(int number) {
 		PlayerHand h = playerlist.get(number);
 		return h.getCurrentPhase();
 	}
 
-
+	@Override
 	public void setPulledCard(){
 		if(this.pulledc == false){
 			this.pulledc = true;
@@ -233,10 +237,11 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			this.pulledc = false;
 		}
 	}
+	@Override
 	public boolean pulledCard(){
 		return this.pulledc;
 	}
-
+	@Override
 	public void setCheckPhase() {
 		if(this.checkPhase == false){
 			this.checkPhase = true;
@@ -244,11 +249,11 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			this.checkPhase = false;
 		}
 	}
-
+	@Override
 	public boolean getCheckPhase() {
 		return this.checkPhase;
 	}
-
+	@Override
 	public boolean checkPhase(int a) {
 		PlayerHand h = playerlist.get(this.currentplayer);
 		if(phase.checkGamePhase(h.getCurrentPhase(), arrayarch[a-1])){
@@ -257,6 +262,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 		}
 		return false;
 	}
+	@Override
 	public void setNextPhase(){
 		PlayerHand p = playerlist.get(this.currentplayer);
 		String pnumber = p.getCurrentPhase().toString();
@@ -282,11 +288,12 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 			p.setPhase(phase.getPhase(0));
 		}
 	}
-
+	@Override
 	public boolean getRoundOver(){
 		status = GameStatus.ROUNDOVER;
 		return this.roundOver;
 	}
+	@Override
 	public void startNewRound(){
 		for(PlayerHand h : playerlist){
 			h.cleanHand();

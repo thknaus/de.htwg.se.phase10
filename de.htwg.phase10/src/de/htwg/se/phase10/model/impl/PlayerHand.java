@@ -1,6 +1,5 @@
 package de.htwg.se.phase10.model.impl;
 
-import java.util.*;
 
 import de.htwg.se.phase10.model.IPlayerHand;
 
@@ -13,11 +12,9 @@ public class PlayerHand implements IPlayerHand{
 	private Deck deck;
 	private Stack stack;
 	private String phase;
-	private int phasen;
 	private boolean currentPhaseAchieved = false;
 	// generatest a new hand
 	public PlayerHand(Deck d, String n) {
-		GamePhase p = new GamePhase();
 		this.name = n;
 		this.score = 0;
 		this.deck = d;
@@ -34,20 +31,24 @@ public class PlayerHand implements IPlayerHand{
 			}
 		}
 	}
-	
+	@Override
 	public String getName(){
 		return this.name;
 	}
+	@Override
 	public int getScore(){
 		return this.score;
 	}
+	@Override
 	public void setScore(int s){
 		this.score = this.score + s;
 	}
+	@Override
 	// returns the current Hand
 	public Card[] getHand(){
 		return this.handcards;
 	}
+	@Override
 	public boolean checkHandNull(){
 		for(Card c: this.handcards){
 			if(c != null){
@@ -58,6 +59,7 @@ public class PlayerHand implements IPlayerHand{
 	}
 	
 	// gets a new card from deck
+	@Override
 	public Card pushCardH(Card c) {
 		for (int i = 0; i < handcards.length; i++){
 			if (handcards[i] == null) {
@@ -70,6 +72,7 @@ public class PlayerHand implements IPlayerHand{
 	}
 	
 	// drops card c from hand
+	@Override
 	public Card dropCardH(Card c) {
 		for (int i = 0; i < handcards.length; i++) {
 			if(handcards[i] == null){
@@ -86,6 +89,7 @@ public class PlayerHand implements IPlayerHand{
 	}
 	
 	// get current card from stack
+	@Override
 	public Card getCardStack(Stack s) {
 		this.stack = s;
 		for (int i = 0; i < handcards.length; i++){
@@ -99,7 +103,8 @@ public class PlayerHand implements IPlayerHand{
 		return null;
 	}
 	
-	// set new card to hand 
+	// set new card to hand
+	@Override
 	public void setCardHand(Card c){
 		for(int i = 0; i < handcards.length; i++){
 			if(handcards[i] == null){
@@ -109,6 +114,7 @@ public class PlayerHand implements IPlayerHand{
 	}
 	
 	// check if hand contains
+	@Override
 	public boolean containsCard(Card c){
 		for(Card d : handcards){
 			if(d == null){
@@ -122,24 +128,29 @@ public class PlayerHand implements IPlayerHand{
 	}
 	
 	// returns the current size of the hand
+	@Override
 	public int getSizeH(){
 		return this.size;
 	}
+	@Override
 	public String getCurrentPhase(){
 		return this.phase;
 	}
+	@Override
 	public void setPhase(String p){
 		this.phase = p;
 	}
+	@Override
 	public void cleanHand(){
 		for(int i = 0; i<handcards.length; i++){
 			handcards[i] = null;
 		}
 	}
-	
+	@Override
 	public boolean getCurrentPhaseAchieved(){
 		return currentPhaseAchieved;
 	}
+	@Override
 	public void setCurrentPhaseAchieved(boolean p){
 		this.currentPhaseAchieved = p;
 	}
