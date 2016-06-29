@@ -109,6 +109,7 @@ public class Name extends JFrame implements ActionListener{
 			this.setVisible(false);
 			controller.setNewGame(false);
 			gui.handCardUpdate();
+			gui.deckStackInfo("");
 		}else if(source == ok1){
 			controller.newPlayer(feld1.getText());
 		}else if(source == ok2){

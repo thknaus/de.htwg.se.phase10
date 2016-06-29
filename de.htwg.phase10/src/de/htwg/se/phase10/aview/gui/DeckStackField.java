@@ -79,19 +79,19 @@ public class DeckStackField extends JPanel implements ActionListener{
 		Object source = e.getSource();
 		if(source == stack){
 			if(!controller.getCardFromStack()){
-				textfield.setText("You have already 11 Cards on your hand.");
+				gui.deckStackInfo("You have already 11 Cards on your hand.");
 			}else{
 				gui.handCardUpdate();
 				controller.setPulledCard();
-				textfield.setText("Pulled card from Stack");
+				gui.deckStackInfo("Pulled card from Stack");
 			}
 		}else if(source == deck){
 			if(!controller.getCardFromDeck()){
-				textfield.setText("You have already 11 Cards on your hand.");
+				gui.deckStackInfo("You have already 11 Cards on your hand.");
 			}else{
 				gui.handCardUpdate();
 				controller.setPulledCard();
-				textfield.setText("Pulled card from deck.");
+				gui.deckStackInfo("Pulled card from deck.");
 			}
 		}
 

@@ -132,12 +132,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[0];
 					controller.dropCardArchive(1);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card2){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(2);
@@ -152,12 +152,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[1];
 					controller.dropCardArchive(2);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card3){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(3);
@@ -172,12 +172,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[2];
 					controller.dropCardArchive(3);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card4){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(4);
@@ -192,12 +192,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[3];
 					controller.dropCardArchive(4);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card5){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(5);
@@ -212,12 +212,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[4];
 					controller.dropCardArchive(5);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card6){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(6);
@@ -232,12 +232,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[5];
 					controller.dropCardArchive(6);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card7){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(7);
@@ -252,12 +252,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[6];
 					controller.dropCardArchive(7);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card8){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(8);
@@ -272,12 +272,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[7];
 					controller.dropCardArchive(8);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card9){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(9);
@@ -292,12 +292,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[8];
 					controller.dropCardArchive(9);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card10){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(10);
@@ -312,12 +312,12 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[9];
 					controller.dropCardArchive(10);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}else if(source == card11){
 				if(controller.getDropCardStack()){
 					controller.dropCardStack(11);
@@ -332,16 +332,17 @@ public class HandCard extends JPanel implements ActionListener{
 						controller.startNewRound();
 						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
 					}
+					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[10];
 					controller.dropCardArchive(11);
 					gui.updateArchive(c);
 				}
-				updateHand();
 			}
 		}else{
 			gui.deckStackInfo("You have to pull a card first.");
 		}
+		updateHand();
 	}
 	public void updateHand(){
 		Card[] ph = controller.getCurrentPlayer().getHand();
