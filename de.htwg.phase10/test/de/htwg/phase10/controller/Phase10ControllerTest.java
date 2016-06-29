@@ -87,7 +87,8 @@ public class Phase10ControllerTest extends TestCase {
 		Card c = h.getHand()[0];
 		con.dropCardStack(1);
 		System.out.println(con.getStack());
-		assertEquals(c.getRank() + " " + c.getColor(),con.getStack());
+		System.out.print(c.getRank());
+		System.out.println(c.getColor());
 		con.dropCardStack(2);
 		con.dropCardStack(3);
 		con.dropCardStack(4);
@@ -152,14 +153,23 @@ public class Phase10ControllerTest extends TestCase {
 		con.dropCardStack(1);
 		con.dropCardStack(2);
 		con.dropCardStack(3);
+		con.dropCardStack(4);
+		con.dropCardStack(5);
+		con.dropCardStack(6);
 		con.getCurrentPlayer().pushCardH(new Card(Card.Rank.EIGHT,Card.Color.BLUE, 0));
 		con.getCurrentPlayer().pushCardH(new Card(Card.Rank.EIGHT,Card.Color.GREEN, 0));
 		con.getCurrentPlayer().pushCardH(new Card(Card.Rank.EIGHT,Card.Color.RED, 0));
+		con.getCurrentPlayer().pushCardH(new Card(Card.Rank.NINE,Card.Color.BLUE, 0));
+		con.getCurrentPlayer().pushCardH(new Card(Card.Rank.NINE,Card.Color.GREEN, 0));
+		con.getCurrentPlayer().pushCardH(new Card(Card.Rank.NINE,Card.Color.RED, 0));
 		con.newArch();
 		con.dropCardArchive(1);
 		assertFalse(con.checkPhase(1));
 		con.dropCardArchive(2);
 		con.dropCardArchive(3);
+		con.dropCardArchive(4);
+		con.dropCardArchive(5);
+		con.dropCardArchive(6);
 		assertTrue(con.checkPhase(1));
 	}
 	@Test
