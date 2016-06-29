@@ -1,13 +1,11 @@
 package de.htwg.se.phase10.aview.tui;
 
-import java.util.Scanner;
 
 import de.htwg.se.phase10.controller.AddPlayer;
 import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.StartGame;
 import de.htwg.se.phase10.controller.UpdateStack;
-import de.htwg.se.phase10.model.impl.GamePhase;
 import de.htwg.se.phase10.util.observer.Event;
 import de.htwg.se.phase10.util.observer.IObserver;
 
@@ -21,9 +19,7 @@ public class TextUI implements IObserver{
 	
 	private int numberp = 1;
 	private int numberpcount;
-	//private String firstplayer;
 	
-	//private boolean startgame = false;
 	private boolean quit;
 	
 	public TextUI(IPhase10Controller controller2) {
@@ -54,17 +50,15 @@ public class TextUI implements IObserver{
 		}
 		if(controller.checkNewGame() && numberp == 1){
 			this.numberp = Integer.parseInt(input);
-			numberpcount++;
 			LOGGER.info("ADDPLAYER - Player 1 name:");
 			return true;
 		}else if(controller.checkNewGame() && numberpcount < numberp){
-			numberpcount++;
 			controller.newPlayer(input);
 			return true;
 		}else if(controller.checkNewGame() && numberpcount == numberp){
-			numberpcount++;
 			controller.newPlayer(input);
 		}
+		numberpcount++;
 		if(numberpcount > numberp){
 			controller.setNewGame(false);
 			controller.setCurrenPlayerNumber(0);
@@ -125,7 +119,6 @@ public class TextUI implements IObserver{
 		}
 
 		switch (c) {
-		// get card from deck
 		case 'd':
 			if(!controller.getCardFromDeck()){
 				LOGGER.info("You have already 11 Cards on your Hand.");
@@ -133,7 +126,6 @@ public class TextUI implements IObserver{
 			}
 			controller.setPulledCard();
 			break;
-		// get card from stack
 		case 's':
 			if(!controller.getCardFromStack()){
 				LOGGER.info("You have already 11 Cards on your Hand.");
@@ -141,7 +133,6 @@ public class TextUI implements IObserver{
 			}
 			controller.setPulledCard();
 			break;
-		// drop to stack
 		case 'f':
 			if(!controller.pulledCard()){
 				printPullCard();
@@ -150,7 +141,6 @@ public class TextUI implements IObserver{
 			controller.setDropedCardStack();
 			LOGGER.info("Choose card: ");
 			break;
-		// choose archive
 		case 'a':
 			if(!controller.pulledCard()){
 				printPullCard();
@@ -170,7 +160,6 @@ public class TextUI implements IObserver{
 			controller.setArchive(number);
 			LOGGER.info("Choose card: ");
 			break;
-		// create new archive
 		case 'n':
 			if(!controller.pulledCard()){
 				printPullCard();
@@ -179,7 +168,6 @@ public class TextUI implements IObserver{
 			controller.newArch();
 			LOGGER.info(controller.getStatus() + "-" + " Choose card: ");
 			break;
-		// choose card for archive
 		case 'c':
 			if(!controller.pulledCard()){
 				printPullCard();

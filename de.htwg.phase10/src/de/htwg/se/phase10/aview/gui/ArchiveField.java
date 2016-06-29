@@ -1186,6 +1186,7 @@ public class ArchiveField extends JPanel implements ActionListener{
 	public void updateArchive(Card c) {
 		controller.getArchive();
 		String i = this.abutton;
+		
 		switch(i){
 //1		
 			case "a1b1":
