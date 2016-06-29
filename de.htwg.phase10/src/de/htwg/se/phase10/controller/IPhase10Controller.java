@@ -181,5 +181,4 @@ public interface IPhase10Controller extends IObservable {
 	 * @return number of player.
 	 */
 	int getNumberP();
-
 }

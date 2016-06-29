@@ -5,7 +5,6 @@ import javax.swing.*;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.UpdateStack;
 import de.htwg.se.phase10.model.impl.Card;
-import de.htwg.se.phase10.model.impl.PlayerHand;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -115,207 +114,149 @@ public class HandCard extends JPanel implements ActionListener{
 	    this.add(card11);
 	    card11.addActionListener(this);
 	}
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
 		if(controller.pulledCard()){
 			if(source == card1){
 				if(controller.getDropCardStack()){
+					card1.setIcon(null);
 					controller.dropCardStack(1);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[0];
 					controller.dropCardArchive(1);
+					card1.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card2){
 				if(controller.getDropCardStack()){
+					card2.setIcon(null);
 					controller.dropCardStack(2);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[1];
 					controller.dropCardArchive(2);
+					card2.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card3){
 				if(controller.getDropCardStack()){
+					card3.setIcon(null);
 					controller.dropCardStack(3);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[2];
 					controller.dropCardArchive(3);
+					card3.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card4){
 				if(controller.getDropCardStack()){
+					card4.setIcon(null);
 					controller.dropCardStack(4);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[3];
 					controller.dropCardArchive(4);
+					card4.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card5){
 				if(controller.getDropCardStack()){
+					card5.setIcon(null);
 					controller.dropCardStack(5);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[4];
 					controller.dropCardArchive(5);
+					card5.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card6){
 				if(controller.getDropCardStack()){
+					card6.setIcon(null);
 					controller.dropCardStack(6);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[5];
 					controller.dropCardArchive(6);
+					card6.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card7){
 				if(controller.getDropCardStack()){
+					card7.setIcon(null);
 					controller.dropCardStack(7);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[6];
 					controller.dropCardArchive(7);
+					card7.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card8){
 				if(controller.getDropCardStack()){
+					card8.setIcon(null);
 					controller.dropCardStack(8);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[7];
 					controller.dropCardArchive(8);
+					card8.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card9){
 				if(controller.getDropCardStack()){
+					card9.setIcon(null);
 					controller.dropCardStack(9);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
 					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[8];
 					controller.dropCardArchive(9);
+					card9.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card10){
 				if(controller.getDropCardStack()){
+					card10.setIcon(null);
 					controller.dropCardStack(10);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[9];
 					controller.dropCardArchive(10);
+					card10.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}else if(source == card11){
@@ -323,22 +264,24 @@ public class HandCard extends JPanel implements ActionListener{
 					controller.dropCardStack(11);
 					controller.setDropedCardStack();
 					controller.setPulledCard();
+					card11.setIcon(null);
 					controller.setCurrentPlayerNumber();
 					controller.notifyObservers(new UpdateStack());
-					if(controller.checkStackTop()){
-						gui.deckStackInfo("Player skiped - Skip card");
-					}
-					if(controller.getRoundOver()){
-						controller.startNewRound();
-						gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
-					}
-					gui.deckStackInfo("");
 				}else{
 					Card c = controller.getCurrentPlayer().getHand()[10];
 					controller.dropCardArchive(11);
+					card11.setIcon(null);
 					gui.updateArchive(c);
 				}
 			}
+			if(controller.checkStackTop()){
+				gui.deckStackInfo("Player skiped - Skip card");
+			}
+			if(controller.getRoundOver()){
+				controller.startNewRound();
+				gui.deckStackInfo(controller.getStatus() + "-" + " Next ROUND!!!");
+			}
+			gui.deckStackInfo("");
 		}else{
 			gui.deckStackInfo("You have to pull a card first.");
 		}
@@ -346,85 +289,76 @@ public class HandCard extends JPanel implements ActionListener{
 	}
 	public void updateHand(){
 		Card[] ph = controller.getCurrentPlayer().getHand();
-		
+		card1.setIcon(null);
+		card2.setIcon(null);
+		card3.setIcon(null);
+		card4.setIcon(null);
+		card5.setIcon(null);
+		card6.setIcon(null);
+		card7.setIcon(null);
+		card8.setIcon(null);
+		card9.setIcon(null);
+		card10.setIcon(null);
+		card11.setIcon(null);
+
 		for(int i = 0; i <= ph.length; i++){
 			switch(i){
 				case 0:
-					if(ph[i] == null){
-						card1.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card1.setIcon(ph[i].getIcon());
 					}
-					card1.setIcon(ph[i].getIcon());
 					break;
 				case 1:
-					if(ph[i] == null){
-						card2.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card2.setIcon(ph[i].getIcon());
 					}
-					card2.setIcon(ph[i].getIcon());
 					break;
 				case 2:
-					if(ph[i] == null){
-						card3.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card3.setIcon(ph[i].getIcon());
 					}
-					card3.setIcon(ph[i].getIcon());
 					break;
 				case 3:
-					if(ph[i] == null){
-						card4.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card4.setIcon(ph[i].getIcon());
 					}
-					card4.setIcon(ph[i].getIcon());
 					break;
 				case 4:
-					if(ph[i] == null){
-						card5.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card5.setIcon(ph[i].getIcon());
 					}
-					card5.setIcon(ph[i].getIcon());
 					break;
 				case 5:
-					if(ph[i] == null){
-						card6.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card6.setIcon(ph[i].getIcon());
 					}
-					card6.setIcon(ph[i].getIcon());
 					break;
 				case 6:
-					if(ph[i] == null){
-						card7.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card7.setIcon(ph[i].getIcon());
 					}
-					card7.setIcon(ph[i].getIcon());
 					break;
 				case 7:
-					if(ph[i] == null){
-						card8.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card8.setIcon(ph[i].getIcon());
 					}
-					card8.setIcon(ph[i].getIcon());
 					break;
 				case 8:
-					if(ph[i] == null){
-						card9.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card9.setIcon(ph[i].getIcon());
 					}
-					card9.setIcon(ph[i].getIcon());
 					break;
 				case 9:
-					if(ph[i] == null){
-						card10.setIcon(null);
-						break;
+					if(ph[i] != null){
+						card10.setIcon(ph[i].getIcon());
 					}
-					card10.setIcon(ph[i].getIcon());
 					break;
 				case 10:
-					if(ph[i] == null){
-						card11.setIcon(null);
-						break;
-					}
-					card11.setIcon(ph[i].getIcon());
+					if(ph[i] != null){
+						card11.setIcon(ph[i].getIcon());
+					}					
+					break;
+				default:
 					break;
 			}
 		}
