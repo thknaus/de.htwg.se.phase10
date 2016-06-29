@@ -108,7 +108,7 @@ public class Name extends JFrame implements ActionListener{
 		if(source == finish) {
 			this.setVisible(false);
 			controller.setNewGame(false);
-			gui.HandCardUpdate();
+			gui.handCardUpdate();
 		}else if(source == ok1){
 			controller.newPlayer(feld1.getText());
 		}else if(source == ok2){

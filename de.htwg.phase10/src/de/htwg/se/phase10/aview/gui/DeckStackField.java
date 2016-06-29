@@ -13,7 +13,7 @@ public class DeckStackField extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private IPhase10Controller controller;
 	
-	JTextField textfield;
+	JTextArea textfield;
     JButton stack, deck, narchiv, phasen1, halter, phasen2;
     JPanel STD;
     Phase10gui gui;
@@ -68,7 +68,7 @@ public class DeckStackField extends JPanel implements ActionListener{
         halter.setBorderPainted(false);
         STD.add(halter);
         
-        textfield = new JTextField("Welcome to Phase 10.");
+        textfield = new JTextArea("Welcome to Phase 10.");
         textfield.setPreferredSize(new Dimension(400,100));
         textfield.setEditable(false);
         STD.add(textfield);
@@ -81,7 +81,7 @@ public class DeckStackField extends JPanel implements ActionListener{
 			if(!controller.getCardFromStack()){
 				textfield.setText("You have already 11 Cards on your hand.");
 			}else{
-				gui.HandCardUpdate();
+				gui.handCardUpdate();
 				controller.setPulledCard();
 				textfield.setText("Pulled card from Stack");
 			}
@@ -89,7 +89,7 @@ public class DeckStackField extends JPanel implements ActionListener{
 			if(!controller.getCardFromDeck()){
 				textfield.setText("You have already 11 Cards on your hand.");
 			}else{
-				gui.HandCardUpdate();
+				gui.handCardUpdate();
 				controller.setPulledCard();
 				textfield.setText("Pulled card from deck.");
 			}

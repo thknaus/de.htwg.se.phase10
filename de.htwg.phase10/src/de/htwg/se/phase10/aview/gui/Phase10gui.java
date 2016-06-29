@@ -6,6 +6,7 @@ import javax.swing.*;
 import de.htwg.se.phase10.controller.GameStatus;
 import de.htwg.se.phase10.controller.IPhase10Controller;
 import de.htwg.se.phase10.controller.UpdateStack;
+import de.htwg.se.phase10.model.impl.Card;
 import de.htwg.se.phase10.util.observer.Event;
 import de.htwg.se.phase10.util.observer.IObserver;
 
@@ -52,7 +53,6 @@ public class Phase10gui extends JFrame implements IObserver{
 		mainPanel.add(hand);
 		mainPanel.add(toolb);
 		this.setContentPane(mainPanel);
-
 	
         
 //Hauptfenster ausgeben
@@ -75,12 +75,19 @@ public class Phase10gui extends JFrame implements IObserver{
 		}
 	}
 
-	public void HandCardUpdate() {
+	public void handCardUpdate() {
 		this.hand.updateHand();
 		controller.notifyObservers();
 	}
 
 	public void deckStackInfo(String s) {
-		dsfield.textfield.setText(s);
+		StringBuilder sb = new StringBuilder();
+		sb.append("Player " + controller.getCurrentPlayer().getName() + " it´s your turn.\n");
+		sb.append(controller.getCurrentPlayer().getCurrentPhase() +"\n");
+		sb.append(s);
+		dsfield.textfield.setText(sb.toString());
+	}
+	public void updateArchive(Card c){
+		this.arch.updateArchive(c);
 	}
 }

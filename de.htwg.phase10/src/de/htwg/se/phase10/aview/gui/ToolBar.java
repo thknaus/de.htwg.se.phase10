@@ -14,16 +14,19 @@ public class ToolBar extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private IPhase10Controller controller;
 	
-	private JButton deck;
+	private JButton deck, stack;
 	Color starbucks = new Color(0x00592D);
 	Phase10gui gui;
 	
 	public ToolBar(Phase10gui g, IPhase10Controller con) {
+		this.controller = con;
+		this.gui = g;
+		
 		this.setBackground(starbucks);
-	    deck = new JButton("Taster1");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
+	    stack = new JButton("Drop Stack");
+	    stack.setPreferredSize(new Dimension(100,30));
+	    this.add(stack);
+	    stack.addActionListener(this);
 	    
 	    deck = new JButton("Taster2");
 	    deck.setPreferredSize(new Dimension(100,30));
@@ -63,8 +66,13 @@ public class ToolBar extends JPanel implements ActionListener{
 
 	public void actionPerformed(ActionEvent e) {
 		Object source = e.getSource();
-		if(source == deck){
-			
+		if(source == stack){
+			if(!controller.pulledCard()){
+				gui.deckStackInfo("You have to pull a card first.");
+			}else{
+				controller.setDropedCardStack();
+				gui.deckStackInfo("Choose a card: ");
+			}
 		}
 	}
 }

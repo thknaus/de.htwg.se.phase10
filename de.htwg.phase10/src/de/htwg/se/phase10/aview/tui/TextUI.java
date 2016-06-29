@@ -168,6 +168,7 @@ public class TextUI implements IObserver{
 					controller.setNextPhase();
 				}else{
 					LOGGER.info("Phase not completed");
+					controller.setCheckPhase();
 				}
 				break;
 			}
@@ -185,12 +186,17 @@ public class TextUI implements IObserver{
 			break;
 		// choose card for archive
 		case 'c':
+			if(!controller.pulledCard()){
+				printPullCard();
+				break;
+			}
 			if(controller.getDropCardStack()){
 				controller.dropCardStack(number);
 				controller.setDropedCardStack();
 				controller.setPulledCard();
 				controller.setCurrentPlayerNumber();
 				if(controller.checkStackTop()){
+					controller.setCurrentPlayerNumber();
 					LOGGER.info("Player skiped - Skip card");
 				}
 				if(controller.getRoundOver()){
