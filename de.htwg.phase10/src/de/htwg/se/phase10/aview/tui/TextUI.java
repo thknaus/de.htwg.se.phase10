@@ -51,14 +51,18 @@ public class TextUI implements IObserver{
 		if(controller.checkNewGame() && numberp == 1){
 			this.numberp = Integer.parseInt(input);
 			LOGGER.info("ADDPLAYER - Player 1 name:");
+			numberpcount++;
 			return true;
 		}else if(controller.checkNewGame() && numberpcount < numberp){
 			controller.newPlayer(input);
+			numberpcount++;
 			return true;
 		}else if(controller.checkNewGame() && numberpcount == numberp){
 			controller.newPlayer(input);
+			numberpcount++;
+			return true;
 		}
-		numberpcount++;
+		
 		if(numberpcount > numberp){
 			controller.setNewGame(false);
 			controller.setCurrenPlayerNumber(0);
