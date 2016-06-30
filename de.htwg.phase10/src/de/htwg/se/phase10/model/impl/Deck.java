@@ -6,7 +6,6 @@ import de.htwg.se.phase10.model.IDeck;
 
 public class Deck implements IDeck{
 	
-	//public static Object getNewCard;
 	private int size = 0;
 	private LinkedList<Card> cards = new LinkedList<Card>();
 	public Deck(){
@@ -18,6 +17,7 @@ public class Deck implements IDeck{
 	 * and set the size to 108.
 	 * @return Returns a LinkedList with all cards
 	 */
+	@Override
 	public void newDeck() {
 		for (int i = 0; i < 2; i++) {
 			forCardColor();
@@ -74,28 +74,21 @@ public class Deck implements IDeck{
 		this.size++;
 	}
 
-	/*
-	 * clean the Array completely and set the
-	 * size to zero.
-	 * Return: returns true if deck has been cleaned.
-	 */
+	@Override
 	public boolean cleanDeck() {
 		this.cards.clear();
 		this.size = 0;
 		return true;
 	}
 	
-	/*
-	 * get a random Card from the list, delete it and
-	 * reduce the size around one.
-	 */
+	@Override
 	public Card getNewCard() {
 		Card c = cards.getLast();
 		cards.removeLast();
 		size--;
 		return c;
 	}
-	
+	@Override
 	public boolean pushToDeck(Card s) {
 		if(cards.size() == 108){
 			return false;
@@ -105,20 +98,8 @@ public class Deck implements IDeck{
 		size++;
 		return true;
 	}
-	
+	@Override
 	public int getSize(){
 		return this.size;
 	}
-	
-	/*@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		if(cards != null){
-			for(Card s : cards){
-				sb.append(s.getRank()).append("_").append(s.getColor()).append(", \n");
-			}
-		}
-		sb.append("size: " + this.size);
-		return sb.toString();
-	}*/
 }

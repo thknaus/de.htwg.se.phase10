@@ -9,6 +9,7 @@ public class ArchiveButton extends JButton{
 	public ArchiveButton(String n){
 		this.name = n;
 	}
+	@Override
 	public String getName(){
 		return this.name;
 	}

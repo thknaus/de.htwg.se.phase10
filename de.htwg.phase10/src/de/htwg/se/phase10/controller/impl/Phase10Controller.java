@@ -3,7 +3,6 @@ package de.htwg.se.phase10.controller.impl;
 import java.util.LinkedList;
 import java.util.List;
 
-import de.htwg.se.phase10.aview.tui.TextUI;
 import de.htwg.se.phase10.controller.AddPlayer;
 import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.GameStatus;
@@ -19,12 +18,9 @@ import de.htwg.se.phase10.model.impl.Stack;
 import de.htwg.se.phase10.util.observer.Observable;
 
 public class Phase10Controller extends Observable implements IPhase10Controller {
-	//private TextUI tui;
-	//private PlayerHand hand;
 
 	private Archive[] arrayarch = new Archive[36];
 	private int archsize;
-	//private boolean archdrop = false;
 	private int currentarch;
 	
 	private boolean stackdrop = false;
@@ -42,7 +38,6 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	private GamePhase phase = new GamePhase();
 	private boolean checkPhase = false;
 	
-	//private boolean checkArchive = false;
 	
 	private boolean roundOver = false;
 
@@ -203,7 +198,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	}
 	@Override
 	public void setDropedCardStack() {
-		if(this.stackdrop == false){
+		if(!this.stackdrop){
 			this.stackdrop = true;
 		}else{
 			this.stackdrop = false;
@@ -231,7 +226,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 
 	@Override
 	public void setPulledCard(){
-		if(this.pulledc == false){
+		if(!this.pulledc){
 			this.pulledc = true;
 		}else {
 			this.pulledc = false;
@@ -243,7 +238,7 @@ public class Phase10Controller extends Observable implements IPhase10Controller 
 	}
 	@Override
 	public void setCheckPhase() {
-		if(this.checkPhase == false){
+		if(!this.checkPhase){
 			this.checkPhase = true;
 		}else{
 			this.checkPhase = false;

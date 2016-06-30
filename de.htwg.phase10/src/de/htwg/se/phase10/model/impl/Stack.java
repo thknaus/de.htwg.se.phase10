@@ -44,6 +44,7 @@ public class Stack implements IStack {
 	public int getSizeS() {
 		return stackL.size();
 	}
+	@Override
 	public Card topCard(){
 		if(stackL.isEmpty()){
 			return null;

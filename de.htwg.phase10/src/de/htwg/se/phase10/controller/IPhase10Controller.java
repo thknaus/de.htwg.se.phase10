@@ -89,8 +89,6 @@ public interface IPhase10Controller extends IObservable {
 	 * @return true if next card goes to stack
 	 */
 	boolean getDropCardStack();
-	/*
-	void moveCard(int number);*/
 	/**
 	 * Gets a new card from Deck
 	 * @return true if the player gets a new Card to his hand, false if already have pulled a card

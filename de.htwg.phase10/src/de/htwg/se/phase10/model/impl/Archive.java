@@ -6,18 +6,12 @@ import java.util.*;
 public class Archive {
 	private int archnumber;
 	private List<Card> arch;
-	//private Deck deck;
-	//private Stack stack;
 
-	//private GamePhase phase;
-	
-	//generate a new archive
 	public Archive(int number){
 		archnumber = number;
 		arch = new LinkedList<>();
 	}
 	
-	//get the current Archive
 	public Card[] getArchive(){
 		Card[] c = new Card[arch.size()];
 		for(int i = 0; i<arch.size(); i++){
@@ -26,12 +20,10 @@ public class Archive {
 		return c;
 	}
 	
-	//put a single card to Archive
 	public void putCardToArchive(Card c){
 		arch.add(c);
 	}
 	
-	//clean the Desk
 	public void cleanArchive(){
 		arch = new LinkedList<>();
 	}

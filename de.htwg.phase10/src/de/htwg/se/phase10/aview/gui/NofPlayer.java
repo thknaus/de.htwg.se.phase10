@@ -102,7 +102,7 @@ public class NofPlayer extends JFrame implements ActionListener{
 		this.setVisible(true);
 	}
 	
-
+	@Override
 	public void actionPerformed(ActionEvent e){
 		Object source = e.getSource();
 		if(source == finish) {

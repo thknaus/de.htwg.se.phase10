@@ -24,6 +24,20 @@ public class Phase10ControllerTest extends TestCase {
 		assertTrue(con.checkNewGame());
 	}
 	@Test
+	public void testQuitGame(){
+		con.quitGame();
+	}
+	@Test
+	public void testGetName(){
+		con.newPlayer("test");
+		assertEquals("test",con.getName());
+	}
+	@Test
+	public void testNumberP(){
+		con.newPlayer("test");
+		assertEquals(1, con.getNumberP());
+	}
+	@Test
 	public void testSetNewDeck(){
 		con.setNewDeck();
 		Deck d = con.getDeck();
@@ -36,7 +50,10 @@ public class Phase10ControllerTest extends TestCase {
 		con.getCardFromDeck();
 		assertFalse(con.getCardFromDeck());
 	}
-	
+	@Test
+	public void testGameStatus(){
+		con.getStatus();
+	}
 	@Test
 	public void testSetNewStack(){
 		con.setNewStack();

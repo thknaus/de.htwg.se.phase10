@@ -13,7 +13,7 @@ public class PlayerHand implements IPlayerHand{
 	private Stack stack;
 	private String phase;
 	private boolean currentPhaseAchieved = false;
-	// generatest a new hand
+
 	public PlayerHand(Deck d, String n) {
 		this.name = n;
 		this.score = 0;
@@ -44,7 +44,6 @@ public class PlayerHand implements IPlayerHand{
 		this.score = this.score + s;
 	}
 	@Override
-	// returns the current Hand
 	public Card[] getHand(){
 		return this.handcards;
 	}
@@ -83,7 +82,6 @@ public class PlayerHand implements IPlayerHand{
 				size--;
 				return c;
 			}
-			continue;
 		}
 		return null;
 	}

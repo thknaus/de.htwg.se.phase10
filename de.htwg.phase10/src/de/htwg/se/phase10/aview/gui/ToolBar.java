@@ -14,7 +14,7 @@ public class ToolBar extends JPanel implements ActionListener{
 	private static final long serialVersionUID = 1L;
 	private IPhase10Controller controller;
 	
-	private JButton deck, stack;
+	private JButton stack;
 	Color starbucks = new Color(0x00592D);
 	Phase10gui gui;
 	
@@ -28,40 +28,6 @@ public class ToolBar extends JPanel implements ActionListener{
 	    this.add(stack);
 	    stack.addActionListener(this);
 	    
-	    deck = new JButton("Taster2");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
-	    
-	    deck = new JButton("Taster3");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
-	    
-	    deck = new JButton("Taster4");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
-	    
-	    deck = new JButton("Taster5");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
-	    
-	    deck = new JButton("Taster6");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
-	    
-	    deck = new JButton("Taster7");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
-	    
-	    deck = new JButton("Taster8");
-	    deck.setPreferredSize(new Dimension(100,30));
-	    this.add(deck);
-	    deck.addActionListener(this);
 	}
 	
 	@Override
@@ -73,6 +39,7 @@ public class ToolBar extends JPanel implements ActionListener{
 			}else{
 				controller.setDropedCardStack();
 				gui.deckStackInfo("Choose a card: ");
+				controller.notifyObservers();
 			}
 		}
 	}

@@ -23,7 +23,7 @@ public class Phase10gui extends JFrame implements IObserver{
 	private ArchiveField arch;
 	
 	JFrame field;
-	JMenuBar Phase10MenuBar;
+	JMenuBar phase10menubar;
 	Color starbucks = new Color(0x00592D);
 	
 	public Phase10gui(IPhase10Controller con){

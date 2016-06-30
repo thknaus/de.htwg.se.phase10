@@ -274,6 +274,7 @@ public class HandCard extends JPanel implements ActionListener{
 					gui.updateArchive(c);
 				}
 			}
+			controller.notifyObservers();
 			if(controller.checkStackTop()){
 				gui.deckStackInfo("Player skiped - Skip card");
 			}
