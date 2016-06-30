@@ -38,19 +38,6 @@ public class TextUITest extends TestCase{
 		tui.inputLine("f");
 		tui.inputLine("s");
 		controller.setCheckPhase();
-		/*controller.dropCardStack(0);
-		controller.dropCardStack(1);
-		controller.dropCardStack(2);
-		controller.dropCardStack(3);
-		controller.dropCardStack(4);
-		controller.dropCardStack(5);
-		controller.dropCardStack(6);
-		Card c1 = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
-		Card c2 = new Card(Card.Rank.EIGHT, Card.Color.BLUE, 0);
-		Card c3 = new Card(Card.Rank.EIGHT, Card.Color.RED, 0);
-		Card c4 = new Card(Card.Rank.ELEVEN, Card.Color.BLUE,0);
-		Card c5 = new Card(Card.Rank.ELEVEN, Card.Color.YELLOW,0);
-		Card c6 = new Card(Card.Rank.ELEVEN, Card.Color.GREEN,0);*/
 		
 		tui.inputLine("a1");
 		tui.inputLine("d");
