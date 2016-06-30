@@ -14,10 +14,14 @@ public class GamePhase {
 	}
 	private boolean checkPhase1(Archive arch){
 		Archive archive = arch;
-		Card c = archive.get(0);
 		if (archive.size() != 6){
 			return false;
 		}
+		return checkPhase1C(arch);
+	}
+	private boolean checkPhase1C(Archive arch){
+		Archive archive = arch;
+		Card c = archive.get(0);
 		for (int i = 0; i < archive.size(); i++) {
 			Card d = archive.get(i);
 			if(i>3){
@@ -35,13 +39,18 @@ public class GamePhase {
 		}
 		return true;
 	}
+	
 	private boolean checkPhase2(Archive arch){
 		Archive archive = arch;
-		Card c = archive.get(0);
 		
 		if(archive.size() != 7){
 			return false;
 		}
+		return checkPhase2C(arch);
+	}
+	private boolean checkPhase2C(Archive arch){
+		Archive archive = arch;
+		Card c = archive.get(0);
 		int z = archive.get(3).getRankValue();
 		for(int i = 0; i<archive.size(); i++){
 			Card d = archive.get(i);
