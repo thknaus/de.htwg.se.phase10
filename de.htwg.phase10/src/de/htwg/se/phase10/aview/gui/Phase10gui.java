@@ -27,19 +27,16 @@ public class Phase10gui extends JFrame implements IObserver{
 	Color starbucks = new Color(0x00592D);
 	
 	public Phase10gui(IPhase10Controller con){
-//MEnuBar einbinden	
 		this.controller = con;
 		this.controller.addObserver(this);
 		Phase10MenuBar menuB = new Phase10MenuBar(this, controller);
 		this.setJMenuBar(menuB.menuBar);
 		
-//Hauptfenster bauen.	
 		mainPanel = new JPanel();
 		setTitle("Phase10");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setPreferredSize(new Dimension(1920, 1040));
 		setResizable(true);
-		//falls wir eine farbe haben wollen
 		mainPanel.setBackground(starbucks);
 
 		dsfield = new DeckStackField(this, controller);
@@ -54,7 +51,6 @@ public class Phase10gui extends JFrame implements IObserver{
 		this.setContentPane(mainPanel);
 	
         
-//Hauptfenster ausgeben
 		this.pack();
 		this.setVisible(true);
 	}
