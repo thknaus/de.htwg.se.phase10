@@ -1,6 +1,9 @@
 package de.htwg.se.phase10.aview.tui;
 
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import de.htwg.se.phase10.controller.AddPlayer;
 import de.htwg.se.phase10.controller.ExitGameEvent;
 import de.htwg.se.phase10.controller.IPhase10Controller;
@@ -9,8 +12,6 @@ import de.htwg.se.phase10.controller.UpdateStack;
 import de.htwg.se.phase10.util.observer.Event;
 import de.htwg.se.phase10.util.observer.IObserver;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class TextUI implements IObserver{
 	

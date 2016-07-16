@@ -1,0 +1,362 @@
+INFO main de.htwg.se.phase10.aview.tui.TextUI - Welcome to Phase 10
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 1.) Start a new Game
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 2.) Quit
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Choose a player number between 2 - 6: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Card from Deck to Stack.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ADDPLAYER- Player 1 name:a
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ADDPLAYER- Player 2 name:d
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player a its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SEVEN YELLOW
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: NINE_RED, 
+2: NINE_BLUE, 
+3: EIGHT_GREEN, 
+4: TWELVE_YELLOW, 
+5: JOKER_WHITE, 
+6: TEN_YELLOW, 
+7: ONE_YELLOW, 
+8: TEN_GREEN, 
+9: TWO_RED, 
+10: ELEVEN_GREEN, 
+empty, 
+size: 10
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO main de.htwg.se.phase10.aview.tui.TextUI - Welcome to Phase 10
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 1.) Start a new Game
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 2.) Quit
+INFO main de.htwg.se.phase10.aview.tui.TextUI - Welcome to Phase 10
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 1.) Start a new Game
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 2.) Quit
+INFO main de.htwg.se.phase10.aview.tui.TextUI - Welcome to Phase 10
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 1.) Start a new Game
+INFO main de.htwg.se.phase10.aview.tui.TextUI - 2.) Quit
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Choose a player number between 2 - 6: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Card from Deck to Stack.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ADDPLAYER- Player 1 name:Thomas
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ADDPLAYER- Player 2 name:Simon
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: JOKER WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: SKIP_WHITE, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+empty, 
+size: 10
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: JOKER WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: SKIP_WHITE, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 11
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: JOKER WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: SKIP_WHITE, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 11
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: JOKER WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: SKIP_WHITE, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 11
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Card from Deck to Stack.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Simon its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SKIP WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: NINE_RED, 
+2: JOKER_WHITE, 
+3: THREE_GREEN, 
+4: SEVEN_YELLOW, 
+5: TWELVE_BLUE, 
+6: ELEVEN_BLUE, 
+7: NINE_YELLOW, 
+8: TEN_BLUE, 
+9: FOUR_YELLOW, 
+10: THREE_GREEN, 
+empty, 
+size: 10
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SKIP WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: EIGHT_YELLOW, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 11
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI -  - no archives generated - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SKIP WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: EIGHT_YELLOW, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 11
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive 1: Cards: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SKIP WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+2: THREE_RED, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: EIGHT_YELLOW, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 11
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive 1: Cards: THREE_RED, 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SKIP WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+empty, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: EIGHT_YELLOW, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 10
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Simon its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive 1: Cards: THREE_RED, 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: SKIP WHITE
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: NINE_RED, 
+2: JOKER_WHITE, 
+3: THREE_GREEN, 
+4: SEVEN_YELLOW, 
+5: TWELVE_BLUE, 
+6: ELEVEN_BLUE, 
+7: NINE_YELLOW, 
+8: TEN_BLUE, 
+9: FOUR_YELLOW, 
+10: THREE_GREEN, 
+empty, 
+size: 10
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Card from Deck to Stack.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - ##############################
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Player Thomas its your turn.
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive: 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Archive 1: Cards: THREE_RED, 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Stack: THREE GREEN
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Your Hand:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 1: JOKER_WHITE, 
+empty, 
+3: SIX_BLUE, 
+4: FOUR_RED, 
+5: TEN_YELLOW, 
+6: EIGHT_YELLOW, 
+7: FIVE_RED, 
+8: FIVE_BLUE, 
+9: SEVEN_RED, 
+10: NINE_RED, 
+11: THREE_YELLOW, 
+size: 10
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Current Phase:
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Phase 1: 2 triplet
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - 
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - Press
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - d - Get Card from Deck, s - Get Card from Stack, f - Drop card stack (next Player)
+INFO AWT-EventQueue-0 de.htwg.se.phase10.aview.tui.TextUI - a+number - Select a archive, y - check archive, n - new Archive, c+number - choose card, q - quit game
